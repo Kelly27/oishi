@@ -30,7 +30,7 @@
                                 <td><img src="{{URL::to('images/list.png')}}" style="margin-top: -45px;"></td>
                                 <td>
                                     <h3>DESCRIPTION</h3>
-                                    <p style="text-align: justify;">Step onto marbled floors while taking in the warm recessed ceiling lights and buffet counters featuring rows of salads, seafood, and more. Chatterz is located in the business district and in the heart of Melaka’s Historical and Heritage zone, close to various UNESCO World Heritage sites. </p>
+                                    <p style="text-align: justify;"></p>
                                 </td>
                             </tr>
                         </tbody>
@@ -65,6 +65,9 @@
         </div>
         @include('pages.home.sig-dish')
         {{-- img5 --}}
+        <div class="container visible-xs" style="background-color:  #231F20; border-top: solid;border-color: white;border-width: thin;"">
+            <h3 style="font-weight: inherit; color: white">CATEGORY</h3>
+        </div>
         <div class="container-fluid nopadding" id="img-container-id">
             <div class="container nopadding img-container">
                 <div class="overlay">

@@ -12,7 +12,7 @@
             <a href="#" id="menu-style">CHICKEN TEERIYAKI</a>
         </div>
         <div class="col-sm-1">
-            <a id="seemore">SEE MORE</a>
+            <a id="seemore" style="margin-bottom: 15px">SEE MORE</a>
         </div>
     </div>
 </div>
