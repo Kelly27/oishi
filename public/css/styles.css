@@ -91,6 +91,10 @@ img{
     padding: 0px;
 }
 
+#voucher-cont > p, #voucher-cont > h6{
+    padding: 0px 20px;
+}
+
 #reward-cont{
     background-color: #F1F1F2;
     margin-bottom: 20px;
@@ -418,7 +422,9 @@ img{
        margin-bottom: 5px;
        margin-left: 10px;
     }
-
+    #voucher-cont2{
+        padding: 0px;
+    }
 }
 
 @media only screen and (min-device-width: 767px) and (max-device-width: 1290px) and (orientation: landscape){
