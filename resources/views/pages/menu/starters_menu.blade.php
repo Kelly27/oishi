@@ -22,7 +22,7 @@
 			<div class="container menu-cont">
 				<div class="row" style="margin-bottom: 20px;">
 					<div class="col-sm-7">
-				<img src="{{URL::to('images/img20.png')}}"" class="img-responsive">
+				<img src="{{URL::to('images/img21.png')}}"" class="img-responsive">
 					</div>
 					<div class="col-sm-5">
 						<h4 style="color: red; padding-top: 15px;">{{$menu->menu_name}}</h4>

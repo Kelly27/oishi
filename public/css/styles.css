@@ -173,7 +173,6 @@ img{
     color: red;
     font-family: Arial;
     background-color: white;
-    width: 340px;
 }
 
  .breadcrumb_container > ol > li:first-child > a{
@@ -406,6 +405,18 @@ img{
         width:100%;
         height:280px;
         position:relative;
+    }
+
+    .menu-cont{
+        width: initial;
+        padding: 0px;
+        margin:0px;
+    }
+
+    .menu-cont p, .menu-cont h4{
+       font-family: Arial;
+       margin-bottom: 5px;
+       margin-left: 10px;
     }
 
 }
