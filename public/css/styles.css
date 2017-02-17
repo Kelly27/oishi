@@ -135,6 +135,10 @@ img{
     cursor: pointer;
 }
 
+.menu-cont{
+    width: initial;
+}
+
 #img-container-id{
         display: flex;
         background-color: black;

@@ -63,7 +63,7 @@
                 </div>
             </div>
         </div>
-        @include('pages.home.sig-dish')
+        @include('pages.home.sig_dish')
         {{-- img5 --}}
         <div class="container visible-xs" style="background-color:  #231F20; border-top: solid;border-color: white;border-width: thin;"">
             <h3 style="font-weight: inherit; color: white">CATEGORY</h3>
