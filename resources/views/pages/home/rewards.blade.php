@@ -1,19 +1,19 @@
 <div class="container">
     <h4 style="font-weight:bold; text-align: center">REWARDS</h2>
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4 m-nopadding">
             <div class="container" id="reward-cont">
                 <img src="{{URL::to('images/img12.png')}}" class="img-responsive">
                 <a href="#" style="font-weight: bold; color: black;"><img src="{{URL::to('images/hand.png')}}" style="margin: 10px"> FREE ONE JUICE DRINK</a>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 m-nopadding">
             <div class="container" id="reward-cont">
                 <img src="{{URL::to('images/img13.png')}}" class="img-responsive">
                 <a href="#" style="font-weight: bold; color: black;"><img src="{{URL::to('images/hand.png')}}" style="margin: 10px"> FREE ONE JUICE DRINK</a>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 m-nopadding">
             <div class="container" id="reward-cont">
                 <img src="{{URL::to('images/img14.png')}}" class="img-responsive">
                 <a href="#" style="font-weight: bold; color: black;"><img src="{{URL::to('images/hand.png')}}" style="margin: 10px"> FREE ONE JUICE DRINK</a>

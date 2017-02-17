@@ -69,7 +69,7 @@
             <h3 style="font-weight: inherit; color: white">CATEGORY</h3>
         </div>
         <div class="container-fluid nopadding" id="img-container-id">
-            <div class="container nopadding img-container">
+            <div class="container nopadding img-container" style="background-image: url(images/img5.png);">
                 <div class="overlay">
                     <a href="#">STARTERS</a>
                 </div>

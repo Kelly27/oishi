@@ -4,12 +4,14 @@
             <h5>SIGNATURE DISH >></h5>
         </div>
         <div class="col-sm-3 nopadding">
-            <img id="media-img" src="{{URL::to('images/img1.png')}}" class="img-responsive">
-            <a href="#" id="menu-style">IKA MARU/TERIYAKI</a>
+            <div class="container sig-dish-img nopadding" style="background-image: url(images/img1.png);">
+                <a href="#" id="menu-style">IKA MARU/TERIYAKI</a>
+            </div>
         </div>
         <div class="col-sm-3 nopadding">
-            <img id="media-img" src="{{URL::to('images/img2.png')}}" class="img-responsive">
-            <a href="#" id="menu-style">CHICKEN TEERIYAKI</a>
+            <div class="container sig-dish-img nopadding" style="background-image: url(images/img2.png);">
+                <a href="#" id="menu-style">CHICKEN TERIYAKI</a>
+            </div>
         </div>
         <div class="col-sm-1">
             <a id="seemore" style="margin-bottom: 15px">SEE MORE</a>

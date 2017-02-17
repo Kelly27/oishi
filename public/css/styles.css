@@ -123,10 +123,19 @@ img{
     top: 50%;
     left: 40%;
 }
+.gen-img-container{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    width:100%;
+    height: 200px;
+}
 
 .img-container{
-    background: url(../images/img5.png);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     height: 700px;
     text-align: center;
 }
@@ -146,6 +155,14 @@ img{
 .menu-cont p, .menu-cont h4{
    font-family: Arial;
    margin-bottom: 5px;
+}
+
+.sig-dish-img{
+    background-position: center;
+    background-size: cover;
+    height: 190px;
+    width: auto;
+    background-repeat: no-repeat
 }
 
 #img-container-id{
@@ -205,6 +222,7 @@ img{
 
 .menu1-header{
     background-image: url(../images/menu1-header.png);
+    background-position: center;
     text-align: center;
     color: white;
     height: 236px;
@@ -422,7 +440,7 @@ img{
        margin-bottom: 5px;
        margin-left: 10px;
     }
-    #voucher-cont2{
+    .m-nopadding{
         padding: 0px;
     }
 }
