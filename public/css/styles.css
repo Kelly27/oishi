@@ -1,0 +1,389 @@
+
+@font-face{
+    font-family: OpenSans;
+    src:  url(open-sans/OpenSans-Regular.ttf);
+}
+
+body
+{
+    font-family: OpenSans;
+}
+
+img{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#navbar > ul > li > a{
+    color: white;
+}
+
+#dash-red{
+    font-family: Arial;
+    width: 50%;
+    font-size: x-large;
+    font-weight: bold;
+    border-color: #EE3433;
+    border-style: dashed;
+    text-align: center;
+    color: #EE3433;
+    border-width: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.home , .home > container > row > col-sm-4{
+    padding: 0px;
+}
+
+.home h1, h3{
+    font-weight: bold;
+}
+
+.home h2, .home > .container-fluid > .container-fluid{
+    font-family: Arial;
+}
+.home h5{
+    color: white;
+    font-size: 65px;
+    display: block;
+    margin-top: 17%;
+    margin-left: 12%;
+}
+
+.table-row{
+    display: inline-table;
+}
+
+.vcenter-col{
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+}
+
+.nopadding{
+    padding: 0px;
+    margin: 0px;
+}
+
+.nopaddingdown{
+    padding-bottom:0px;
+    margin-bottom: 0px;
+}
+
+#home-red{
+    background-color: #EE3433;
+    color: white;
+    text-align: center;
+    font-family: Arial:
+}
+
+#twentypercent{
+    font-size:125px;
+    border-top: solid;
+    border-width: thick;
+}
+
+#voucher-cont{
+    background-color: white;
+    margin-bottom: 20px;
+    width: initial;
+}
+
+#reward-cont{
+    background-color: #F1F1F2;
+    margin-bottom: 20px;
+    width: initial;
+}
+
+#seemore{
+     color: white;
+     font-size: xx-large;
+     display: block;
+     margin-top: 73%;
+     text-align: center;
+}
+
+#padding > tbody > tr > td{
+    padding: 5px;
+}
+
+.home-img{
+    font-family: OpenSans;
+    font-size: large;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+}
+
+.img-container{
+    background: url(../images/img5.png);
+    background-repeat: no-repeat;
+    height: 700px;
+    text-align: center;
+}
+
+.img-container:hover .overlay{
+    background-color:rgba(152, 26, 53, 0.5);
+    width: 374px;
+    height:700px;
+    position:absolute;
+    cursor: pointer;
+}
+
+#img-container-id{
+        display: flex;
+        background-color: black;
+}
+
+.img-container > .overlay > a{
+    position: relative;
+    top: 357px;
+    color: white;
+    font-family: OpenSans;
+    font-size: x-large;
+}
+
+#menu-style{
+    font-size: xx-large;
+    background-color: rgba(35,31,34, 0.5);
+    position: absolute;
+    top: 76%;
+    color: white;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    padding-top: 2%;
+}
+
+.breadcrumb_container > ol, .breadcrumb_container > ol > li:first-child > a{
+    color: red;
+    font-family: Arial;
+    background-color: white;
+    width: 340px;
+}
+
+ .breadcrumb_container > ol > li:first-child > a{
+    margin-right: 50%;
+    margin-left: 0%;
+ }
+
+.aboutus-header{
+    background-image: url(../images/aboutus-header.png);
+    text-align: center;
+    color: white;
+    height: 236px;
+}
+
+.aboutus-header{
+    background-image: url(../images/aboutus-header.png);
+    text-align: center;
+    color: white;
+    height: 236px;
+}
+
+.aboutus-header h1, .aboutus-header p{
+    position: relative;
+    top: 55px;
+}
+
+.menu1-header{
+    background-image: url(../images/menu1-header.png);
+    text-align: center;
+    color: white;
+    height: 236px;
+}
+
+.menu1-header h1, .menu1-header p{
+    position: relative;
+    top: 55px;
+}
+
+.breadcrumb_container > ol > li > a{
+    color: red;
+    font-family: Arial;
+    background-color: white;
+    margin-right: 20%;
+    margin-left: 15%;
+}
+
+.board-director h4{
+    color: #AEAFB0;
+}
+
+.paragraph{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+.footer-area{
+    font-family: Arial;
+    background-color: #313332;
+    color: white;
+    display: flex;
+    align-items: center;
+    overflow: inherit;
+}
+
+.footer-area h3{
+    font-weight: bold;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+.footer-area p{
+    margin-bottom: auto;
+    font-size: small;
+}
+
+.footer-area a{
+    color: white;
+}
+
+.footer-area hr{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 40px;
+    border-color: #808080;
+}
+
+.footer-area .table{
+    width: 100%;
+}
+
+.footer-area .table > tbody > tr:first-child > td{
+    border: none;
+}
+
+.footer-area .table > tbody > tr > td{
+    border-color: #808080;
+}
+
+.footer-area .table .borderless > tr > td{
+    border: none;
+    padding: 0px;
+    margin-bottom: 5px;
+}
+
+.footer-area .table .borderless > tr > td > p{
+    margin-bottom: 10px;
+    margin-left: 2px;
+}
+
+.quick-link{
+    margin-left: 5px;
+}
+.quick-link i{
+    color: red;
+    margin-right: 20px;
+}
+.btn-social-icon ul {
+	overflow: auto;
+    padding-left: 15px;
+}
+
+.btn-social-icon ul li {
+	list-style-type: none;
+	float: left;
+}
+
+.btn-social-icon ul li a i {
+	color: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	font-size: 25px;
+	text-align: center;
+	margin-right: 10px;
+	padding-top: 15%;
+}
+
+.fa-facebook {
+	background:#3b5998
+}
+.fa-instagram {
+	background:
+    linear-gradient( #400080, transparent),
+
+   linear-gradient(
+   200deg, #d047d1, #ff0000,    #ffff00);
+
+}
+.fa-twitter {
+	background:#00aced
+}
+.fa-google-plus {
+	background:#d34836
+}
+
+@media screen and (max-width: 700px) {
+    .home h1{
+        font-size: 30px;
+    }
+
+    .home h5, #seemore{
+        font-size: 15px;
+        color: white;
+        margin-top: 15px;
+
+    }
+
+    #dash-red{
+        font-family: Arial;
+        width: 85%;
+        font-size: large;
+        font-weight: bold;
+        border-color: #EE3433;
+        border-style: dashed;
+        text-align: center;
+        color: #EE3433;
+        border-width: 1px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #twentypercent{
+        font-size:90px;
+        border-top: solid;
+        border-width: thick;
+    }
+
+
+    #menu-style{
+        font-size: large;
+        background-color: rgba(35,31,34, 0.5);
+        position: absolute;
+        top: 76%;
+        color: white;
+        height: 25%;
+        text-align: center;
+        padding-top: 2%;
+    }
+
+    .img-container{
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-y: -110px;
+        height: 280px;
+    }
+
+    #img-container-id{
+        display: initial;
+        background-color: black;
+    }
+
+    .img-container > .overlay > a{
+        position: relative;
+        top: 128px;
+    }
+
+
+    .img-container:hover .overlay{
+        background-color:rgba(152, 26, 53, 0.5);
+        width:320px;
+        height:280px;
+        position:relative;
+    }
+
+}
