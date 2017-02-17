@@ -66,8 +66,7 @@ img{
     margin: 0px;
 }
 
-.nopaddingdown{
-    padding-bottom:0px;
+.nomarginbottom{
     margin-bottom: 0px;
 }
 

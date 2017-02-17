@@ -15,13 +15,11 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Special Offer</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Photo Gallery</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">News Feed</a></li>
+                <li><a href="#">News and Event</a></li>
               </ul>
             </li>
             <li><a href="#">Menu</a></li>
