@@ -139,6 +139,11 @@ img{
     width: initial;
 }
 
+.menu-cont p, .menu-cont h4{
+   font-family: Arial;
+   margin-bottom: 5px;
+}
+
 #img-container-id{
         display: flex;
         background-color: black;
@@ -224,6 +229,15 @@ img{
     margin-bottom: 10px;
     text-align: justify;
 }
+
+.pagination > .active > span {
+    background-color: #EE3433;
+}
+
+.pagination > li > a {
+    color: #EE3433;
+}
+
 .footer-area{
     font-family: Arial;
     background-color: #313332;

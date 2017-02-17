@@ -23,11 +23,8 @@ Route::get('gallery', function () {
     return view('pages.gallery');
 });
 
-Route::get('sig_menu', function () {
-    return view('pages.menu.sig_menu');
-});
-
-Route::get('sig_menu', 'menuController@sig_menu');
+Route::get('sig_menu', 'menuController@show_sig_menu');
+Route::get('starters_menu', 'menuController@show_starters_menu');
 
 Route::get('test', function () {
     return view('test');
