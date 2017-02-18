@@ -19,10 +19,7 @@ Route::get('about', function () {
     return view('pages.abt.about');
 });
 
-Route::get('gallery', function () {
-    return view('pages.gallery');
-});
-
+Route::get('gallery', 'AboutController@show_gallery');
 Route::get('sig_menu', 'menuController@show_sig_menu');
 Route::get('starters_menu', 'menuController@show_starters_menu');
 

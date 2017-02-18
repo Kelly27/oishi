@@ -10,7 +10,7 @@
 	    </ol>
 	</div>	
 </div>
-<div class="container-fluid aboutus-header">
+<div class="container-fluid aboutus-header" style="background-image: url(images/aboutus-header.png)">
     <h1>OUR STORY</h1>
     <p>Oishi Japanese Restaurant is the most complete and trusted coporate and business on the market.</p>
 </div>

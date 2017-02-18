@@ -30,7 +30,7 @@
                                 <td><img src="{{URL::to('images/list.png')}}" style="margin-top: -45px;"></td>
                                 <td>
                                     <h3>DESCRIPTION</h3>
-                                    <p style="text-align: justify;"></p>
+                                    <p style="text-align: justify;">Step onto marbled floors while taking in the warm recessed ceiling lights and buffet counters featuring rows of salads, seafood, and more. Chatterz is located in the business district and in the heart of Melaka’s Historical and Heritage zone, close to various UNESCO World Heritage sites. </p>
                                 </td>
                             </tr>
                         </tbody>

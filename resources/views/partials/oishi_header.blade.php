@@ -11,12 +11,12 @@
         </div>
         <div id="navbar" class="navbar-collapse navbar-right collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="{{URL::to('/')}}">Home</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Our Story</a></li>
-                <li><a href="#">Photo Gallery</a></li>
+                <li><a href="{{URL::to('about')}}">Our Story</a></li>
+                <li><a href="{{URL::to('gallery')}}">Photo Gallery</a></li>
                 <li><a href="#">Careers</a></li>
                 <li><a href="#">News Feed</a></li>
                 <li><a href="#">News and Event</a></li>

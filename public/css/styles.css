@@ -123,16 +123,17 @@ img{
     top: 50%;
     left: 40%;
 }
-.gen-img-container{
+.img-200px{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     text-align: center;
+    display: block;
     width:100%;
     height: 200px;
 }
 
-.img-container{
+.img-700px{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -160,7 +161,7 @@ img{
 .sig-dish-img{
     background-position: center;
     background-size: cover;
-    height: 190px;
+    height: 300px;
     width: auto;
     background-repeat: no-repeat
 }
@@ -202,17 +203,11 @@ img{
  }
 
 .aboutus-header{
-    background-image: url(../images/aboutus-header.png);
     text-align: center;
     color: white;
     height: 236px;
-}
-
-.aboutus-header{
-    background-image: url(../images/aboutus-header.png);
-    text-align: center;
-    color: white;
-    height: 236px;
+    background-size: cover;
+    background-position: center;
 }
 
 .aboutus-header h1, .aboutus-header p{
@@ -257,6 +252,16 @@ img{
 
 .pagination > li > a {
     color: #EE3433;
+}
+
+.my-col-2{
+    width: 17.666667%;
+}
+
+#gallery-col{
+    display: inline-block;
+    float: right;
+    left:-7%
 }
 
 .footer-area{
@@ -440,8 +445,15 @@ img{
        margin-bottom: 5px;
        margin-left: 10px;
     }
+
     .m-nopadding{
         padding: 0px;
+    }
+
+    #gallery-col{
+    display: inline;
+    float: none;
+    left: initial;
     }
 }
 
@@ -450,3 +462,4 @@ img{
         font-size: large;
     }
 }
+
