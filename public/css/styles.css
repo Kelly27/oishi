@@ -141,7 +141,7 @@ img{
     text-align: center;
 }
 
-.img-container:hover .overlay{
+.img-700px:hover .overlay{
     background-color:rgba(152, 26, 53, 0.5);
     width: 25%;
     height:700px;
@@ -171,7 +171,7 @@ img{
         background-color: black;
 }
 
-.img-container > .overlay > a{
+.img-700px > .overlay > a{
     position: relative;
     top: 357px;
     color: white;
@@ -409,7 +409,7 @@ img{
         padding-top: 2%;
     }
 
-    .img-container{
+    .img-700px{
         background-size: 100%;
         background-repeat: no-repeat;
         background-position-y: -110px;
@@ -421,13 +421,13 @@ img{
         background-color: black;
     }
 
-    .img-container > .overlay > a{
+    .img-700px > .overlay > a{
         position: relative;
         top: 128px;
     }
 
 
-    .img-container:hover .overlay{
+    .img-700px:hover .overlay{
         background-color:rgba(152, 26, 53, 0.5);
         width:100%;
         height:280px;

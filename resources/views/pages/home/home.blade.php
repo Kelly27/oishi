@@ -64,32 +64,7 @@
             </div>
         </div>
         @include('pages.home.sig_dish')
-        {{-- img5 --}}
-        <div class="container visible-xs" style="background-color:  #231F20; border-top: solid;border-color: white;border-width: thin;"">
-            <h3 style="font-weight: inherit; color: white">CATEGORY</h3>
-        </div>
-        <div class="container-fluid nopadding" id="img-container-id">
-            <div class="container nopadding img-container" style="background-image: url(images/img5.png);">
-                <div class="overlay">
-                    <a href="#">STARTERS</a>
-                </div>
-            </div>
-            <div class="container nopadding img-container" style="background-image: url(images/img6.png);">
-                <div class="overlay">
-                    <a href="#">MAIN COURSES</a>
-                </div>
-            </div>
-            <div class="container nopadding img-container" style="background-image: url(images/img7.png);">
-                <div class="overlay">
-                    <a href="#">DESSERTS</a>
-                </div>
-            </div>
-            <div class="container nopadding img-container" style="background-image: url(images/img8.png);">
-                <div class="overlay">
-                    <a href="#">DRINKS</a>
-                </div>
-            </div>
-        </div>
+        @include('pages.home.menu_category')
     </div>
     @include('pages.home.voucher')
     @include('pages.home.rewards')
