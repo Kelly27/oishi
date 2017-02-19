@@ -43,13 +43,6 @@ img{
 .home h2, .home > .container-fluid > .container-fluid{
     font-family: Arial;
 }
-.home h5{
-    color: white;
-    font-size: xx-large;
-    display: block;
-    margin-top: 17%;
-    margin-left: 12%;
-}
 
 .table-row{
     display: inline-table;
@@ -118,7 +111,7 @@ img{
 .home-img{
     font-family: OpenSans;
     font-size: large;
-    color: white;
+    color: white;P
     position: absolute;
     top: 50%;
     left: 40%;

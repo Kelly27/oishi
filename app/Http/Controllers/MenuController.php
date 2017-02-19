@@ -8,6 +8,12 @@ use App\Menu;
 
 class MenuController extends Controller
 {
+
+    public function show_menu_home()
+    {
+        return view('pages.menu.menu_home');
+    }
+
     public function show_sig_menu()
     {
     	$menus = DB::table('menus')->where('menu_type', 'sig')->paginate(8);
@@ -19,4 +25,5 @@ class MenuController extends Controller
     	$menus = DB::table('menus')->where('menu_type', 'sta')->paginate(10);
     	return view('pages.menu.starters_menu', compact('menus'));
     }
+
 }

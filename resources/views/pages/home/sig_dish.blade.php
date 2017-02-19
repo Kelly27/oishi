@@ -1,7 +1,7 @@
 <div class="container-fluid nopadding" style="background-color: #231F20;">
     <div class="row nopadding">
         <div class="col-sm-4 nopadding">
-            <h5>SIGNATURE DISH >></h5>
+            <a href="{{URL::route('sig_menu')}}" style="color: white; font-size: xx-large; display: block; margin-top: 17%; margin-left: 12%;">SIGNATURE DISH >></a>
         </div>
         <div class="col-sm-3 nopadding">
             <div class="container sig-dish-img nopadding" style="background-image: url(images/img1.png);">

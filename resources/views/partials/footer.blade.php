@@ -23,7 +23,7 @@
             <div class="col-sm-4">
                 <div class="quick-link">
                     <h3>QUICK LINKS</h3>
-                        <i class="fa fa-chevron-right"></i><a href="#">MENU</a>
+                        <i class="fa fa-chevron-right"></i><a href="{{URL::route('menu_home')}}">MENU</a>
                         <hr>
                         <i class="fa fa-chevron-right"></i><a href="#">VOUCHER</a>
                         <hr>

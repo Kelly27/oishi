@@ -15,14 +15,14 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="{{URL::to('about')}}">Our Story</a></li>
-                <li><a href="{{URL::to('gallery')}}">Photo Gallery</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">News Feed</a></li>
+                <li><a href="{{URL::route('our_story')}}">Our Story</a></li>
+                <li><a href="{{URL::route('gallery')}}">Photo Gallery</a></li>
+                <li><a href="">Careers</a></li>
+                <li><a href="{{URL::route('news_feed')}}">News Feed</a></li>
                 <li><a href="#">News and Event</a></li>
               </ul>
             </li>
-            <li><a href="#">Menu</a></li>
+            <li><a href="{{URL::route('menu_home')}}">Menu</a></li>
             <li><a href="#">Special Offer</a></li>
             <li><a href="#">Contact Us</a></li>
           </ul>

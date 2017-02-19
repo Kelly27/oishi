@@ -7,6 +7,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+
+    // public function news_feed()
+    // {
+    //     return $this->hasMany('App\News_Feed');
+    // }
+
     use Notifiable;
 
     /**

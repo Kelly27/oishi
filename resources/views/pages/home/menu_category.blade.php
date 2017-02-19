@@ -1,7 +1,7 @@
 <div class="container-fluid nopadding" id="img-container-id">
     <div class="container nopadding img-700px" style="background-image: url(images/img5.png);">
         <div class="overlay">
-            <a href="#">STARTERS</a>
+            <a href="{{URL::route('starters_menu')}}">STARTERS</a>
         </div>
     </div>
     <div class="container nopadding img-700px" style="background-image: url(images/img6.png);">

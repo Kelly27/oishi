@@ -8,7 +8,7 @@
 	      <li class="breadcrumb-item"><a href="#">About Us</a></li>
 	      <li class="breadcrumb-item active">Photo Gallery</li>
 	    </ol>
-	</div>	
+	</div>
 </div>
 <div class="container-fluid aboutus-header" style="background-image: url(images/gallery-header.png)">
     <h1>Photo Gallery</h1>

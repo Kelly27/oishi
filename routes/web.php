@@ -15,13 +15,21 @@ Route::get('/', function () {
     return view('pages.home.home');
 });
 
-Route::get('about', function () {
-    return view('pages.abt.about');
+
+Route::group(['prefix' => 'about'], function(){
+    Route::get('our_story', 'AboutController@show_our_story') -> name('our_story');
+    Route::get('gallery', 'AboutController@show_gallery') -> name('gallery');
+    Route::get('career', 'AboutController@show_career') -> name('career');
+    Route::get('news_feed', 'AboutController@show_news_feed') -> name('news_feed');
+
 });
 
-Route::get('gallery', 'AboutController@show_gallery');
-Route::get('sig_menu', 'menuController@show_sig_menu');
-Route::get('starters_menu', 'menuController@show_starters_menu');
+Route::group(['prefix' => 'menu'], function(){
+    Route::get('menu_home', 'menuController@show_menu_home') -> name('menu_home');
+    Route::get('sig_menu', 'menuController@show_sig_menu') -> name('sig_menu');
+    Route::get('starters_menu', 'menuController@show_starters_menu') -> name('starters_menu');
+
+});
 
 Route::get('test', function () {
     return view('test');
