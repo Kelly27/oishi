@@ -22,10 +22,10 @@
                 <div class="col-sm-6">
                     <div class="row">
                         <div class="col-sm-3">
-                            <img src="{{asset('images/profilepic.png')}}" style="border-radius: 20px; border: solid;"> {{-- user-img --}}
+                            <img src="{{asset('images/profilepic.png')}}" style="border-radius: 20px; border: solid;">
                         </div>
                         <div class="col-sm-5">
-                            <h1>{{--username--}}</h1>
+                            <h1>name</h1>
                             <p>Rated Restaurant <i class="fa fa-star" style="color: #F6921E"></i><span>5.00</span></p>
                             <p>Rated Food <i class="fa fa-star" style="color: #F6921E"></i><span>5.00</span></p>
                         </div>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="container sig-dish-img nopadding" style="background-image: url(images/img1.png);">
                     </div>
-                    <a href="#">{{$news_feed->food}}</a>
+                    <a href="#">Kam</a>
                     <p>Description</p>
                     <div class="row">
                         <div class="col-sm-3">

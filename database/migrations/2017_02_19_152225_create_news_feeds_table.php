@@ -13,7 +13,7 @@ class CreateNewsFeedsTable extends Migration
      */
     public function up()
     {
-        Schema::create('news__feeds', function (Blueprint $table) {
+        Schema::create('news_feeds', function (Blueprint $table) {
             $table->increments('id');
             $table->double('rated_restaurant');
             $table->double('rated_food');
