@@ -251,6 +251,31 @@ img{
     width: 17.666667%;
 }
 
+.p-smaller > p{
+    font-size: smaller; 
+    padding: 0px;
+    margin: 0px;
+}
+
+.news-feed{
+    font-family: Arial;
+}
+
+.news-feed-col{
+    border: solid; 
+    border-color: #CCCCCC; 
+    margin: 0px 15px 15px; 
+    border-width: thin; 
+    width: 392px; 
+    max-width: 100%
+}
+
+.comment-table a{
+    color: #A7A9AC;
+    font-weight: bold;
+    margin-left: 15%;
+}
+
 #gallery-col{
     display: inline-block;
     float: right;
@@ -447,6 +472,11 @@ img{
     display: inline;
     float: none;
     left: initial;
+    }
+
+    .news-feed-col{
+        width: initial;
+        margin: 0px;
     }
 }
 

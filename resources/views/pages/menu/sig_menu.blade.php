@@ -22,7 +22,7 @@
 			<div class="container menu-cont">
 				<div class="row hidden-xs" style="margin-bottom: 20px;">
 					<div class="col-sm-7">
-						<div class="container img-responsive img-200px" style="background-image: url(images/{{$menu->menu_img}}); max-width: 100%; width: 400px; height: 200px; background-size: cover;">
+						<div class="container img-responsive img-200px" style="background-image: url(../images/{{$menu->menu_img}}); max-width: 100%; width: 400px; height: 200px; background-size: cover;">
 						</div>
 					</div>
 					<div class="col-sm-5">
@@ -34,7 +34,7 @@
 				</div>
 			</div>
 			<div class="container menu-cont visible-xs" style="margin: 0px auto 0px auto; width: 356px; max-width: 100%; background-color: white" >
-				<div class="container img-responsive img-200px" style="background-image: url(images/{{$menu->menu_img}}); max-width: 100%; width: 400px; height: 200px; background-size: cover">
+				<div class="container img-responsive img-200px" style="background-image: url(../images/{{$menu->menu_img}}); max-width: 100%; width: 400px; height: 200px; background-size: cover">
 				</div>	
 				<h4 style="color: red; vertical-align: middle;">{{$menu->menu_name}}</h4>
 			    <p>RM{{number_format($menu->price,2)}}</p>
