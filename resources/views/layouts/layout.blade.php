@@ -8,11 +8,10 @@
         <!--styles-->
 
         <link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-        <link href="<?=asset('/css/app.css')?>" rel="stylesheet">
-        <script src="<?=asset('/js/app.js')?>"></script>
-        <link href="<?=asset('/css/styles.css')?>" rel="stylesheet">
-
-
+        <link href="{{asset('/css/app.css')}}" rel="stylesheet">
+        <script src="{{asset('/js/app.js')}}"></script>
+        <link href="{{asset('/css/styles.css')}}" rel="stylesheet">
+        <script src="{{ asset('/js/masonry.pkgd.min.js') }}"></script>
 
 
     </head>

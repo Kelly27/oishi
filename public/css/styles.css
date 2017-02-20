@@ -267,7 +267,9 @@ img{
     margin: 0px 15px 15px; 
     border-width: thin; 
     width: 392px; 
-    max-width: 100%
+    max-width: 100%;
+    position: relative;
+    display: block;
 }
 
 .comment-table a{
@@ -280,6 +282,9 @@ img{
     display: inline-block;
     float: right;
     left:-7%
+}
+.item{
+    width:250px;
 }
 
 .footer-area{
