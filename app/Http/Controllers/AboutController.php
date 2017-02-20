@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Gallery;
 use App\NewsFeed;
+use App\User;
 
 class AboutController extends Controller
 {
@@ -32,8 +33,12 @@ class AboutController extends Controller
         // return view('pages.abt.news_feed', compact('news_feeds'));  //this way of code cannot do pagination 
         // $news_feeds = DB::table('news_feeds') -> paginate(4);
         // return view('pages.abt.news_feed', compact('news_feeds')); //this way of code do pagination
-        // 
-        $news_feeds = NewsFeed::all();
-        return view('pages.abt.news_feed', compact('news_feeds'));  //this way of code cannot do pagination 
+        
+        // $users = User::where('id', 1)->first();
+        $users = User::has('news_feed')->first();
+        // $news_feeds = NewsFeed::paginate(4); //way of pagination
+        $news_feeds = $users->news_feed()->paginate(4);
+        // return $users->name;
+        return view('pages.abt.news_feed', compact('news_feeds', 'users'));  //this way of code cannot do pagination 
     }
 }

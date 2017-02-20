@@ -24,10 +24,10 @@
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td><img src="{{asset('images/head1.png')}}" style="border-radius: 50px"></td>
+                                        <td><img src="{{asset('images')}}/{{$users->profilepic}}" style="border-radius: 50px"></td>
                                         <td>
                                             <div class="p-smaller" style="padding-left: 10px;">
-                                                <h3>name</h3>
+                                                <h3>{{$users->name}}</h3>
                                                 <p>Rated Restaurant <i class="fa fa-star" style="color: #F6921E"></i><span>{{number_format($news_feed->rated_restaurant,2)}}</span></p>
                                                 <p>Rated Food <i class="fa fa-star" style="color: #F6921E"></i><span>{{number_format($news_feed->rated_food,2)}}</span></p>
                                             </div>
@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="text-right">
-                    {{-- {{$careers->render()}} --}}
+                    {{$news_feeds->render()}}
                 </div>
             </div>
             <div class="col-sm-3 hidden-xs">
