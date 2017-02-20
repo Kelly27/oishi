@@ -15,12 +15,12 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>
 <div class="container-fluid nopadding news-feed" style="background-color: white;">
-    <div class="container" style="background-color: white; margin-top: 3%; padding: 0px;">
+    <div class="container">
         <div class="row">
             <div class="col-sm-9">
-                <div class="row">
-                    @foreach($news_feeds as $news_feed)
-                    <div class="col-sm-6 nopadding news-feed-col">
+                <div class="masonry">
+                    @foreach ($news_feeds as $news_feed)
+                        <div class="news-feed-item">
                             <table style="width: inherit;">
                                 <tbody>
                                     <tr>
@@ -46,22 +46,22 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        <div class="container sig-dish-img nopadding" style="background-image: url(../images/{{$news_feed->image_file}});"></div>
-                        <div style="padding-left: 20px; margin-top: 15px">
-                            <a class="pre" href="#"><img src="{{ asset('images/cutleryicon.png') }}" style="width: 5%; margin-right: 5px">{{$news_feed->food}}</a>
-                            <p class="pre" style="margin: 10px 0px 20px 0px; ">{{$news_feed->description}}</p>
-                            <table class="comment-table" style="width: 87%; margin-bottom: 5%;margin-left: 5%;">
-                                <tbody>
-                                    <tr>
-                                        <td><img src="{{ asset('images/likeicon.png') }}" style="vertical-align: sub;"><a>10k</a></td>
-                                        <td><img src="{{ asset('images/commenticon.png') }}"><a>100</a></td>
-                                        <td><i class="fa fa-facebook" style="font-size: x-large; background: none; vertical-align: bottom;"></i><a href="#"></i>Share</a></td>
-                                        <td><i class="fa fa-chevron-right" style="font-size: x-large; color: #A7A9AC"></i></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <img src="{{ asset('images') }}/{{$news_feed->image_file}}" class="img-responsive">
+                            <div style="padding-left: 20px; margin-top: 15px">
+                                <a class="pre" href="#"><img src="{{ asset('images/cutleryicon.png') }}" style="width: 5%; margin-right: 5px">{{$news_feed->food}}</a>
+                                <p class="pre" style="margin: 10px 0px 20px 0px; ">{{$news_feed->description}}</p>
+                                <table class="comment-table" style="width: 87%; margin-bottom: 5%;margin-left: 5%;">
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="{{ asset('images/likeicon.png') }}" style="vertical-align: sub;"><a>10k</a></td>
+                                            <td><img src="{{ asset('images/commenticon.png') }}"><a>100</a></td>
+                                            <td><i class="fa fa-facebook" style="font-size: x-large; background: none; vertical-align: bottom;"></i><a href="#"></i>Share</a></td>
+                                            <td><i class="fa fa-chevron-right" style="font-size: x-large; color: #A7A9AC"></i></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
                 <div class="text-right">
@@ -74,7 +74,10 @@
             </div>
         </div>
     </div>
+    
+
 </div>
+
 @endsection
 
 {{-- mansory grid --}}

@@ -9,10 +9,10 @@ body
     font-family: OpenSans;
 }
 
-img{
-    margin-left: auto;
-    margin-right: auto;
-}
+// img{
+//    margin-left: auto;
+//  margin-right: auto;
+//  }
 
 #navbar > ul > li > a{
     color: white;
@@ -283,8 +283,20 @@ img{
     float: right;
     left:-7%
 }
-.item{
-    width:250px;
+
+.masonry{
+    column-count: 4;
+    column-gap: 1em;
+    -webkit-column-width: 20em;
+}
+
+.news-feed-item{
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%;
+    border: solid;
+    border-width: thin;
+    border-color: #CCCCCC;
 }
 
 .footer-area{

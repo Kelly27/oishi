@@ -9,15 +9,15 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="{{URL::to('images/oishi-header.png')}}" alt="oishi-header">
+      <img src="{{ asset('images/oishi-header.png') }}" alt="oishi-header">
     </div>
 
     <div class="item">
-      <img src="{{URL::to('images/oishi-header.png')}}" alt="oishi-header">
+      <img src="{{ asset('images/oishi-header.png') }}" alt="oishi-header">
     </div>
 
     <div class="item">
-      <img src="{{URL::to('images/oishi-header.png')}}" alt="oishi-header">
+      <img src="{{ asset('images/oishi-header.png') }}" alt="oishi-header">
     </div>
   </div>
 </div>
