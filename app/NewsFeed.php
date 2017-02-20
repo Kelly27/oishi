@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class News_Feed extends Model
+class NewsFeed extends Model
 {
     // public function user()
     // {

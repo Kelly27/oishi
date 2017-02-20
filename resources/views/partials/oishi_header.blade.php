@@ -17,7 +17,7 @@
               <ul class="dropdown-menu">
                 <li><a href="{{URL::route('our_story')}}">Our Story</a></li>
                 <li><a href="{{URL::route('gallery')}}">Photo Gallery</a></li>
-                <li><a href="">Careers</a></li>
+                <li><a href="{{URL::route('career')}}">Careers</a></li>
                 <li><a href="{{URL::route('news_feed')}}">News Feed</a></li>
                 <li><a href="#">News and Event</a></li>
               </ul>

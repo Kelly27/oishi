@@ -17,10 +17,9 @@ class CreateNewsFeedsTable extends Migration
             $table->increments('id');
             $table->double('rated_restaurant');
             $table->double('rated_food');
-            $table->string('food_img');
+            $table->string('image_file');
             $table->string('food');
             $table->string('description');
-            //with ppl
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateNewsFeedsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news__feeds');
+        Schema::dropIfExists('news_feeds');
     }
 }

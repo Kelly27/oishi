@@ -10,59 +10,64 @@
         </ol>
     </div>
 </div>
-<div class="container-fluid aboutus-header" style="background-image: url(images/gallery-header.png)">
+<div class="container-fluid aboutus-header" style="background-image: url(../images/gallery-header.png)">
     <h1>News Feed</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9">
-            <div class="row">
-                @foreach($news_feeds as $news_feed)
-                <div class="col-sm-6">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="{{asset('images/profilepic.png')}}" style="border-radius: 20px; border: solid;">
+<div class="container-fluid" style="background-color: white;">
+    <div class="container" style="background-color: white; margin-top: 3%;">
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="row">
+                    @foreach($news_feeds as $news_feed)
+                    <div class="col-sm-6 nopadding" style="border: solid; border-color: #CCCCCC; margin: 0px 15px 15px; border-width: thin; width: 392px;">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <img src="{{asset('images/profilepic.png')}}">
+                                </div>
+                                <div class="col-sm-5">
+                                    <div style="padding-left: 10px">
+                                        <h1>name</h1>
+                                        <p>Rated Restaurant <i class="fa fa-star" style="color: #F6921E"></i><span>{{$news_feed->rated_restaurant}}</span></p>
+                                        <p>Rated Food <i class="fa fa-star" style="color: #F6921E"></i><span>{{$news_feed->rated_food}}</span></p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>2 hours ago</p>
+                                </div>
+                            </div>
+                        <div class="container sig-dish-img nopadding" style="background-image: url(../images/{{$news_feed->image_file}});">
                         </div>
-                        <div class="col-sm-5">
-                            <h1>name</h1>
-                            <p>Rated Restaurant <i class="fa fa-star" style="color: #F6921E"></i><span>5.00</span></p>
-                            <p>Rated Food <i class="fa fa-star" style="color: #F6921E"></i><span>5.00</span></p>
-                        </div>
-                        <div class="col-sm-4">
-                            <p>2 hours ago</p>
+                        <div style="padding-left: 20px">
+                            <a href="#">{{$news_feed->food}}</a>
+                            <p>{{$news_feed->description}}</p>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p>10k</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <p>100</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <a href="#"><i class="fa fa-facebook"></i>Share</a>
+                                </div>
+                                <div class="col-sm-3">
+                                    <i class="fa fa-chevron-right"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="container sig-dish-img nopadding" style="background-image: url(images/img1.png);">
-                    </div>
-                    <a href="#">Kam</a>
-                    <p>Description</p>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <p>10k</p>
-                        </div>
-                        <div class="col-sm-3">
-                            <p>100</p>
-                        </div>
-                        <div class="col-sm-3">
-                            <a href="#"><i class="fa fa-facebook"></i>Share</a>
-                        </div>
-                        <div class="col-sm-3">
-                            <i class="fa fa-chevron-right"></i>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                @endforeach
-            </div>
 
-            <div class="text-right">
-                {{-- {{$careers->render()}} --}}
+                <div class="text-right">
+                    {{-- {{$careers->render()}} --}}
+                </div>
             </div>
-        </div>
-        <div class="col-sm-3">
-            <img src="{{asset('images/img5.png')}}">
+            <div class="col-sm-3">
+                <img src="{{asset('images/ads.png')}}">
+            </div>
         </div>
     </div>
 </div>
-
 @endsection

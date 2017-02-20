@@ -10,7 +10,7 @@
 	    </ol>
 	</div>
 </div>
-<div class="container-fluid aboutus-header" style="background-image: url(images/gallery-header.png)">
+<div class="container-fluid aboutus-header" style="background-image: url(../images/gallery-header.png)">
     <h1>Photo Gallery</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>

@@ -10,7 +10,7 @@
         </ol>
     </div>
 </div>
-<div class="container-fluid aboutus-header" style="background-image: url(images/gallery-header.png)">
+<div class="container-fluid aboutus-header" style="background-image: url(../images/gallery-header.png)">
     <h1>Career</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="col-sm-3">
-            <img src="{{asset('images/img5.png')}}">
+            <img src="{{asset('images/ads.png')}}">
         </div>
     </div>
 </div>
