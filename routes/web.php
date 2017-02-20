@@ -20,6 +20,7 @@ Route::group(['prefix' => 'about'], function(){
     Route::get('our_story', 'AboutController@show_our_story') -> name('our_story');
     Route::get('gallery', 'AboutController@show_gallery') -> name('gallery');
     Route::get('career', 'AboutController@show_career') -> name('career');
+    Route::get('career/{career_id}', 'AboutController@show_career_by_id');
     Route::get('news_feed', 'AboutController@show_news_feed') -> name('news_feed');
 
 });

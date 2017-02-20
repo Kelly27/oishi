@@ -20,8 +20,8 @@
             <div class="row">
                 @foreach($careers as $career)
                 <div class="col-sm-6">
-                    <h3 style="color: #EE3433; font-weight: normal; padding-left: 10px"><img src="{{ asset('images/careericon.png') }}" style="padding-right: 15px">{{$career->title}}</h3>
-                    <p class="text-justify ">{{$career->description}}</p>
+                    <a href="{{ url('about/career/'. $career->id) }}" style="color: #EE3433; font-weight: normal; padding-left: 10px"><img src="{{ asset('images/careericon.png') }}" style="padding-right: 15px">{{$career->title}}</a>
+                    <p class="text-justify ">{{$career->short_description}}</p>
                     <a href="#" style="float: right;">Learn more</a>
                 </div>
                 @endforeach
