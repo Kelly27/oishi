@@ -10,18 +10,17 @@
         </ol>
     </div>
 </div>
-<div class="container-fluid aboutus-header" style="background-image: url(../images/gallery-header.png)">
+<div class="container-fluid aboutus-header" style="background-image: url(../images/career-header.png); background-position-y: -780px;">
     <h1>Career</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>
-<div class="container">
+<div class="container" style="background-color: white">
     <div class="row">
         <div class="col-sm-9">
             <div class="row">
                 @foreach($careers as $career)
                 <div class="col-sm-6">
-                    {{-- <img>  --}}
-                    <h1>{{$career->title}}</h1>
+                    <h3 style="color: #EE3433; font-weight: normal; padding-left: 10px"><img src="{{ asset('images/careericon.png') }}" style="padding-right: 15px">{{$career->title}}</h3>
                     <p class="text-justify ">{{$career->description}}</p>
                     <a href="#" style="float: right;">Learn more</a>
                 </div>
