@@ -24,7 +24,7 @@
                         <div class="news-feed-item"> {{-- news-feed-item style is same here --}}
                             <img src="{{ asset('images') }}/{{$news_event->image}}" class="img-responsive" style="margin-left: auto; margin-right: auto; width: 100%; max-height: 241px">
                             <div style="padding-left: 20px; padding-right: 20px; margin-top: 15px">
-                                <a href"#" class="pre" style="font-size:large; color: #4D4D4D; margin: 10px 0px 20px 0px; ">{{$news_event->title}}</a>
+                                <a href="{{ url('about/news_event/'. $news_event->id) }}" style="font-size:large; color: #4D4D4D; margin: 10px 0px 20px 0px; ">{{$news_event->title}}</a>
                                 <p style="color: #4D4D4D; font-style: italic;font-size:medium; margin: 10px 0px 0px">{{$news_event->created_at}}</p>
                                 <p class="text-justify">{{$news_event->short_description}}</p>
                             </div>

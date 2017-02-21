@@ -58,5 +58,11 @@ class AboutController extends Controller
         return view('pages.abt.news_event_index', compact('news_events'));
     }
 
+    public function show_news_event_byID($news_event_id)
+    {
+        $news_event = NewsEvent::where('id', $news_event_id)->firstOrFail();
+        return view('pages.abt.news_event_byID', compact('news_event'));
+    }
+
 
 }

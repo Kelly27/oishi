@@ -23,6 +23,7 @@ Route::group(['prefix' => 'about'], function(){
     Route::get('career/{career_id}', 'AboutController@show_career_by_id');
     Route::get('news_feed', 'AboutController@show_news_feed') -> name('news_feed');
     Route::get('news_event', 'AboutController@show_news_event') -> name('news_event');
+    Route::get('news_event/{news_event_id}', 'AboutController@show_news_event_byID');
 
 });
 
