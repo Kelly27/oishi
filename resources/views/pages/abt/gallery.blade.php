@@ -4,8 +4,8 @@
 <div class="container-fluid" style="background-color: white;">
 	<div class="container breadcrumb_container">
 	    <ol class="breadcrumb">
-	      <li class="breadcrumb-item"><a href="#">Home</a></li>
-	      <li class="breadcrumb-item"><a href="#">About Us</a></li>
+	      <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
+	      <li class="breadcrumb-item">About Us</li>
 	      <li class="breadcrumb-item active">Photo Gallery</li>
 	    </ol>
 	</div>
