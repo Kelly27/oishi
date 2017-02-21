@@ -4,6 +4,12 @@
     src:  url(open-sans/OpenSans-Regular.ttf);
 }
 
+@font-face{
+    font-family: OpenSansBold;
+    src:  url(open-sans/OpenSans-Bold.ttf);
+    font-weight: bold;
+}
+
 body
 {
     font-family: OpenSans;
@@ -146,7 +152,7 @@ body
     width: initial;
 }
 
-.menu-cont p, .menu-cont h4{
+.menu-cont p, .menu-cont a{
    font-family: Arial;
    margin-bottom: 5px;
 }
@@ -297,6 +303,66 @@ body
     border: solid;
     border-width: thin;
     border-color: #CCCCCC;
+}
+
+.menu-detail h6{
+    font-size: x-large;
+    font-family: OpenSansBold;
+}
+
+.menu-detail button, .menu-btn{
+    color: black;
+    background-color: white;
+    border: solid;
+    border-width: thin;
+    border-color: #CCCCCC; 
+    text-align: center;
+    width: 49%
+}
+
+.remark-tb td{
+    border: solid;
+    border-width: thin;
+    border-color: #CCCCCC;
+    width: 100%;
+    color: black;
+    padding: 1%;
+}
+
+.addOn-tb, .cafe-list{
+    width: 100%;
+    color: black;
+    border: solid;
+    border-color: #CCCCCC;
+    border-width: thin;
+}
+
+.addOn-tb th, .addOn-tb td, .cafe-list td{
+    padding: 1%
+}
+.addOn-tb th, #grey, {
+    background-color: #F1F1F2
+} 
+
+.cafe-list > tbody > tr:nth-child(odd){
+    background-color: #F1F1F2
+}
+.addOn-tb th{
+    border-bottom: solid;
+    border-width: thin;
+    border-color: #CCCCCC;
+}
+
+#no-border-right{
+    border-right: none;
+}
+
+#price-font{
+    float: right; 
+    color: red; 
+    font-size: xx-large; 
+    font-family: Arial; 
+    font-weight: normal;
 }
 
 .footer-area{
@@ -491,8 +557,19 @@ body
     left: initial;
     }
 
-    #news-feed-col{
-        padding:0px;
+    // #news-feed-col{
+    //     padding:0px;
+    // }
+
+    #price-font{
+        font-size: large;
+        color: red;
+        font-weight: normal;
+    }
+
+    .menu-detail h6{
+        font-size: medium;
+        padding: 0px;
     }
 }
 

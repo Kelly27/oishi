@@ -19,7 +19,7 @@
                 <li><a href="{{URL::route('gallery')}}">Photo Gallery</a></li>
                 <li><a href="{{URL::route('career')}}">Careers</a></li>
                 <li><a href="{{URL::route('news_feed')}}">News Feed</a></li>
-                <li><a href="#">News and Event</a></li>
+                <li><a href="{{URL::route('news_event')}}">News and Event</a></li>
               </ul>
             </li>
             <li><a href="{{URL::route('menu_home')}}">Menu</a></li>

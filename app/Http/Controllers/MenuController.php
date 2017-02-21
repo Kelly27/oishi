@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Menu;
+use App\NewsFeed;
+use App\User;
 
 class MenuController extends Controller
 {
@@ -24,6 +26,14 @@ class MenuController extends Controller
     {
     	$menus = DB::table('menus')->where('menu_type', 'sta')->paginate(10);
     	return view('pages.menu.starters_menu', compact('menus'));
+    }
+
+    public function show_sig_menu_byID($menu_id)
+    {   
+        $users = User::has('news_feed')->first();
+        $news_feeds = $users->news_feed;
+        $menu = Menu::where('id', $menu_id)->firstOrFail();
+        return view('pages.menu.sig_menu_byID', compact('menu', 'news_feeds', 'users'));
     }
 
 }

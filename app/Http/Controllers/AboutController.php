@@ -9,6 +9,7 @@ use App\Gallery;
 use App\NewsFeed;
 use App\User;
 use App\Career;
+use App\NewsEvent;
 
 class AboutController extends Controller
 {
@@ -49,6 +50,12 @@ class AboutController extends Controller
         $news_feeds = $users->news_feed()->paginate(4);
         // return $users->name;
         return view('pages.abt.news_feed', compact('news_feeds', 'users'));  //this way of code cannot do pagination
+    }
+
+    public function show_news_event()
+    {
+        $news_events = NewsEvent::paginate(4);
+        return view('pages.abt.news_event_index', compact('news_events'));
     }
 
 

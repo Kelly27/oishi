@@ -7,5 +7,4 @@
     <img style="background-image: url(<?= asset('images/app-store-badge.png')?>); width: 128px; height: 38px;border-radius: 8px;" href="#"></button>
 </div>
 <div class="container text-center" style="width: initial; margin-bottom: 5px">
-    <button class="btn btn-primary" style="background-color: white; border-color: #939598; color: #58595B; margin-top: 15px;">WRITE A POST</button>
 </div>

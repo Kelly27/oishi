@@ -26,7 +26,7 @@
 						</div>
 					</div>
 					<div class="col-sm-5">
-						<h4 style="color: red; vertical-align: middle;">{{$menu->menu_name}}</h4>
+						<a href="{{ url('menu/sig_menu/'. $menu->id) }}" style="font-size: large; color: red; vertical-align: middle;">{{$menu->menu_name}}</a>
 					    <p>RM{{number_format($menu->price,2)}}</p>
 					    <p style="font-size: x-small"><i class="fa fa-star" style="color: #F6921E"></i>{{number_format($menu->star,2)}}</p>
 					    <p style="font-size: x-small">{{$menu->new_feed_point}} new feed posts</p>
@@ -36,7 +36,7 @@
 			<div class="container menu-cont visible-xs" style="margin: 0px auto 0px auto; width: 356px; max-width: 100%; background-color: white" >
 				<div class="container img-responsive img-200px" style="background-image: url(../images/{{$menu->menu_img}}); max-width: 100%; width: 400px; height: 200px; background-size: cover">
 				</div>	
-				<h4 style="color: red; vertical-align: middle;">{{$menu->menu_name}}</h4>
+				<a href="{{ url('menu/sig_menu/'. $menu->id) }}" style="color: red; vertical-align: middle;">{{$menu->menu_name}}</a>
 			    <p>RM{{number_format($menu->price,2)}}</p>
 			    <p style="font-size: x-small"><i class="fa fa-star" style="color: #F6921E"></i>{{number_format($menu->star,2)}}</p>
 			    <p style="font-size: x-small">{{$menu->new_feed_point}} new feed posts</p>
