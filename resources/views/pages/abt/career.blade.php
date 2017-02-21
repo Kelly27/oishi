@@ -14,26 +14,29 @@
     <h1>Career</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>
-<div class="container" style="background-color: white">
-    <div class="row">
-        <div class="col-sm-9">
-            <div class="row">
-                @foreach($careers as $career)
-                <div class="col-sm-6">
-                    <a href="{{ url('about/career/'. $career->id) }}" style="color: #EE3433; font-weight: normal; padding-left: 10px"><img src="{{ asset('images/careericon.png') }}" style="padding-right: 15px">{{$career->title}}</a>
-                    <p class="text-justify ">{{$career->short_description}}</p>
-                    <a href="#" style="float: right;">Learn more</a>
+<div class="container-fluid" style="background-color: white">
+    <div class="container" style="margin-top: 2%">
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="row">
+                    @foreach($careers as $career)
+                    <div class="col-sm-6" style="padding: 10px">
+                        <a href="{{ url('about/career/'. $career->id) }}" style="color: #EE3433; font-weight: normal; padding-left: 10px; font-size: large;"><img src="{{ asset('images/careericon.png') }}" style="padding-right: 15px">{{$career->title}}</a>
+                        <p class="text-justify ">{{$career->short_description}}</p>
+                        <a href="#" style="float: right;">Learn more</a>
+                    </div>
+                    @endforeach
                 </div>
-                @endforeach
+                <div class="text-right">
+                    {{$careers->render()}}
+                </div>
             </div>
-            <div class="text-right">
-                {{$careers->render()}}
+            <div class="col-sm-3 hidden-xs">
+                @include('pages.abt.ads')
             </div>
-        </div>
-        <div class="col-sm-3">
-            <img src="{{asset('images/ads.png')}}">
         </div>
     </div>
 </div>
+
 
 @endsection

@@ -42,7 +42,7 @@
                                                 </table>
                                             </div>
                                         </td>
-                                        <td style="vertical-align: bottom; text-align: center; font-size: smaller;"><p style="font-style: italic;">2 hours ago</p></td>
+                                        <td style="vertical-align: bottom; text-align: center; font-size: smaller;"><p style="font-style: italic;">{{$news_feed->created_at}}</p></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -65,7 +65,7 @@
                     @endforeach
                 </div>
                 <div class="text-right">
-                    {{$news_feeds->render()}}
+                    {{-- {{$news_feeds->render()}} --}}
                 </div>
             </div>
             <div class="col-md-3 hidden-xs">

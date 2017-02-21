@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 use App\Gallery;
 use App\NewsFeed;
 use App\User;
@@ -24,7 +25,7 @@ class AboutController extends Controller
 
     public function show_career()
     {
-        $careers = DB::table('careers')->paginate(4);
+        $careers = Career::paginate(4);
         return view('pages.abt.career', compact('careers'));
     }
 
@@ -49,4 +50,6 @@ class AboutController extends Controller
         // return $users->name;
         return view('pages.abt.news_feed', compact('news_feeds', 'users'));  //this way of code cannot do pagination
     }
+
+
 }
