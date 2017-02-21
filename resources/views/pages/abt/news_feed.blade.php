@@ -15,9 +15,9 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>
 <div class="container-fluid nopadding news-feed" style="background-color: white;">
-    <div class="container">
+    <div class="container" style="padding-top: 3%;">
         <div class="row">
-            <div class="col-sm-9">
+            <div class="col-sm-12 col-md-9" id="news-feed-col">
                 <div class="masonry">
                     @foreach ($news_feeds as $news_feed)
                         <div class="news-feed-item">
@@ -46,7 +46,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <img src="{{ asset('images') }}/{{$news_feed->image_file}}" class="img-responsive">
+                            <img src="{{ asset('images') }}/{{$news_feed->image_file}}" class="img-responsive" style="margin-left: auto; margin-right: auto;">
                             <div style="padding-left: 20px; margin-top: 15px">
                                 <a class="pre" href="#"><img src="{{ asset('images/cutleryicon.png') }}" style="width: 5%; margin-right: 5px">{{$news_feed->food}}</a>
                                 <p class="pre" style="margin: 10px 0px 20px 0px; ">{{$news_feed->description}}</p>
@@ -68,9 +68,18 @@
                     {{$news_feeds->render()}}
                 </div>
             </div>
-            <div class="col-sm-3 hidden-xs">
-                <img src="{{asset('images/ads.png')}}">
-                <button class="btn btn-primary" style="background-color: white; border-color: #939598; color: #58595B; margin-top: 15px; width: 220px;">WRITE A POST</button>
+            <div class="col-md-3 hidden-xs">
+                <div class="container text-center" style="display: table; width:inherit; color:#BCBEC0; border: solid; border-width: thin; border-radius: 20px; padding: 25px;">
+                    <p style="color: black; font-size: large;">Download<br>         
+                    <span style="font-weight: bold;">Teaspoon Free App</span> <br> and enjoy the fill feature today!</p>
+                    <div class="container" style="background-image: url(../images/ads.png); height: 276px; width: 151px; max-width: 100%; background-position: center; margin-bottom: 15px;"></div>
+                    <p style="color: #58595B">AVAILABLE ON</p>
+                    <img style="background-image: url(../images/google-play-badge.png); width: 128px; height: 38px;border-radius: 8px; margin-bottom: 5px;" href="#"></button>
+                    <img style="background-image: url(../images/app-store-badge.png); width: 128px; height: 38px;border-radius: 8px;" href="#"></button>
+                </div>
+                <div class="container text-center" style="width: initial; margin-bottom: 5px">
+                    <button class="btn btn-primary" style="background-color: white; border-color: #939598; color: #58595B; margin-top: 15px;">WRITE A POST</button>
+                </div>
             </div>
         </div>
     </div>
