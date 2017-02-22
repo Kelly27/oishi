@@ -32,7 +32,7 @@ class User extends Authenticatable
 
 
 
-    public function news_feed()
+    public function news_feeds()
     {
         return $this->hasMany('App\NewsFeed');
     }

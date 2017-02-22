@@ -23,7 +23,14 @@
               </ul>
             </li>
             <li><a href="{{URL::route('menu_home')}}">Menu</a></li>
-            <li><a href="#">Special Offer</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Special Offer<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{route('voucher')}}">Voucher</a></li>
+                <li><a href="#">Reward</a></li>
+                <li><a href="#">Promotion</a></li>
+              </ul>
+            </li>
             <li><a href="#">Contact Us</a></li>
           </ul>
         </div><!--/.nav-collapse -->

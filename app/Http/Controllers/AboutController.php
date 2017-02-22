@@ -10,6 +10,7 @@ use App\NewsFeed;
 use App\User;
 use App\Career;
 use App\NewsEvent;
+use App\Like;
 
 class AboutController extends Controller
 {
@@ -32,9 +33,9 @@ class AboutController extends Controller
         return view('pages.abt.career', compact('careers'));
     }
 
-    public function show_career_by_id($career_id)
+    public function show_career_by_id($id)
     {
-        $career = Career::where('id', $career_id)->firstOrFail();
+        $career = Career::where('id', $id)->firstOrFail();
         // return $career;
         return view('pages.abt.career_by_id', compact('career'));
     }
@@ -47,12 +48,19 @@ class AboutController extends Controller
         // return view('pages.abt.news_feed', compact('news_feeds')); //this way of code do pagination
 
         // $users = User::where('id', 1)->first();
-        $users = User::has('news_feed')->first();
+        // $users = User::has('news_feed')->get();
+        $news_feeds = NewsFeed::with('user')->paginate(4);
+        // $users = $news_feeds->user;
         // $news_feeds = NewsFeed::paginate(4); //way of pagination
-        $news_feeds = $users->news_feed()->paginate(4);
         // $news_feeds = $users->news_feed;
         // return $users->name;
-        return view('pages.abt.news_feed', compact('news_feeds', 'users'));  //this way of code cannot do pagination
+        return view('pages.abt.news_feed', compact('news_feeds', 'users', 'likes'));
+    }
+
+    public function show_news_feed_byID($id)
+    {
+        $news_feed = NewsFeed::where('id', $id)->firstOrFail();
+        return view('pages.abt.news_feed_byID', compact('news_feed'));
     }
 
     public function show_news_event()
@@ -67,5 +75,12 @@ class AboutController extends Controller
         return view('pages.abt.news_event_byID', compact('news_event'));
     }
 
-
+    public function get_news_feed_like($id)
+    {
+        // $news_feed = NewsFeed::where('id', $id)->first();
+        $likes = Like::has('news_feeds')->get();
+        return $likes;
+        // return redirect()->back();
+        // return $news_feed;
+    }
 }

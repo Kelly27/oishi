@@ -22,9 +22,13 @@ Route::group(['prefix' => 'about'], function(){
     Route::get('career', 'AboutController@show_career') -> name('career');
     Route::get('career/{career_id}', 'AboutController@show_career_by_id');
     Route::get('news_feed', 'AboutController@show_news_feed') -> name('news_feed');
+    Route::get('news_feed/{news_feed_id}', 'AboutController@show_news_feed_byID') -> name('news_feed.id');
+    Route::get('news_feed/{news_feed_id}/like', [
+        'uses' => 'AboutController@get_news_feed_like', 
+        'as' => 'news_feed.like'
+        ]);
     Route::get('news_event', 'AboutController@show_news_event') -> name('news_event');
     Route::get('news_event/{news_event_id}', 'AboutController@show_news_event_byID');
-
 });
 
 Route::group(['prefix' => 'menu'], function(){
@@ -33,6 +37,10 @@ Route::group(['prefix' => 'menu'], function(){
     Route::get('sig_menu/{menu_id}', 'menuController@show_sig_menu_byID');
     Route::get('starters_menu', 'menuController@show_starters_menu') -> name('starters_menu');
 
+});
+
+Route::group(['prefix' => 'specialOffer'], function(){
+    Route::get('voucher', 'OfferController@show_voucher') -> name('voucher');
 });
 
 Route::get('test', function () {

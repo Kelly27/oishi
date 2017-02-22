@@ -19,7 +19,7 @@
 <div class="container-fluid nopadding news-feed" style="background-color: white;">
     <div class="container" style="padding-top: 3%;">
         <div class="row">
-            <div class="col-sm-12 col-md-9 m-nopadding" >
+            <div class="col-sm-9 m-nopadding" >
                 @if ($news_feeds->count()===0)
                     <h1 class="alert alert-danger">CURRENTLY THERE IS NO NEWS AVAILABLE.</h1>
                 @else
@@ -29,10 +29,10 @@
                             <table style="width: inherit;">
                                 <tbody>
                                     <tr>
-                                        <td style="text-align: end;"><img src="{{asset('images')}}/{{$users->profilepic}}" style="border-radius: 50px"></td>
+                                        <td style="text-align: end;"><img src="{{asset('images')}}/{{$news_feed->user->profilepic}}" style="border-radius: 50px"></td>
                                         <td>
                                             <div class="p-smaller" style="padding-left: 10px;">
-                                                <h3>{{$users->name}}</h3>
+                                                <h3>{{$news_feed->user->name}}</h3>
                                                 <table  style="font-size: smaller;">
                                                     <tbody>
                                                         <tr>
@@ -53,15 +53,15 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <img src="{{ asset('images') }}/{{$news_feed->image_file}}" class="img-responsive" style="margin-left: auto; margin-right: auto;">
+                            <a href="{{URL::route('news_feed.id', ['id' => $news_feed->id])}}"><img src="{{ asset('images') }}/{{$news_feed->image_file}}" class="img-responsive" style="margin-left: auto; margin-right: auto;"></a>
                             <div style="padding-left: 20px; margin-top: 15px">
                                 <a class="pre" href="#"><img src="{{ asset('images/cutleryicon.png') }}" style="width: 5%; margin-right: 5px">{{$news_feed->food}}</a>
                                 <p class="pre" style="margin: 10px 0px 20px 0px; overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">{{ $news_feed->description }}</p>
                                 <table class="comment-table" style="width: 87%; margin-bottom: 5%;margin-left: 5%;">
                                     <tbody>
                                         <tr>
-                                            <td><img src="{{ asset('images/likeicon.png') }}" style="vertical-align: sub;"><a>10k</a></td>
-                                            <td><img src="{{ asset('images/commenticon.png') }}"><a>100</a></td>
+                                            <td><a href="{{route('news_feed.like', ['id' => $news_feed->id])}}"><img src="{{ asset('images/likeicon.png') }}" style="cursor:pointer;vertical-align: sub;">{{count($news_feed->likes)}}</a></td>
+                                            <td><a href="{{URL::route('news_feed.id', ['id' => $news_feed->id])}}"><img src="{{ asset('images/commenticon.png') }}">100</a></td>
                                             <td><i class="fa fa-facebook" style="font-size: x-large; background: none; vertical-align: bottom;"></i><a href="#"></i>Share</a></td>
                                             <td><i class="fa fa-chevron-right" style="font-size: x-large; color: #A7A9AC"></i></td>
                                         </tr>
@@ -77,9 +77,9 @@
                 @endif
 
             </div>
-            <div class="col-md-3 hidden-xs">
+            <div class="col-sm-3 hidden-xs text-center">
                 @include('pages.abt.ads')
-                <button class="btn btn-primary" style="background-color: white; border-color: #939598; color: #58595B; margin-top: 15px;">WRITE A POST</button>
+                <button class="btn btn-primary" style="min-width: 201px; width: 56%; background-color: white; border-color: #939598; color: #58595B; margin-top: 15px;">WRITE A POST</button>
             </div>
         </div>
     </div>
