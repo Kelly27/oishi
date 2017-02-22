@@ -10,7 +10,7 @@
         </ol>
     </div>
 </div>
-<div class="container-fluid aboutus-header" style="background-image: url(../images/career-header.png); background-position-y: -780px;">
+<div class="container-fluid aboutus-header" style="background-image: url(../images/career-header.png); background-position-y: center;">
     <h1>Career</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>
@@ -18,6 +18,9 @@
     <div class="container" style="margin-top: 2%">
         <div class="row">
             <div class="col-sm-9">
+                @if($careers->count()===0)
+                    <h1 class="alert alert-danger">CURRENTLY THERE IS NO CAREER AVAILABLE.</h1>
+                @else
                 <div class="row">
                     @foreach($careers as $career)
                     <div class="col-sm-6" style="padding: 10px">
@@ -30,6 +33,7 @@
                 <div class="text-right">
                     {{$careers->render()}}
                 </div>
+                @endif
             </div>
             <div class="col-sm-3 hidden-xs">
                 @include('pages.abt.ads')

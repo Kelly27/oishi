@@ -16,36 +16,40 @@
 </div>
 <div class="container">
 	<h1 class="hidden-xs">STARTERS</h1>
-	<div class="row" >
-		@foreach ($menus as $menu)
-		<div class="col-sm-6 nopadding">
-			<div class="container menu-cont">
-				<div class="row hidden-xs" style="margin-bottom: 20px;">
-					<div class="col-sm-7">
-						<div class="container img-responsive img-200px" style="background-image: url(<?= asset('images')?>/{{$menu->menu_img}}); max-width: 100%; width: 400px; height: 200px; background-size: cover;">
+	@if ($menus->count()===0)
+		<h2 class="alert alert-danger">THERE IS NO STARTERS MENU TO BE DISPLAY.</h2>
+	@else
+		<div class="row" >
+			@foreach ($menus as $menu)
+			<div class="col-sm-6 nopadding">
+				<div class="container menu-cont">
+					<div class="row hidden-xs" style="margin-bottom: 20px;">
+						<div class="col-sm-7">
+							<div class="container img-responsive img-200px" style="background-image: url(<?= asset('images')?>/{{$menu->menu_img}}); max-width: 100%; width: 400px; height: 200px; background-size: cover;">
+							</div>
+						</div>
+						<div class="col-sm-5">
+							<h4 style="color: red; vertical-align: middle;">{{$menu->menu_name}}</h4>
+						    <p>RM{{number_format($menu->price,2)}}</p>
+						    <p style="font-size: x-small"><i class="fa fa-star" style="color: #F6921E"></i>{{number_format($menu->star,2)}}</p>
+						    <p style="font-size: x-small">{{$menu->new_feed_point}} new feed posts</p>
 						</div>
 					</div>
-					<div class="col-sm-5">
-						<h4 style="color: red; vertical-align: middle;">{{$menu->menu_name}}</h4>
-					    <p>RM{{number_format($menu->price,2)}}</p>
-					    <p style="font-size: x-small"><i class="fa fa-star" style="color: #F6921E"></i>{{number_format($menu->star,2)}}</p>
-					    <p style="font-size: x-small">{{$menu->new_feed_point}} new feed posts</p>
-					</div>
+				</div>
+				<div class="container menu-cont visible-xs" style="margin: 0px auto 0px auto; width: 356px; max-width: 100%; background-color: white" >
+					<div class="container img-responsive img-200px" style="background-image: url(images/{{$menu->menu_img}}); max-width: 100%; width: 400px; height: 200px; background-size: cover">
+					</div>	
+					<h4 style="color: red; vertical-align: middle;">{{$menu->menu_name}}</h4>
+				    <p>RM{{number_format($menu->price,2)}}</p>
+				    <p style="font-size: x-small"><i class="fa fa-star" style="color: #F6921E"></i>{{number_format($menu->star,2)}}</p>
+				    <p style="font-size: x-small">{{$menu->new_feed_point}} new feed posts</p>
 				</div>
 			</div>
-			<div class="container menu-cont visible-xs" style="margin: 0px auto 0px auto; width: 356px; max-width: 100%; background-color: white" >
-				<div class="container img-responsive img-200px" style="background-image: url(images/{{$menu->menu_img}}); max-width: 100%; width: 400px; height: 200px; background-size: cover">
-				</div>	
-				<h4 style="color: red; vertical-align: middle;">{{$menu->menu_name}}</h4>
-			    <p>RM{{number_format($menu->price,2)}}</p>
-			    <p style="font-size: x-small"><i class="fa fa-star" style="color: #F6921E"></i>{{number_format($menu->star,2)}}</p>
-			    <p style="font-size: x-small">{{$menu->new_feed_point}} new feed posts</p>
-			</div>
+			@endforeach
 		</div>
-		@endforeach
-	</div>
 	<div class="text-right">
 		{{$menus->render()}}
 	</div>
+	@endif
 </div>
 @endsection

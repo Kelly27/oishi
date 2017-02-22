@@ -19,12 +19,14 @@ class MenuController extends Controller
     public function show_sig_menu()
     {
     	$menus = DB::table('menus')->where('menu_type', 'sig')->paginate(8);
+        // $menus = Menu::where('id', 99) ; //test no data
     	return view('pages.menu.sig_menu', compact('menus'));
     }
 
     public function show_starters_menu()
     {
     	$menus = DB::table('menus')->where('menu_type', 'sta')->paginate(10);
+        // $menus = Menu::where('id', 99) ; //test no data
     	return view('pages.menu.starters_menu', compact('menus'));
     }
 

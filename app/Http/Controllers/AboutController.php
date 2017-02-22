@@ -16,6 +16,7 @@ class AboutController extends Controller
     public function show_gallery()
     {
     	$galleries = DB::table('galleries')->paginate(15);
+        // $galleries = Gallery::where('id', 30); //test no data
     	return view('pages.abt.gallery', compact('galleries'));
     }
 
@@ -27,6 +28,7 @@ class AboutController extends Controller
     public function show_career()
     {
         $careers = Career::paginate(4);
+        // $careers = Career::where('title', 'gg'); //test no data
         return view('pages.abt.career', compact('careers'));
     }
 
@@ -48,6 +50,7 @@ class AboutController extends Controller
         $users = User::has('news_feed')->first();
         // $news_feeds = NewsFeed::paginate(4); //way of pagination
         $news_feeds = $users->news_feed()->paginate(4);
+        // $news_feeds = $users->news_feed;
         // return $users->name;
         return view('pages.abt.news_feed', compact('news_feeds', 'users'));  //this way of code cannot do pagination
     }

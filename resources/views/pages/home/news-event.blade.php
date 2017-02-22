@@ -2,7 +2,7 @@
         <h3 style="font-family: OpenSans">OUR NEWS AND EVENTS</h3>
         <p style="font-family: OpenSans">We are here to share with you every news and events we organized.</p>
         <div class="container">
-            <div class="row">
+            <div class="row imagecenter">
                 <div class="col-sm-4">
                     <p><img src="{{URL::to('images/img15.png')}}" class="img-responsive"></p>
                     <p>Event name</p>

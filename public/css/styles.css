@@ -69,6 +69,11 @@ body
     margin-bottom: 0px;
 }
 
+.imagecenter img{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #home-red{
     background-color: #EE3433;
     color: white;
@@ -194,12 +199,13 @@ body
     color: red;
     font-family: Arial;
     background-color: white;
+    margin:0px;
 }
 
- .breadcrumb_container > ol > li:first-child > a{
-    margin-right: 50%;
-    margin-left: 0%;
- }
+ // .breadcrumb_container > ol > li:first-child > a{
+ //    margin-right: 50%;
+ //    margin-left: 0%;
+ // }
 
 .aboutus-header{
     text-align: center;
@@ -513,7 +519,7 @@ body
     .img-700px{
         background-size: 100%;
         background-repeat: no-repeat;
-        background-position-y: -110px;
+        background-position-y: center;
         height: 280px;
     }
 
@@ -557,9 +563,10 @@ body
     left: initial;
     }
 
-    // #news-feed-col{
-    //     padding:0px;
-    // }
+    .imagecenter img {
+    margin-left: auto;
+    margin-right: auto;
+    }
 
     #price-font{
         font-size: large;

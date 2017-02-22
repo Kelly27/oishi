@@ -1,3 +1,5 @@
+<? use Carbon\Carbon; ?>
+
 @extends('layouts.layout')
 
 @section('content')
@@ -18,6 +20,9 @@
     <div class="container" style="padding-top: 3%;">
         <div class="row">
             <div class="col-sm-12 col-md-9 m-nopadding" >
+                @if ($news_feeds->count()===0)
+                    <h1 class="alert alert-danger">CURRENTLY THERE IS NO NEWS AVAILABLE.</h1>
+                @else
                 <div class="masonry">
                     @foreach ($news_feeds as $news_feed)
                         <div class="news-feed-item">
@@ -42,14 +47,16 @@
                                                 </table>
                                             </div>
                                         </td>
-                                        <td style="vertical-align: bottom; text-align: center; font-size: smaller;"><p style="font-style: italic;">{{$news_feed->created_at}}</p></td>
+                                        <td style="vertical-align: bottom; text-align: center; font-size: smaller;">
+                                            <p style="font-style: italic;">{{$news_feed->created_at->diffForHumans()}}</p>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                             <img src="{{ asset('images') }}/{{$news_feed->image_file}}" class="img-responsive" style="margin-left: auto; margin-right: auto;">
                             <div style="padding-left: 20px; margin-top: 15px">
                                 <a class="pre" href="#"><img src="{{ asset('images/cutleryicon.png') }}" style="width: 5%; margin-right: 5px">{{$news_feed->food}}</a>
-                                <p class="pre" style="margin: 10px 0px 20px 0px; ">{{$news_feed->description}}</p>
+                                <p class="pre" style="margin: 10px 0px 20px 0px; overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">{{ $news_feed->description }}</p>
                                 <table class="comment-table" style="width: 87%; margin-bottom: 5%;margin-left: 5%;">
                                     <tbody>
                                         <tr>
@@ -65,8 +72,10 @@
                     @endforeach
                 </div>
                 <div class="text-right">
-                    {{-- {{$news_feeds->render()}} --}}
+                    {{$news_feeds->render()}}
                 </div>
+                @endif
+
             </div>
             <div class="col-md-3 hidden-xs">
                 @include('pages.abt.ads')
@@ -74,8 +83,6 @@
             </div>
         </div>
     </div>
-    
-
 </div>
 
 @endsection

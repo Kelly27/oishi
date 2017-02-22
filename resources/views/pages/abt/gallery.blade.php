@@ -14,17 +14,22 @@
     <h1>Photo Gallery</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>
-<div class="container" style="padding-top: 2%">
-	<div class="row">
-		@foreach($galleries as $gallery)
-			<div class="col-sm-2 my-col-2 nopadding" id="gallery-col" >
-				<img src="{{asset('images')}}/{{$gallery->gallery_name}}" class="img-responsive">
-			</div>
-		@endforeach
-	</div>
-	<div class="text-right">
-		{{$galleries->render()}}
+<div class="container-fluid"  style="background-color: white;"">
+	<div class="container" style="padding-top: 2%">
+		@if($galleries->count() === 0)
+			<h1 class="alert alert-danger">THERE IS NO PHOTO TO BE DISPLAYED.</h1>
+		@else
+		<div class="row">
+			@foreach($galleries as $gallery)
+				<div class="col-sm-2 my-col-2 nopadding imagecenter" id="gallery-col" >
+					<img src="{{asset('images')}}/{{$gallery->gallery_name}}" class="img-responsive" style="height:207px;">
+				</div>
+			@endforeach
+		</div>
+		<div class="text-right">
+			{{$galleries->render()}}
+		</div>
+		@endif
 	</div>
 </div>
-
 @endsection
