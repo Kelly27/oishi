@@ -19,6 +19,9 @@ Route::get('contact', function () {
     return view('pages.contact');
 })-> name('contact');
 
+Route::post('contact/store_message', 'AboutController@store_message'
+)-> name('store_message');
+
 Route::group(['prefix' => 'about'], function(){
     Route::get('our_story', 'AboutController@show_our_story') -> name('our_story');
     Route::get('gallery', 'AboutController@show_gallery') -> name('gallery');

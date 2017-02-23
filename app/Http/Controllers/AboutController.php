@@ -11,6 +11,7 @@ use App\User;
 use App\Career;
 use App\NewsEvent;
 use App\Like;
+use App\ContactUs;
 
 class AboutController extends Controller
 {
@@ -82,5 +83,18 @@ class AboutController extends Controller
         return $likes;
         // return redirect()->back();
         // return $news_feed;
+    }
+
+    public function store_message(Request $request)
+    {   
+        $message = new ContactUs([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'phone' => $request->input('phone'),
+            'subject' => $request->input('subject'),
+            'message' => $request->input('message')
+        ]);
+        $message->save();
+        return redirect()->route('contact');
     }
 }
