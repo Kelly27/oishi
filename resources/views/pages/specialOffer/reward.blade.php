@@ -19,19 +19,16 @@
 		<div class="row">
 			<div class="col-sm-8">
 			<div class="row">
-				@foreach ($vouchers as $voucher)
+				@foreach ($rewards as $reward)
 					<div class="col-sm-6 m-nopadding imagecenter" style="margin-top: 2%;">
-						<a href="{{route('voucher.id', ['id' => $voucher->id])}}"><img src="{{ asset('images') }}/{{$voucher->image}}" class="img-responsive"></a>
+						<a href="{{route('reward.id', ['id' => $reward->id])}}"><img src="{{ asset('images') }}/{{$reward->image}}" class="img-responsive"></a>
 						<div style="background-color: #F1F1F2; padding: 3% 5% 1%">
-							<h6 style="font-weight:bold; margin:0px;">{{$voucher->title}}</h6>
-			                <p style="font-size:x-small; ">{{$voucher->sold}} Bought | {{$voucher->availability}}</p>
-			                <p class="nopadding text-right" style="font-size: x-small;text-decoration: line-through; color: #6D6E71">RM{{number_format($voucher->ori_price, 2)}}</p>
-			                <p style="color: #EC1C24; font-weight: bold; margin-top: 0px; text-align: right;"><span style="font-size: x-small;">From </span> RM{{number_format($voucher->dis_price,2)}}</p>
+							<a href="#" style="font-weight: bold; color: black;"><img src="{{URL::to('images/hand.png')}}" style="margin: 10px">{{$reward->title}}</a>
 						</div>
 					</div>
 				@endforeach
 				<div class="text-right">
-					{{$vouchers->render()}}
+					{{$rewards->render()}}
 				</div>
 			</div>
 			</div>

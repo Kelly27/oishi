@@ -363,6 +363,10 @@ body
     border-right: none;
 }
 
+.color4d p{
+    color: #4D4D4D;
+}
+
 #price-font{
     float: right; 
     color: red; 

@@ -27,7 +27,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Special Offer<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="{{route('voucher')}}">Voucher</a></li>
-                <li><a href="#">Reward</a></li>
+                <li><a href="{{route('reward')}}">Reward</a></li>
                 <li><a href="#">Promotion</a></li>
               </ul>
             </li>

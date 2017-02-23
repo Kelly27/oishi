@@ -41,6 +41,9 @@ Route::group(['prefix' => 'menu'], function(){
 
 Route::group(['prefix' => 'specialOffer'], function(){
     Route::get('voucher', 'OfferController@show_voucher') -> name('voucher');
+    Route::get('voucher/{voucher_id}', 'OfferController@show_voucher_byID') -> name('voucher.id');
+    Route::get('reward', 'OfferController@show_reward') -> name('reward');
+    Route::get('reward/{reward_id}', 'OfferController@show_reward_byID') -> name('reward.id');
 });
 
 Route::get('test', function () {

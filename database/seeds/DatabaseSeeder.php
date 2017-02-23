@@ -8,6 +8,7 @@ use App\Career;
 use App\NewsEvent;
 use App\Like;
 use App\Voucher;
+use App\Reward;
 
 class DatabaseSeeder extends Seeder
 {
@@ -63,9 +64,20 @@ class OishiSeeder extends Seeder
 				'image' => 'img2.png',
             	'title' => '50% OFF CHICKEN WITH RICE',
             	'sold' => 0,
+            	'sold' => 0,
+            	'group_of' => 3,
+            	'expirydate' => '2018-02-27',
             	'availability' => 'Unlimited',
             	'ori_price' => 110.00,
             	'dis_price' => 55.00
+				]);
+		}
+
+		for ($i=0; $i <10 ; $i++) { 
+			Reaward::create([
+				'image' => 'img13.png',
+            	'title' => 'FREE ONE JUICE DRINK',
+				'expirydate' => '2018-02-27'
 				]);
 		}
 
