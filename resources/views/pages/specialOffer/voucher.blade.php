@@ -15,14 +15,14 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>
 <div class="container-fluid m-nopadding" style="background-color: white">
-	<div class="container m-nopadding">
+	<div class="container m-nopadding" style="margin-top: 2%;">
 		<div class="row">
 			<div class="col-sm-8">
 			<div class="row">
 				@foreach ($vouchers as $voucher)
-					<div class="col-sm-6 m-nopadding imagecenter">
+					<div class="col-sm-6 m-nopadding imagecenter" style="margin-top: 2%;">
 						<img src="{{ asset('images') }}/{{$voucher->image}}" class="img-responsive">
-						<div class="nopadding" style="background-color: #F1F1F2">
+						<div style="background-color: #F1F1F2; padding: 3% 5% 1%">
 							<h6 style="font-weight:bold; margin:0px;">{{$voucher->title}}</h6>
 			                <p style="font-size:x-small; ">{{$voucher->sold}} Bought | {{$voucher->availability}}</p>
 			                <p class="nopadding text-right" style="font-size: x-small;text-decoration: line-through; color: #6D6E71">RM{{number_format($voucher->ori_price, 2)}}</p>
