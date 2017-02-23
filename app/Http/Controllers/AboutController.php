@@ -25,6 +25,13 @@ class AboutController extends Controller
     	return view('pages.abt.gallery', compact('galleries'));
     }
 
+    public function show_test()
+    {
+        $galleries = DB::table('galleries')->paginate(15);
+        // $galleries = Gallery::where('id', 30); //test no data
+        return view('test', compact('galleries'));
+    }
+
     public function show_our_story()
     {
         return view('pages.abt.our_story');

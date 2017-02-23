@@ -292,8 +292,8 @@ body
 
 #gallery-col{
     display: inline-block;
-    float: right;
-    left:-7%
+    left: 53px;
+    position: relative;
 }
 
 .masonry{
@@ -493,6 +493,9 @@ body
 	background:#d34836
 }
 
+.modal.and.carousel {
+  position: absolute; // Needed because the carousel overrides the position property
+}
 @media only screen and (max-width: 767px) {
     .home h1{
         font-size: 30px;
@@ -581,8 +584,8 @@ body
 
     #gallery-col{
     display: inline;
-    float: none;
-    left: initial;
+    left: 0px;
+    position: relative;
     }
 
     .imagecenter img {

@@ -53,7 +53,5 @@ Route::group(['prefix' => 'specialOffer'], function(){
     Route::get('promotion', 'OfferController@show_promotion') -> name('promotion');
 });
 
-Route::get('test', function () {
-    return view('test');
-});
+Route::get('test', 'AboutController@show_test');
 

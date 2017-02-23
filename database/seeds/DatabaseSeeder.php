@@ -48,6 +48,19 @@ class OishiSeeder extends Seeder
 			]);
 		}
 
+		for ($i=0; $i <30 ; $i++) { 
+			if ($i%2 == 1) {
+				Gallery::create([
+				'gallery_name' => 'img24.png'
+				]);
+			}
+			else{
+				Gallery::create([
+				'gallery_name' => 'img23.png'
+				]);
+			}
+		}
+
 		// for ($i=0; $i <4 ; $i++) { 
 		// 	NewsEvent::create([
 		// 	'image' => "img25.png",
