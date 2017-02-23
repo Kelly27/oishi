@@ -63,8 +63,8 @@ class OishiSeeder extends Seeder
 			Voucher::create([
 				'image' => 'img2.png',
             	'title' => '50% OFF CHICKEN WITH RICE',
-            	'sold' => 0,
-            	'sold' => 0,
+            	'sold' => 100,
+            	'stock' => 115,
             	'group_of' => 3,
             	'expirydate' => '2018-02-27',
             	'availability' => 'Unlimited',
@@ -74,7 +74,7 @@ class OishiSeeder extends Seeder
 		}
 
 		for ($i=0; $i <10 ; $i++) { 
-			Reaward::create([
+			Reward::create([
 				'image' => 'img13.png',
             	'title' => 'FREE ONE JUICE DRINK',
 				'expirydate' => '2018-02-27'

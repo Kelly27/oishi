@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('pages.home.home');
 });
 
+Route::get('contact', function () {
+    return view('pages.contact');
+})-> name('contact');
 
 Route::group(['prefix' => 'about'], function(){
     Route::get('our_story', 'AboutController@show_our_story') -> name('our_story');
@@ -44,6 +47,7 @@ Route::group(['prefix' => 'specialOffer'], function(){
     Route::get('voucher/{voucher_id}', 'OfferController@show_voucher_byID') -> name('voucher.id');
     Route::get('reward', 'OfferController@show_reward') -> name('reward');
     Route::get('reward/{reward_id}', 'OfferController@show_reward_byID') -> name('reward.id');
+    Route::get('promotion', 'OfferController@show_promotion') -> name('promotion');
 });
 
 Route::get('test', function () {

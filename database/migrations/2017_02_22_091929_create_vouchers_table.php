@@ -18,7 +18,7 @@ class CreateVouchersTable extends Migration
             $table->string('image');
             $table->string('title');
             $table->integer('sold');
-            $table->integer('sold');
+            $table->integer('stock');
             $table->integer('group_of');
             $table->string('availability');
             $table->float('ori_price');

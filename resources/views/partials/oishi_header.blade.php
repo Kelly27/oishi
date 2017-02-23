@@ -28,10 +28,10 @@
               <ul class="dropdown-menu">
                 <li><a href="{{route('voucher')}}">Voucher</a></li>
                 <li><a href="{{route('reward')}}">Reward</a></li>
-                <li><a href="#">Promotion</a></li>
+                <li><a href="{{route('promotion')}}">Promotion</a></li>
               </ul>
             </li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="{{route('contact')}}">Contact Us</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div><!--/.container-fluid -->

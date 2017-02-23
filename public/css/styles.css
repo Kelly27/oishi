@@ -99,7 +99,7 @@ body
     padding: 0px 20px;
 }
 
-#reward-cont{
+.reward-cont{
     background-color: #F1F1F2;
     margin-bottom: 20px;
     width: initial;
@@ -375,6 +375,14 @@ body
     font-weight: normal;
 }
 
+.promo-row{
+    background-color: #261002; 
+    padding: 0px; 
+    width: 83%; 
+    margin-left: auto;
+    margin-right: auto
+}
+
 .footer-area{
     font-family: Arial;
     background-color: #313332;
@@ -427,6 +435,16 @@ body
 .footer-area .table .borderless > tr > td > p{
     margin-bottom: 10px;
     margin-left: 2px;
+}
+
+.contact-info > tr >td{
+    padding:1%
+}
+
+.contact-info > tr >td{
+    padding-bottom: 0px;
+    color: #231F20;
+    line-height: 15px;
 }
 
 .quick-link{
@@ -581,6 +599,10 @@ body
     .menu-detail h6{
         font-size: medium;
         padding: 0px;
+    }
+
+    .promo-row{
+        width: initial;
     }
 }
 
