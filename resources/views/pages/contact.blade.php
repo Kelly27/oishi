@@ -49,7 +49,19 @@
 			<div class="col-sm-8">
 				<h3 style="font-family: OpenSansBold; color: #414042">CONTACT US NOW</h3>
 				<p style="color: #231F20">To contact us by email, please fill out the form below. Items marked [*] are required information.</p>
-				<form method="POST" action="{{route('store_message')}}">
+				@if(Session::has('message'))
+					<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+				@endif
+				@if (count($errors->all()))
+				    <div class="alert alert-danger">
+				        <ul>
+				            @foreach ($errors->all() as $error)
+				                <li>{{ $error }}</li>
+				            @endforeach
+				        </ul>
+				    </div>
+				@endif				
+					<form method="POST" action="{{route('store_message')}}" novalidate>
 					<div class="row">
 						<div class="col-sm-4">
 							<div class="form-group">

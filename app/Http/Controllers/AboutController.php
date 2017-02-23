@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Session;
+use Illuminate\Validation\Factory;
+
 use Carbon\Carbon;
 use App\Gallery;
 use App\NewsFeed;
@@ -85,16 +88,31 @@ class AboutController extends Controller
         // return $news_feed;
     }
 
-    public function store_message(Request $request)
+    public function store_message(Request $request, Factory $validator)
     {   
-        $message = new ContactUs([
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'phone' => $request->input('phone'),
-            'subject' => $request->input('subject'),
-            'message' => $request->input('message')
+        $validation=$validator->make($request->all(), [
+            'name' =>'required',
+            'email' =>'required',
+            'phone' =>'required',
+            'subject' =>'required',
+            'message' =>'required',
         ]);
-        $message->save();
-        return redirect()->route('contact');
+        if($validation->fails()){
+            return redirect()->back()->withErrors($validation);
+
+        }
+        else{
+            $message = new ContactUs([
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'phone' => $request->input('phone'),
+                'subject' => $request->input('subject'),
+                'message' => $request->input('message')
+            ]);
+            $message->save();
+            Session::flash('message', 'Successfully created message!');
+        }
+        
+        return redirect()->back();
     }
 }
