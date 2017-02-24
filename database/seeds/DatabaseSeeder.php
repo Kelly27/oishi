@@ -48,15 +48,39 @@ class OishiSeeder extends Seeder
 			]);
 		}
 
+		Gallery::create([
+			'gallery_name' => 'Hydrangeas.jpg'
+		]);
+		Gallery::create([
+			'gallery_name' => 'Chrysanthemum.jpg'
+		]);
+		Gallery::create([
+			'gallery_name' => 'Desert.jpg'
+		]);
+		Gallery::create([
+			'gallery_name' => 'Penguins.jpg'
+		]);
+		Gallery::create([
+			'gallery_name' => 'Lighthouse.jpg'
+		]);
+		Gallery::create([
+			'gallery_name' => 'Jellyfish.jpg'
+		]);
+		Gallery::create([
+			'gallery_name' => 'Tulips.jpg'
+		]);
+		Gallery::create([
+			'gallery_name' => 'Jellyfish.jpg'
+		]);
 		for ($i=0; $i <30 ; $i++) { 
 			if ($i%2 == 1) {
 				Gallery::create([
-				'gallery_name' => 'img24.png'
+					'gallery_name' => 'img24.png'
 				]);
 			}
 			else{
 				Gallery::create([
-				'gallery_name' => 'img23.png'
+					'gallery_name' => 'img23.png'
 				]);
 			}
 		}

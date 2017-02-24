@@ -12,14 +12,12 @@
         <script src="{{asset('/js/app.js')}}"></script>
         <link href="{{asset('/css/styles.css')}}" rel="stylesheet">
         <script src="{{ asset('/js/masonry.pkgd.min.js') }}"></script>
-
+        <link rel="stylesheet" href="css/blueimp-gallery.min.css">
 
     </head>
     <body>
         @include('partials.oishi_header')
         @yield('content')
         @include('partials.footer')
-
-
     </body>
 </html>

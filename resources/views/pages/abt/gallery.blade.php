@@ -19,10 +19,12 @@
 		@if($galleries->count() === 0)
 			<h1 class="alert alert-danger">THERE IS NO PHOTO TO BE DISPLAYED.</h1>
 		@else
-		<div class="row">
+		<div class="row" id="links">
 			@foreach($galleries as $gallery)
 				<div class="col-sm-2 my-col-2 nopadding imagecenter" id="gallery-col" >
-					<img src="{{asset('images')}}/{{$gallery->gallery_name}}" class="img-responsive" style="height:207px;">
+					<a href="{{asset('images')}}/{{$gallery->gallery_name}}">
+						<img src="{{asset('images')}}/{{$gallery->gallery_name}}" class="img-responsive" style="min-height:100px;" >
+					</a>
 				</div>
 			@endforeach
 		</div>
@@ -32,4 +34,35 @@
 		@endif
 	</div>
 </div>
+
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev" style="border:0px">‹</a>
+    <a class="next">›</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+        
+<script src="js/blueimp-gallery.min.js"></script>
+
+<script>
+document.getElementById('links').onclick = function (event) {
+    event = event || window.event;
+    var target = event.target || event.srcElement,
+        link = target.src ? target.parentNode : target,
+        options = {index: link, event: event},
+        links = this.getElementsByTagName('a');
+    blueimp.Gallery(links, options);
+};
+</script>
+<script>
+blueimp.Gallery(
+    document.getElementById('links').getElementsByTagName('a'),
+    {
+        container: '#blueimp-gallery-carousel',
+        carousel: true
+    }
+);
+</script>
 @endsection

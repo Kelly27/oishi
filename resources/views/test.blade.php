@@ -19,10 +19,12 @@
 		@if($galleries->count() === 0)
 			<h1 class="alert alert-danger">THERE IS NO PHOTO TO BE DISPLAYED.</h1>
 		@else
-		<div class="row">
+		<div class="row" id="links">
 			@foreach($galleries as $gallery)
 				<div class="col-sm-2 my-col-2 nopadding imagecenter" id="gallery-col" >
-					<a href="#lightbox" data-toggle="modal" data-slide-to="{{$gallery->id}}" ><img src="{{asset('images')}}/{{$gallery->gallery_name}}" class="active img-responsive" style="height:207px;" ></a>
+					<a href="{{asset('images')}}/{{$gallery->gallery_name}}">
+						<img src="{{asset('images')}}/{{$gallery->gallery_name}}" class="img-responsive" style="min-height:100px;" >
+					</a>
 				</div>
 			@endforeach
 		</div>
@@ -32,34 +34,35 @@
 		@endif
 	</div>
 </div>
-<div class="modal fade and carousel slide" id="lightbox">
-    <div class="modal-dialog">
-	    <div class="modal-body">
-	      <ol class="carousel-indicators">
-	      	@foreach($galleries as $gallery)
-	        	<li data-target="#lightbox" data-slide-to="{{$gallery->id}}"></li>
-	        @endforeach
-	      </ol>
-	      <div class="carousel-inner">
-	      	@foreach ($galleries as $gallery)
-	            @if ($gallery->id == 1)
-	            	<div class="item active">
-		              <img src="{{asset('images')}}/{{$gallery->gallery_name}}">
-		            </div>
-		        @else
-		        	<div class="item active">
-		              <img src="{{asset('images')}}/{{$gallery->gallery_name}}">
-		            </div>
-	            @endif
-	      	@endforeach
-	      </div><!-- /.carousel-inner -->
-	      <a class="left carousel-control" href="#lightbox" role="button" data-slide="prev">
-	        <span class="fa fa-chevron-left"></span>
-	      </a>
-	      <a class="right carousel-control" href="#lightbox" role="button" data-slide="next">
-	        <span class="fa fa-chevron-right"></span>
-	      </a>
-	    </div><!-- /.modal-body -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev" style="border:0px">‹</a>
+    <a class="next">›</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+        
+<script src="js/blueimp-gallery.min.js"></script>
+
+<script>
+document.getElementById('links').onclick = function (event) {
+    event = event || window.event;
+    var target = event.target || event.srcElement,
+        link = target.src ? target.parentNode : target,
+        options = {index: link, event: event},
+        links = this.getElementsByTagName('a');
+    blueimp.Gallery(links, options);
+};
+</script>
+<script>
+blueimp.Gallery(
+    document.getElementById('links').getElementsByTagName('a'),
+    {
+        container: '#blueimp-gallery-carousel',
+        carousel: true
+    }
+);
+</script>
 @endsection
