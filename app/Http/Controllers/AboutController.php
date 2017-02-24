@@ -73,7 +73,7 @@ class AboutController extends Controller
     public function show_news_feed_byID($id)
     {
         $news_feed = NewsFeed::where('id', $id)->firstOrFail();
-        $comments = Comment::with(['news_feed', 'user'])->get();
+        $comments = Comment::with(['news_feed', 'user'])->paginate(4);
         return view('pages.abt.news_feed_byID', compact('news_feed', 'comments'));
     }
 

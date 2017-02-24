@@ -18,19 +18,19 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>
 <div class="container-fluid nopadding news-feed" style="background-color: white;">
-<div class="container" style="padding-top: 3%;">
+<div class="container" style="padding-top: 3%; margin-bottom: 3%">
     <div class="row">
         <div class="col-sm-9" style="border: solid; border-width:thin;border-color: #BCBEC0; border-radius: 20px">
-            <div class="row" style="display: table;margin: auto;">
+            <div class="row row-tb" style="margin: auto;">
                 <div class="col-sm-6 m-nopadding">
-                    <table>
+                    <table style="width: 100%">
                         <tbody>
                             <tr>
                                 <td style="text-align: end;"><img src="{{asset('images')}}/{{$news_feed->newsfeedPoster->profilepic}}" style="border-radius: 50px"></td>
                                 <td>
                                     <div class="p-smaller" style="padding-left: 10px;">
-                                        <h3>{{$news_feed->newsfeedPoster->name}}</h3>
-                                        <table  style="font-size: smaller;">
+                                        <h3 class="color4D">{{$news_feed->newsfeedPoster->name}}</h3>
+                                        <table class="color4D" style="color: font-size: smaller;">
                                             <tbody>
                                                 <tr>
                                                     <td><p class="nopadding">Rated Restaurant</p></td>
@@ -52,18 +52,18 @@
                     </table>
                     <a href="{{URL::route('news_feed.id', ['id' => $news_feed->id])}}"><img src="{{ asset('images') }}/{{$news_feed->image_file}}" class="img-responsive" style="margin-left: auto; margin-right: auto;"></a>
                 </div>
-                <div class="col-sm-6  menu-detail news-feed-detail" >
+                <div class="col-sm-6 news-feed-detail" >
                     <a class="pre" href="#"><img src="{{ asset('images/cutleryicon.png') }}" style="margin-right: 5px;">{{$news_feed->food}}</a>
                     <p class="pre" style=" color: black; margin: 10px 0px 20px 0px; overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">{{ $news_feed->description }}</p>
                     <p>{{count($news_feed->user)}} likes</p>
-                    <button class="btn fa fa-share-alt"><span style="font-family: OpenSans;"> Share </span></button>
+                    <button class="btn fa fa-share-alt btn-style"><span style="font-family: OpenSans;"> Share </span></button>
                 </div>
             </div>
-            <h3>Recent Comments</h3>
+            <h3 class="color4D">Recent Comments</h3>
             <hr class="nopadding" style="border-color: #BCBEC0">
             <div class="containter comment">
                 @foreach ($comments as $comment)
-                    <div class="container" style="border: solid; border-width:thin;border-color: #BCBEC0; border-radius: 20px; width: inherit; margin-top: 2%">
+                    <div class="container" style="border: solid; border-width:thin;border-color: #BCBEC0; border-radius: 20px; width: inherit; margin: 2% 0% 2% ">
                         <table style="width: 100%">
                             <tbody>
                                 <tr>
@@ -82,6 +82,16 @@
                         </table>
                     </div>
                 @endforeach
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button class="btn btn-primary btn-style" style="color: #58595B; width: 100%; margin-bottom: 3%">WRITE A COMMENT</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-right">
+                            {{$comments->render()}}
+                        </div>
+                    </div>
+                </div>
             </div>   
         </div>
         <div class="col-sm-3 hidden-xs">

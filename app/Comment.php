@@ -15,4 +15,9 @@ class Comment extends Model
     {
         return $this->belongsTo('App\NewsFeed', 'news_feed_id');
     }
+
+    public function replies()
+    {
+    	return $this->hasMany('App\Reply');
+    }
 }

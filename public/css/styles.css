@@ -325,7 +325,7 @@ body
     font-family: OpenSansBold;
 }
 
-.menu-detail button, .menu-btn{
+.menu-detail button, .menu-btn, .btn-style{
     color: black;
     background-color: white;
     border: solid;
@@ -374,6 +374,10 @@ body
 
 .color4d p{
     color: #4D4D4D;
+}
+
+ul.pagination{
+    margin:0px 0px 15px;
 }
 
 #price-font{
@@ -624,6 +628,10 @@ body
 
     .news-feed-detail{
     top: 0px;
+    }
+
+    .row-tb{
+        display: table;
     }
 }
 
