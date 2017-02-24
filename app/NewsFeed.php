@@ -10,12 +10,21 @@ class NewsFeed extends Model
 	
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsToMany('App\User', 'news_feed_likes_users');
     }
 
-    public function likes()
+    public function newsfeedPoster(){ 
+        return $this->belongsTo('App\User', 'user_id');
+    }
+
+    // public function likes()
+    // {
+    //     return $this->belongsToMany('App\Like', , 'news_feed_id', 'like_id');
+    // }
+    // 
+    public function comments()
     {
-        return $this->belongsToMany('App\Like', 'news_feeds_likes', 'news_feed_id', 'like_id');
+        return $this->hasMany('App\Comment');
     }
 
     protected $fillable = [

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Session;
 use Illuminate\Validation\Factory;
+use Illuminate\Support\Facades\Auth;
 
 use Carbon\Carbon;
 use App\Gallery;
@@ -13,8 +14,8 @@ use App\NewsFeed;
 use App\User;
 use App\Career;
 use App\NewsEvent;
-use App\Like;
 use App\ContactUs;
+use App\Comment;
 
 class AboutController extends Controller
 {
@@ -60,18 +61,20 @@ class AboutController extends Controller
 
         // $users = User::where('id', 1)->first();
         // $users = User::has('news_feed')->get();
-        $news_feeds = NewsFeed::with('user')->paginate(4);
+        // return User::with('feeds')->get();
+        $news_feeds = NewsFeed::with('newsfeedPoster')->paginate(4);
         // $users = $news_feeds->user;
         // $news_feeds = NewsFeed::paginate(4); //way of pagination
         // $news_feeds = $users->news_feed;
         // return $users->name;
-        return view('pages.abt.news_feed', compact('news_feeds', 'likes'));
+        return view('pages.abt.news_feed', compact('news_feeds'));
     }
 
     public function show_news_feed_byID($id)
     {
         $news_feed = NewsFeed::where('id', $id)->firstOrFail();
-        return view('pages.abt.news_feed_byID', compact('news_feed'));
+        $comments = Comment::with(['news_feed', 'user'])->get();
+        return view('pages.abt.news_feed_byID', compact('news_feed', 'comments'));
     }
 
     public function show_news_event()
@@ -88,11 +91,10 @@ class AboutController extends Controller
 
     public function get_news_feed_like($id)
     {
-        // $news_feed = NewsFeed::where('id', $id)->first();
-        $likes = Like::has('news_feeds')->get();
-        return $likes;
-        // return redirect()->back();
-        // return $news_feed;
+        $user_id=Auth::user()->id;
+        $user = User::where('id', $user_id)->first();
+        $user->news_feeds()->attach($id);
+        return redirect() -> back();
     }
 
     public function store_message(Request $request, Factory $validator)

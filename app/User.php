@@ -34,7 +34,15 @@ class User extends Authenticatable
 
     public function news_feeds()
     {
-        return $this->hasMany('App\NewsFeed');
+        return $this->belongsToMany('App\NewsFeed', 'news_feed_likes_users');
     }
 
+    // public function feeds() {
+    //     return $this->hasMany('App\NewsFeed');
+    // }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }

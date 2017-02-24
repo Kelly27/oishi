@@ -118,6 +118,13 @@ class OishiSeeder extends Seeder
 				]);
 		}
 
+		for ($i=0; $i <10 ; $i++) { 
+			Comment::create([
+				'user_id' => 1,
+				'comment' => 'I came here for a few times already.'
+			]);
+		}
+		
 
 	}
 }

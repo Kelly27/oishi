@@ -29,7 +29,7 @@ Route::group(['prefix' => 'about'], function(){
     Route::get('career/{career_id}', 'AboutController@show_career_by_id');
     Route::get('news_feed', 'AboutController@show_news_feed') -> name('news_feed');
     Route::get('news_feed/{news_feed_id}', 'AboutController@show_news_feed_byID') -> name('news_feed.id');
-    Route::get('news_feed/{news_feed_id}/like', [
+    Route::get('news_feed/like/{news_feed_id}', [
         'uses' => 'AboutController@get_news_feed_like', 
         'as' => 'news_feed.like'
         ]);

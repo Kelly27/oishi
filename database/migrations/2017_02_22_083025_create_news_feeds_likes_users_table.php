@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNewsFeedsLikesTable extends Migration
+class CreateNewsFeedsLikesUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,8 @@ class CreateNewsFeedsLikesTable extends Migration
     {
         Schema::create('news_feeds_likes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('like_id');
             $table->integer('news_feed_id');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

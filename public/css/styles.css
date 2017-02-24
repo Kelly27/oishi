@@ -311,6 +311,15 @@ body
     border-color: #CCCCCC;
 }
 
+.news-feed-detail{
+    top: 150px;
+}
+
+.comment{
+    font-family: Arial;
+    color: black;
+}
+
 .menu-detail h6{
     font-size: x-large;
     font-family: OpenSansBold;
@@ -611,6 +620,10 @@ body
 
     .promo-row{
         width: initial;
+    }
+
+    .news-feed-detail{
+    top: 0px;
     }
 }
 
