@@ -1,18 +1,21 @@
-<div class="container-fluid text-center" id="home-red">
+<div class="container-fluid text-center m-nopadding" id="home-red">
         <h3 style="font-family: OpenSans">OUR NEWS AND EVENTS</h3>
         <p style="font-family: OpenSans">We are here to share with you every news and events we organized.</p>
         <div class="container">
             <div class="row imagecenter">
-                <div class="col-sm-4">
-                    <p><img src="{{URL::to('images/img15.png')}}" class="img-responsive"></p>
+                <div class="col-sm-4 m-nopadding">
+                    <div class="container m-nopadding" style="background-image: url(images/img15.png); max-width: 100%; width: 400px; height: 200px; background-size: cover">
+                    </div>
                     <p>Event name</p>
                 </div>
-                <div class="col-sm-4">
-                    <p><img src="{{URL::to('images/img16.png')}}" class="img-responsive"></p>
+                <div class="col-sm-4 m-nopadding">
+                    <div class="container m-nopadding" style="background-image: url(images/img16.png); max-width: 100%; width: 400px; height: 200px; background-size: cover">
+                    </div>
                     <p>Event name</p>
                 </div>
-                <div class="col-sm-4">
-                    <p><img src="{{URL::to('images/img17.png')}}" class="img-responsive"></p>
+                <div class="col-sm-4 m-nopadding">
+                    <div class="container m-nopadding" style="background-image: url(images/img17.png); max-width: 100%; width: 400px; height: 200px; background-size: cover">
+                    </div>
                     <p>Event name</p>
                 </div>
             </div>

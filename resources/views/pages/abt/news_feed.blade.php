@@ -25,50 +25,51 @@
                 @else
                 <div class="masonry">
                     @foreach ($news_feeds as $news_feed)
-                        <div class="news-feed-item">
-                            <table style="width: inherit;">
-                                <tbody>
-                                    <tr>
-                                        <td style="text-align: end;"><img src="{{asset('images')}}/{{$news_feed->user->profilepic}}" style="border-radius: 50px"></td>
-                                        <td>
-                                            <div class="p-smaller" style="padding-left: 10px;">
-                                                <h3>{{$news_feed->user->name}}</h3>
-                                                <table  style="font-size: smaller;">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td><p class="nopadding">Rated Restaurant</p></td>
-                                                            <td><p class="nopadding" style="padding-left: 10px;"><i class="fa fa-star" style="color: #F6921E"></i>{{number_format($news_feed->rated_restaurant,2)}}</p></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><p class="nopadding">Rated Food</p></td>
-                                                            <td><p class="nopadding" style="padding-left: 10px;"><i class="fa fa-star" style="color: #F6921E"></i>{{number_format($news_feed->rated_food,2)}}</p></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </td>
-                                        <td style="vertical-align: bottom; text-align: center; font-size: smaller;">
-                                            <p style="font-style: italic;">{{$news_feed->created_at->diffForHumans()}}</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <a href="{{URL::route('news_feed.id', ['id' => $news_feed->id])}}"><img src="{{ asset('images') }}/{{$news_feed->image_file}}" class="img-responsive" style="margin-left: auto; margin-right: auto;"></a>
-                            <div style="padding-left: 20px; margin-top: 15px">
-                                <a class="pre" href="#"><img src="{{ asset('images/cutleryicon.png') }}" style="width: 5%; margin-right: 5px">{{$news_feed->food}}</a>
-                                <p class="pre" style="margin: 10px 0px 20px 0px; overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">{{ $news_feed->description }}</p>
-                                <table class="comment-table" style="width: 87%; margin-bottom: 5%;margin-left: 5%;">
+                        <a href="{{URL::route('news_feed.id', ['id' => $news_feed->id])}}" style="color: inherit;width: inherit; text-decoration: inherit;">
+                            <div class="news-feed-item">
+                                <table style="width: inherit;">
                                     <tbody>
                                         <tr>
-                                            <td><a href="{{route('news_feed.like', ['id' => $news_feed->id])}}"><img src="{{ asset('images/likeicon.png') }}" style="cursor:pointer;vertical-align: sub;">{{count($news_feed->likes)}}</a></td>
-                                            <td><a href="{{URL::route('news_feed.id', ['id' => $news_feed->id])}}"><img src="{{ asset('images/commenticon.png') }}">100</a></td>
-                                            <td><i class="fa fa-facebook" style="font-size: x-large; background: none; vertical-align: bottom;"></i><a href="#"></i>Share</a></td>
-                                            <td><i class="fa fa-chevron-right" style="font-size: x-large; color: #A7A9AC"></i></td>
+                                            <td style="text-align: end;"><img src="{{asset('images')}}/{{$news_feed->user->profilepic}}" style="border-radius: 50px"></td>
+                                            <td>
+                                                <div class="p-smaller" style="padding-left: 10px;">
+                                                    <h3>{{$news_feed->user->name}}</h3>
+                                                    <table  style="font-size: smaller;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><p class="nopadding">Rated Restaurant</p></td>
+                                                                <td><p class="nopadding" style="padding-left: 10px;"><i class="fa fa-star" style="color: #F6921E"></i>{{number_format($news_feed->rated_restaurant,2)}}</p></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><p class="nopadding">Rated Food</p></td>
+                                                                <td><p class="nopadding" style="padding-left: 10px;"><i class="fa fa-star" style="color: #F6921E"></i>{{number_format($news_feed->rated_food,2)}}</p></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            <td style="vertical-align: bottom; text-align: center; font-size: smaller;">
+                                                <p style="font-style: italic;">{{$news_feed->created_at->diffForHumans()}}</p>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
+                                <a href="{{URL::route('news_feed.id', ['id' => $news_feed->id])}}"><img src="{{ asset('images') }}/{{$news_feed->image_file}}" class="img-responsive" style="margin-left: auto; margin-right: auto;"></a>
+                                <div style="padding-left: 20px; margin-top: 15px">
+                                    <a class="pre" href="#"><img src="{{ asset('images/cutleryicon.png') }}" style="width: 5%; margin-right: 5px">{{$news_feed->food}}</a>
+                                    <p class="pre" style="margin: 10px 0px 20px 0px; overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">{{ $news_feed->description }}</p>
+                                    <table class="comment-table" style="width: 87%; margin-bottom: 5%;margin-left: 5%;">
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="{{route('news_feed.like', ['id' => $news_feed->id])}}"><img src="{{ asset('images/likeicon.png') }}" style="cursor:pointer;vertical-align: sub;">{{count($news_feed->likes)}}</a></td>
+                                                <td><a href="{{URL::route('news_feed.id', ['id' => $news_feed->id])}}"><img src="{{ asset('images/commenticon.png') }}">100</a></td>
+                                                <td><i class="fa fa-facebook" style="font-size: x-large; background: none; vertical-align: bottom;"></i><a href="#"></i>Share</a></td>
+                                                <td><a href="{{route('news_feed.id', ['id' => $news_feed->id])}}"><i class="fa fa-chevron-right" style="font-size: x-large; color: #A7A9AC"></i></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     @endforeach
                 </div>
                 <div class="text-right">
@@ -78,16 +79,28 @@
 
             </div>
             <div class="col-sm-3 hidden-xs text-center">
-                @include('pages.abt.ads')
+                <div class="container text-center" style="display: table; width:inherit; color:#BCBEC0; border: solid; border-width: thin; border-radius: 20px; margin-bottom: 5%; padding: 25px;">
+                    <p style="color: black; font-size: large;">Download<br>         
+                    <span style="font-weight: bold;">Teaspoon Free App</span> <br> and enjoy the full feature today!</p>
+                    <a href="#" data-target="#adspopup" data-toggle="modal"><div class="container" style="background-image: url(<?= asset('images/ads.png')?>); height: 276px; width: 151px; max-width: 100%; background-position: center; margin-bottom: 15px;"></div></a>
+                    <p style="color: #58595B">AVAILABLE ON</p>
+                    <img style="background-image: url(<?= asset('images/google-play-badge.png')?>); width: 128px; height: 38px;border-radius: 8px; margin-bottom: 5px;" href="#"></button>
+                    <img style="background-image: url(<?= asset('images/app-store-badge.png')?>); width: 128px; height: 38px;border-radius: 8px;" href="#"></button>
+                </div>
                 <button class="btn btn-primary" style="min-width: 201px; width: 56%; background-color: white; border-color: #939598; color: #58595B; margin-top: 15px;">WRITE A POST</button>
+                <div id="adspopup" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content text-center" style="background-image: url(<?= asset('images/adspopup.png')?> )">
+                            <p>Enjoy Full Features with <br><span style="font-weight: bold">Teaspoon Free App</span><br>Today!</p>
+                            <img src="{{ asset('images/ads.png') }} " class="img-responsive" style="margin-left: auto; margin-right: auto;">
+                        </div>
+                    </div>
+                </div>
+  
+
             </div>
         </div>
     </div>
 </div>
 
 @endsection
-
-{{-- mansory grid --}}
-{{-- overflow --}}
-{{-- linebreak --}}
-{{-- 99+ likes --}}

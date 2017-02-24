@@ -12,12 +12,33 @@
         <script src="{{asset('/js/app.js')}}"></script>
         <link href="{{asset('/css/styles.css')}}" rel="stylesheet">
         <script src="{{ asset('/js/masonry.pkgd.min.js') }}"></script>
-        <link rel="stylesheet" href="css/blueimp-gallery.min.css">
+        <link rel="stylesheet" href="{{ asset('css/blueimp-gallery.min.css') }}">
 
     </head>
     <body>
         @include('partials.oishi_header')
         @yield('content')
+
+        <script src="{{ asset('/js/blueimp-gallery.min.js') }}"></script>
+        <script>
+        document.getElementById('links').onclick = function (event) {
+            event = event || window.event;
+            var target = event.target || event.srcElement,
+                link = target.src ? target.parentNode : target,
+                options = {index: link, event: event},
+                links = this.getElementsByTagName('a');
+            blueimp.Gallery(links, options);
+        };
+        </script>
+        <script>
+        blueimp.Gallery(
+            document.getElementById('links').getElementsByTagName('a'),
+            {
+                container: '#blueimp-gallery-carousel',
+                carousel: true
+            }
+        );
+        </script>
         @include('partials.footer')
     </body>
 </html>

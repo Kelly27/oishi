@@ -8,7 +8,7 @@ class NewsFeed extends Model
 {
 	public $timestamps = true;
 	
-    public function users()
+    public function user()
     {
         return $this->belongsTo('App\User');
     }

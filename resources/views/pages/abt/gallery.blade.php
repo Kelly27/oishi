@@ -10,7 +10,7 @@
 	    </ol>
 	</div>
 </div>
-<div class="container-fluid aboutus-header" style="background-image: url(../images/gallery-header.png)">
+<div class="container-fluid aboutus-header hidden-xs" style="background-image: url(../images/gallery-header.png)">
     <h1>Photo Gallery</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>
@@ -21,9 +21,9 @@
 		@else
 		<div class="row" id="links">
 			@foreach($galleries as $gallery)
-				<div class="col-sm-2 my-col-2 nopadding imagecenter" id="gallery-col" >
+				<div class="col-sm-2 my-col-2 nopadding imagecenter" id="gallery-col" style="min-height:100px; max-height: 155px; overflow: hidden">
 					<a href="{{asset('images')}}/{{$gallery->gallery_name}}">
-						<img src="{{asset('images')}}/{{$gallery->gallery_name}}" class="img-responsive" style="min-height:100px;" >
+						<img src="{{asset('images')}}/{{$gallery->gallery_name}}" class="img-responsive"  >
 					</a>
 				</div>
 			@endforeach
@@ -43,26 +43,5 @@
     <a class="play-pause"></a>
     <ol class="indicator"></ol>
 </div>
-        
-<script src="js/blueimp-gallery.min.js"></script>
-
-<script>
-document.getElementById('links').onclick = function (event) {
-    event = event || window.event;
-    var target = event.target || event.srcElement,
-        link = target.src ? target.parentNode : target,
-        options = {index: link, event: event},
-        links = this.getElementsByTagName('a');
-    blueimp.Gallery(links, options);
-};
-</script>
-<script>
-blueimp.Gallery(
-    document.getElementById('links').getElementsByTagName('a'),
-    {
-        container: '#blueimp-gallery-carousel',
-        carousel: true
-    }
-);
 </script>
 @endsection

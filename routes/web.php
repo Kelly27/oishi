@@ -55,3 +55,7 @@ Route::group(['prefix' => 'specialOffer'], function(){
 
 Route::get('test', 'AboutController@show_test');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
