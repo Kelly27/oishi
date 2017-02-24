@@ -29,9 +29,9 @@ Route::group(['prefix' => 'about'], function(){
     Route::get('career/{career_id}', 'AboutController@show_career_by_id');
     Route::get('news_feed', 'AboutController@show_news_feed') -> name('news_feed');
     Route::get('news_feed/{news_feed_id}', 'AboutController@show_news_feed_byID') -> name('news_feed.id');
-    Route::get('news_feed/{news_feed_id}/{reply_id}', 'AboutController@show_reply') -> name('news_feed.reply');
+    Route::get('news_feed/{news_feed_id}/{comment_id}', 'AboutController@show_reply') -> name('news_feed.reply');
     Route::get('news_feed/like/{news_feed_id}', [
-        'uses' => 'AboutController@get_news_feed_like', 
+        'uses' => 'AboutController@get_news_feed_like',
         'as' => 'news_feed.like'
         ]);
     Route::get('news_event', 'AboutController@show_news_event') -> name('news_event');

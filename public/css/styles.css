@@ -264,7 +264,7 @@ body
 }
 
 .p-smaller > p{
-    font-size: smaller; 
+    font-size: smaller;
     padding: 0px;
     margin: 0px;
 }
@@ -274,11 +274,11 @@ body
 }
 
 .news-feed-col{
-    border: solid; 
-    border-color: #CCCCCC; 
-    margin: 0px 15px 15px; 
-    border-width: thin; 
-    width: 392px; 
+    border: solid;
+    border-color: #CCCCCC;
+    margin: 0px 15px 15px;
+    border-width: thin;
+    width: 392px;
     max-width: 100%;
     position: relative;
     display: block;
@@ -330,7 +330,7 @@ body
     background-color: white;
     border: solid;
     border-width: thin;
-    border-color: #CCCCCC; 
+    border-color: #CCCCCC;
     text-align: center;
     width: 49%
 }
@@ -357,7 +357,7 @@ body
 }
 .addOn-tb th, #grey, {
     background-color: #F1F1F2
-} 
+}
 
 .cafe-list > tbody > tr:nth-child(odd){
     background-color: #F1F1F2
@@ -381,17 +381,17 @@ ul.pagination{
 }
 
 #price-font{
-    float: right; 
-    color: red; 
-    font-size: xx-large; 
-    font-family: Arial; 
+    float: right;
+    color: red;
+    font-size: xx-large;
+    font-family: Arial;
     font-weight: normal;
 }
 
 .promo-row{
-    background-color: #261002; 
-    padding: 0px; 
-    width: 83%; 
+    background-color: #261002;
+    padding: 0px;
+    width: 83%;
     margin-left: auto;
     margin-right: auto
 }
@@ -399,6 +399,15 @@ ul.pagination{
 .chef > img{
     margin-left: auto;
     margin-right: auto;
+}
+
+.grey-border{
+    border: solid;
+    border-width:thin;
+    border-color: #BCBEC0;
+    border-radius: 20px;
+    width: 100%;
+    margin: 2% 0% 2%
 }
 
 .footer-area{

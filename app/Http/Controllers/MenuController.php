@@ -31,9 +31,8 @@ class MenuController extends Controller
     }
 
     public function show_sig_menu_byID($menu_id)
-    {   
-        $users = User::has('news_feed')->first();
-        $news_feeds = $users->news_feed;
+    {
+        $news_feeds = NewsFeed::paginate(2);
         $menu = Menu::where('id', $menu_id)->firstOrFail();
         return view('pages.menu.sig_menu_byID', compact('menu', 'news_feeds', 'users'));
     }

@@ -22,7 +22,7 @@
 				<h1 class="hidden-xs" style="font-family: Arial; font-weight: bolder;">DETAILED INFORMATION</h1>
 				<img src="{{ asset('images') }}/{{$menu->menu_img}}" class="img-responsive" style="margin-left: auto; margin-right: auto">
 				<h6 style="text-transform: uppercase;">{{$menu->menu_name}}<span id="price-font">RM {{number_format($menu->price,2)}}</span></h6>
-				
+
 				<button class="btn fa fa-share-alt"><span style="font-family: OpenSans"> Share </span></button>
 				<button class="btn fa fa-comments"><span style="font-family: OpenSans"> Write a post </span></button>
 				<br>
@@ -30,7 +30,7 @@
 				<table class="remark-tb" style="width: 100%">
 					<tbody>
 						<tr><td id="grey" style="font-weight: bold;">Ice Level</td></tr>
-						<tr><td>- 100%</td></tr>
+						<tr><td>{{$menu->ice_lvl}}</td></tr>
 						<tr><td id="grey" style="font-weight: bold;">Sugar Level</td></tr>
 						<tr><td>- 100%</td></tr>
 						<tr><td id="grey" style="font-weight: bold;">Hot</td></tr>
@@ -69,10 +69,10 @@
                         <table style="width: inherit;">
                             <tbody>
                                 <tr>
-                                    <td style="text-align: end;"><img src="{{asset('images')}}/{{$users->profilepic}}" style="border-radius: 50px"></td>
+                                    <td style="text-align: end;"><img src="{{asset('images')}}/{{$news_feed->newsfeedPoster->profilepic}}" style="border-radius: 50px"></td>
                                     <td>
                                         <div class="p-smaller" style="padding-left: 10px;">
-                                            <h3>{{$users->name}}</h3>
+                                            <h3>{{$news_feed->newsfeedPoster->name}}</h3>
                                             <table  style="font-size: smaller;">
                                                 <tbody>
                                                     <tr>
@@ -111,7 +111,7 @@
                 <button class="btn menu-btn" style="width: 100%; margin-bottom: 5%">View all Post ({{$news_feeds->count()}})</button>
 			</div>
 		</div>
-	</div> 
+	</div>
 </div>
 
 @endsection

@@ -13,7 +13,7 @@ class CreateNewsFeedsLikesUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('news_feeds_likes', function (Blueprint $table) {
+        Schema::create('news_feed_likes_users', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('news_feed_id');
             $table->integer('user_id');

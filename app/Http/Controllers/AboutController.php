@@ -16,6 +16,7 @@ use App\Career;
 use App\NewsEvent;
 use App\ContactUs;
 use App\Comment;
+use App\Reply;
 
 class AboutController extends Controller
 {
@@ -73,8 +74,16 @@ class AboutController extends Controller
     public function show_news_feed_byID($id)
     {
         $news_feed = NewsFeed::where('id', $id)->firstOrFail();
-        $comments = Comment::with(['news_feed', 'user'])->paginate(4);
+        $comments = $news_feed->comments()->paginate(4);
+        // return $comments = Comment::has(['news_feed'])->get();
         return view('pages.abt.news_feed_byID', compact('news_feed', 'comments'));
+    }
+
+    public function show_reply($a, $comment_id)
+    {
+        $comment = Comment::where('id', $comment_id)->firstOrFail();;
+        $replies = $comment->replies()->paginate(6);
+        return view('pages.abt.replies', compact('comment', 'replies'));
     }
 
     public function show_news_event()
@@ -98,7 +107,7 @@ class AboutController extends Controller
     }
 
     public function store_message(Request $request, Factory $validator)
-    {   
+    {
         $validation=$validator->make($request->all(), [
             'name' =>'required',
             'email' =>'required',
@@ -121,7 +130,7 @@ class AboutController extends Controller
             $message->save();
             Session::flash('message', 'Successfully created message!');
         }
-        
+
         return redirect()->back();
     }
 }

@@ -6,7 +6,7 @@ use App\NewsFeed;
 use App\User;
 use App\Career;
 use App\NewsEvent;
-use App\Like;
+use App\Comment;
 use App\Voucher;
 use App\Reward;
 
@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
 
 class OishiSeeder extends Seeder
 {
-	
+
 	public function run()
 	{
 		User::create([
@@ -37,7 +37,7 @@ class OishiSeeder extends Seeder
 			'password' => '123'
 			]);
 
-		for ($i=0; $i <4 ; $i++) { 
+		for ($i=0; $i <4 ; $i++) {
 			NewsFeed::create([
 			'user_id' => 1,
 			'rated_restaurant' => 5,
@@ -72,7 +72,7 @@ class OishiSeeder extends Seeder
 		Gallery::create([
 			'gallery_name' => 'Jellyfish.jpg'
 		]);
-		for ($i=0; $i <30 ; $i++) { 
+		for ($i=0; $i <30 ; $i++) {
 			if ($i%2 == 1) {
 				Gallery::create([
 					'gallery_name' => 'img24.png'
@@ -85,7 +85,7 @@ class OishiSeeder extends Seeder
 			}
 		}
 
-		// for ($i=0; $i <4 ; $i++) { 
+		// for ($i=0; $i <4 ; $i++) {
 		// 	NewsEvent::create([
 		// 	'image' => "img25.png",
 		// 	'rated_restaurant' => 5,
@@ -95,8 +95,8 @@ class OishiSeeder extends Seeder
 		// 	'description' => 'This food is nice.'
 		// 	]);
 		// }
-		// 
-		for ($i=0; $i <10 ; $i++) { 
+		//
+		for ($i=0; $i <10 ; $i++) {
 			Voucher::create([
 				'image' => 'img2.png',
             	'title' => '50% OFF CHICKEN WITH RICE',
@@ -110,7 +110,7 @@ class OishiSeeder extends Seeder
 				]);
 		}
 
-		for ($i=0; $i <10 ; $i++) { 
+		for ($i=0; $i <10 ; $i++) {
 			Reward::create([
 				'image' => 'img13.png',
             	'title' => 'FREE ONE JUICE DRINK',
@@ -118,13 +118,14 @@ class OishiSeeder extends Seeder
 				]);
 		}
 
-		for ($i=0; $i <10 ; $i++) { 
+		for ($i=0; $i <10 ; $i++) {
 			Comment::create([
 				'user_id' => 1,
+				'news_feed_id' => 1,
 				'comment' => 'I came here for a few times already.'
 			]);
 		}
-		
+
 
 	}
 }

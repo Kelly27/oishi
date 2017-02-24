@@ -18,6 +18,9 @@ class CreateMenusTable extends Migration
             $table->string('menu_img');
             $table->string('menu_type');
             $table->string('menu_name');
+            $table->string('ice_lvl');
+            $table->string('sugar_lvl');
+            $table->string('hot');
             $table->float('price');
             $table->integer('star');
             $table->integer('new_feed_point');
