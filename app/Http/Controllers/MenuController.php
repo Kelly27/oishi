@@ -34,7 +34,9 @@ class MenuController extends Controller
     {
         $news_feeds = NewsFeed::paginate(2);
         $menu = Menu::where('id', $menu_id)->firstOrFail();
-        return view('pages.menu.sig_menu_byID', compact('menu', 'news_feeds', 'users'));
+        $addOns = $menu->addOns;
+        $locations = $menu->locations;
+        return view('pages.menu.sig_menu_byID', compact('menu', 'news_feeds', 'users', 'addOns', 'locations'));
     }
 
 }

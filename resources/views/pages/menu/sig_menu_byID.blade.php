@@ -1,6 +1,13 @@
 @extends('layouts.layout')
 
 @section('content')
+<?php 
+$text = $menu->ice_lvl;
+$newtxt = wordwrap($text, 6, "<br>\n");
+$text2 = $menu->sugar_lvl;
+$newtxt2 = wordwrap($text2, 6, "<br>\n");
+?>
+
 <div class="container-fluid" style="background-color: white;">
 	<div class="container breadcrumb_container">
 	    <ol class="breadcrumb">
@@ -20,6 +27,7 @@
 		<div class="row">
 			<div class="col-sm-8 menu-detail" style="margin-left: auto; margin-right: auto">
 				<h1 class="hidden-xs" style="font-family: Arial; font-weight: bolder;">DETAILED INFORMATION</h1>
+				{{-- <div class="container" style="background-image: url(<?php asset('images')?>/{{$menu->menu_img}})"></div> --}}
 				<img src="{{ asset('images') }}/{{$menu->menu_img}}" class="img-responsive" style="margin-left: auto; margin-right: auto">
 				<h6 style="text-transform: uppercase;">{{$menu->menu_name}}<span id="price-font">RM {{number_format($menu->price,2)}}</span></h6>
 
@@ -30,11 +38,11 @@
 				<table class="remark-tb" style="width: 100%">
 					<tbody>
 						<tr><td id="grey" style="font-weight: bold;">Ice Level</td></tr>
-						<tr><td>{{$menu->ice_lvl}}</td></tr>
+						<tr><td><?php echo $newtxt?></td></tr>
 						<tr><td id="grey" style="font-weight: bold;">Sugar Level</td></tr>
-						<tr><td>- 100%</td></tr>
+						<tr><td><?php echo $newtxt2?></td></tr>
 						<tr><td id="grey" style="font-weight: bold;">Hot</td></tr>
-						<tr><td>- 100%</td></tr>
+						<tr><td>{{$menu->hot}}</td></tr>
 					</tbody>
 				</table>
 				<br>
@@ -45,10 +53,12 @@
 						<th>Price(RM)</th>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Pearl</td>
-							<td>1.00</td>
-						</tr>
+						@foreach ($addOns as $addOn)
+							<tr>
+								<td>{{$addOn->item}}</td>
+								<td>{{$addOn->price}}</td>
+							</tr>
+						@endforeach
 					</tbody>
 				</table>
 				<p style="font-style: italic;">Number of add-on can be selected per dish: All</p>
@@ -56,9 +66,12 @@
 				<p style="font-weight: bold">AVAILABLE AT</p>
 				<table class="cafe-list">
 					<tbody>
-						<tr><td>The G <span style="float: right; font-size: x-large; color: #939598" class="fa fa-chevron-right"></span></td></tr>
-						<tr><td>The G</td></tr>
-						<tr><td>The G</td></tr>
+						@foreach ($locations as $location)
+							<tr>
+								<td>The G Cafe @ {{$location->location_name}} <span style="float: right; font-size: x-large; color: #939598" class="fa fa-chevron-right"></span></td>
+							</tr>
+						@endforeach
+						
 					</tbody>
 				</table>
 			</div>

@@ -60,7 +60,7 @@
                 </div>
             </div>
             <h3 class="color4D">Recent Comments</h3>
-            <hr class="nopadding" style="border-color: #BCBEC0">
+            <hr style="border-color: #BCBEC0">
             <div class="containter comment">
                 @foreach ($comments as $comment)
                     <div class="container grey-border">
@@ -75,7 +75,7 @@
                                         <p style="text-align: ">like</p>
                                     </td>
                                     <td style="vertical-align: bottom;">
-                                        <a href="{{route('news_feed.reply', [$news_feed->id, $comment->id])}}"><p style="font-family: OpenSans; font-size:smaller; text-align: right">Replies</p></a>
+                                        <a href="{{route('news_feed.reply', [$news_feed->id, $comment->id])}}"><p style="font-family: OpenSans; font-size:smaller; text-align: right;color: initial">{{count($comment->replies)}} Replies</p></a>
                                     </td>
                                 </tr>
                             </tbody>

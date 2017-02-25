@@ -34,13 +34,13 @@
                                 <p style="text-align: ">like</p>
                             </td>
                             <td style="vertical-align: bottom;">
-                                <p style="font-family: OpenSans; font-size:smaller; text-align: right">{{count($comment->replies)}}Replies</p>
+                                <p style="font-family: OpenSans; font-size:smaller; text-align: right">{{count($comment->replies)}} Replies</p>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <hr class="nopadding" style="border: solid;border-color: #BCBEC0; border-width: thin;">
+            <hr style="border: solid;border-color: #BCBEC0; border-width: thin;">
             @foreach($replies as $reply)
                 <div class="container grey-border">
                     <table style="width: 100%">
