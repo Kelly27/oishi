@@ -28,7 +28,7 @@
 				</div>
 			@endforeach
 		</div>
-		<div class="text-right">
+		<div class="text-right" style="margin-top: 3%">
 			{{$galleries->render()}}
 		</div>
 		@endif

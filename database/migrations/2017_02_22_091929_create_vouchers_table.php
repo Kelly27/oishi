@@ -17,6 +17,8 @@ class CreateVouchersTable extends Migration
             $table->increments('id');
             $table->string('image');
             $table->string('title');
+            $table->text('description');
+            $table->string('redeem_dish');
             $table->integer('sold');
             $table->integer('stock');
             $table->integer('group_of');
@@ -24,6 +26,7 @@ class CreateVouchersTable extends Migration
             $table->float('ori_price');
             $table->float('dis_price');
             $table->date('expirydate');
+            $table->text('term_cond');
             $table->timestamps();
         });
     }

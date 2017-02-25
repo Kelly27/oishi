@@ -20,7 +20,7 @@
 <div class="container-fluid nopadding news-feed" style="background-color: white;">
 <div class="container" style="padding-top: 3%; margin-bottom: 3%">
     <div class="row">
-        <h3 class="color4D">Recent Comments</h3>
+        <h3">Recent Comments</h3>
         <div class="col-sm-9" >
             <div class="container grey-border">
                 <table style="width: 100%">

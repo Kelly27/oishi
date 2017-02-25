@@ -137,6 +137,16 @@ body
     height: 200px;
 }
 
+.img-350px{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    display: block;
+    width:100%;
+    height: 350px;
+}
+
 .img-700px{
     background-repeat: no-repeat;
     background-position: center;
@@ -320,9 +330,14 @@ body
     color: black;
 }
 
+.menu-detail{
+    padding: 0% 10%
+}
+
 .menu-detail h6{
     font-size: x-large;
     font-family: OpenSansBold;
+    color: #404041;
 }
 
 .menu-detail button, .menu-btn, .btn-style{
@@ -344,7 +359,7 @@ body
     padding: 1%;
 }
 
-.addOn-tb, .cafe-list{
+.addOn-tb, .menu-detail{
     width: 100%;
     color: black;
     border: solid;
@@ -352,14 +367,21 @@ body
     border-width: thin;
 }
 
-.addOn-tb th, .addOn-tb td, .cafe-list td{
-    padding: 1%
+.alt_bg{
+    width: 100%;
+    border: solid;
+    border-color: #CCCCCC;
+    border-width: thin;
+}
+
+.addOn-tb th, .addOn-tb td, .menu-detail td, .alt_bg td{
+    padding: 2%
 }
 .addOn-tb th, #grey, {
     background-color: #F1F1F2
 }
 
-.cafe-list > tbody > tr:nth-child(odd){
+.menu-detail > tbody > tr:nth-child(odd), .alt_bg > tbody > tr:nth-child(odd){
     background-color: #F1F1F2
 }
 .addOn-tb th{
@@ -372,8 +394,12 @@ body
     border-right: none;
 }
 
-.color4d p{
+#color4d, #color4d > p{
     color: #4D4D4D;
+}
+
+#color4d > p{
+    margin: 3px;
 }
 
 ul.pagination{
@@ -388,6 +414,9 @@ ul.pagination{
     font-weight: normal;
 }
 
+.checkbox-slider--b-flat input:checked + span:before {
+    background-color: #D10000;
+}
 .promo-row{
     background-color: #261002;
     padding: 0px;
@@ -500,6 +529,21 @@ ul.pagination{
 	text-align: center;
 	margin-right: 10px;
 	padding-top: 15%;
+}
+.btn-grab{
+    color: white;
+    background-color:  #D10000;
+    font-size: x-large;
+}
+
+.btn-redeem{
+    background-color:  #F8F8F8;
+    font-size: x-large;
+}
+
+.bold-black{
+    color:black;
+    font-weight: bolder;
 }
 
 .fa-facebook {
@@ -624,6 +668,10 @@ ul.pagination{
         font-size: large;
         color: red;
         font-weight: normal;
+    }
+    
+    .menu-detail{
+        padding: 0%;
     }
 
     .menu-detail h6{

@@ -59,7 +59,7 @@
                     <button class="btn fa fa-share-alt btn-style"><span style="font-family: OpenSans;"> Share </span></button>
                 </div>
             </div>
-            <h3 class="color4D">Recent Comments</h3>
+            <h3>Recent Comments</h3>
             <hr style="border-color: #BCBEC0">
             <div class="containter comment">
                 @foreach ($comments as $comment)

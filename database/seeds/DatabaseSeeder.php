@@ -33,6 +33,17 @@ class OishiSeeder extends Seeder
 
 	public function run()
 	{
+		DB::table('users')->delete();
+        DB::table('add_ons')->delete();
+        DB::table('careers')->delete();
+        DB::table('news_feeds')->delete();
+        DB::table('galleries')->delete();
+        DB::table('menus')->delete();
+        DB::table('comments')->delete();
+        DB::table('vouchers')->delete();
+        DB::table('rewards')->delete();
+        DB::table('locations')->delete();
+
 		User::create([
 			'name' => 'John Maxwell',
 			'profilepic' => 'head1.png',
@@ -117,6 +128,13 @@ class OishiSeeder extends Seeder
 			Voucher::create([
 				'image' => 'img2.png',
             	'title' => '50% OFF CHICKEN WITH RICE',
+            	'description' => 'A white fluorescent sign with a red awning marks Haem-Beogeo’s location along Jalan Baru, where diners may expect to find burgers with a Korean twist. Proprietor Mr. Haem devised a menu featuring familiar meats like pork, chicken, and shrimp but doused with Korean flavours and served with a side of kimchi. Complement meals with a variety of Korean-imported beverages while Wi-Fi connection prolongs dining sessions.',
+
+            	'redeem_dish' => 'Chicken Rice',
+            	'term_cond' => 'XXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXxxxxxxx
+					XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+					XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+					XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
             	'sold' => 100,
             	'stock' => 115,
             	'group_of' => 3,
@@ -129,6 +147,15 @@ class OishiSeeder extends Seeder
 				Reward::create([
 				'image' => 'img13.png',
             	'title' => 'FREE ONE JUICE DRINK',
+            	'description' => 'A white fluorescent sign with a red awning marks Haem-Beogeo’s location along Jalan Baru, where diners may expect to find burgers with a Korean twist. Proprietor Mr. Haem devised a menu featuring familiar meats like pork, chicken, and shrimp but doused with Korean flavours and served with a side of kimchi. Complement meals with a variety of Korean-imported beverages while Wi-Fi connection prolongs dining sessions.',
+            	'term_cond' => '- Redemption period: Jul 7, 2015 
+            					– Dec 31, 2015.
+								- Valid 11am – 9pm daily (not 
+								  including public holidays).
+								- Dine-in only.
+								- Non-Halal restaurant.
+								- Prices displayed inclusive of GST. - No service charge.
+								- Valid at Haem-Beogeo: 04-390 8878.',
 				'expirydate' => '2018-02-27'
 				]);
 

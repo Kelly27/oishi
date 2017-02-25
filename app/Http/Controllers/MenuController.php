@@ -33,10 +33,11 @@ class MenuController extends Controller
     public function show_sig_menu_byID($menu_id)
     {
         $news_feeds = NewsFeed::paginate(2);
+        $count_news = NewsFeed::get();
         $menu = Menu::where('id', $menu_id)->firstOrFail();
         $addOns = $menu->addOns;
         $locations = $menu->locations;
-        return view('pages.menu.sig_menu_byID', compact('menu', 'news_feeds', 'users', 'addOns', 'locations'));
+        return view('pages.menu.sig_menu_byID', compact('menu', 'news_feeds', 'users', 'addOns', 'locations', 'count_news'));
     }
 
 }

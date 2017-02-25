@@ -17,7 +17,8 @@ class OfferController extends Controller
     public function show_voucher_byID($id)
     {
     	$voucher = Voucher::where('id', $id)->firstOrFail();
-    	return view('pages.specialOffer.voucher_byID', compact('voucher'));
+        $locations = $voucher->locations;
+    	return view('pages.specialOffer.voucher_byID', compact('voucher', 'locations'));
     }
 
     public function show_reward()
@@ -29,7 +30,8 @@ class OfferController extends Controller
     public function show_reward_byID($id)
     {
     	$reward = Reward::where('id', $id)->firstOrFail();
-    	return view('pages.specialOffer.reward_byID', compact('reward'));
+        $locations = $reward->locations;
+    	return view('pages.specialOffer.reward_byID', compact('reward', 'locations'));
     }
 
     public function show_promotion()

@@ -48,7 +48,7 @@
                                                     </table>
                                                 </div>
                                             <td style="vertical-align: bottom; text-align: center; font-size: smaller;">
-                                                <p style="font-style: italic;">{{$news_feed->created_at->diffForHumans()}}</p>
+                                                <p style="font-style: italic; color:#808080">{{$news_feed->created_at->diffForHumans()}}</p>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -62,7 +62,7 @@
                                             <tr>
                                                 <td><a href="#"><img src="{{ asset('images/likeicon.png') }}" style="cursor:pointer;vertical-align: sub;">{{count($news_feed->user)}}</a></td>
                                                 <td><a href="{{URL::route('news_feed.id', ['id' => $news_feed->id])}}"><img src="{{ asset('images/commenticon.png') }}">100</a></td>
-                                                <td><i class="fa fa-facebook" style="font-size: x-large; background: none; vertical-align: bottom;"></i><a href="#"></i>Share</a></td>
+                                                <td><i class="fa fa-facebook" style="font-size: x-large; background: none; vertical-align: bottom; color: #999999" ></i><a href="#"></i>Share</a></td>
                                                 <td><a href="{{route('news_feed.id', ['id' => $news_feed->id])}}"><i class="fa fa-chevron-right" style="font-size: x-large; color: #A7A9AC"></i></a></td>
                                             </tr>
                                         </tbody>
