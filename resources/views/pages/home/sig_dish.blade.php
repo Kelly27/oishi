@@ -4,13 +4,13 @@
             <a href="{{URL::route('sig_menu')}}" style="color: white; font-size: xx-large; display: block; margin-top: 17%; margin-left: 12%;">SIGNATURE DISH >></a>
         </div>
         <div class="col-sm-3 nopadding">
-            <div class="container sig-dish-img nopadding" style="background-image: url(<?= asset('images/img1.png')?>);">
-                <a href="#" id="menu-style">IKA MARU/TERIYAKI</a>
+            <div class="container sig-dish-img nopadding" style="background-image:  url(<?= asset('images')?>/{{$menu1->menu_img}});">
+                <a style="text-transform: uppercase;"href="#" id="menu-style">{{$menu1->menu_name}}</a>
             </div>
         </div>
         <div class="col-sm-3 nopadding">
-            <div class="container sig-dish-img nopadding" style="background-image: url(<?= asset('images/img2.png')?>);">
-                <a href="#" id="menu-style">CHICKEN TERIYAKI</a>
+            <div class="container sig-dish-img nopadding" style="background-image: url(<?= asset('images')?>/{{$menu2->menu_img}}); ">
+                <a style="text-transform: uppercase;" href="#" id="menu-style">{{$menu2->menu_name}}</a>
             </div>
         </div>
         <div class="col-sm-1">

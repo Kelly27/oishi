@@ -5,10 +5,10 @@
 	<div class="container breadcrumb_container">
 	    <ol class="breadcrumb nomarginbottom">
 	      <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
-	      <li class="breadcrumb-item">About Us</li>
+	      <li class="breadcrumb-item active">About Us</li>
 	      <li class="breadcrumb-item active">Our Story</li>
 	    </ol>
-	</div>	
+	</div>
 </div>
 <div class="container-fluid aboutus-header" style="background-image: url(../images/aboutus-header.png)">
     <h1>OUR STORY</h1>

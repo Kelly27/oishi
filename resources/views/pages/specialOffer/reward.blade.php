@@ -18,19 +18,23 @@
 	<div class="container m-nopadding" style="margin-top: 2%;">
 		<div class="row nopadding">
 			<div class="col-sm-8">
-			<div class="row">
-				@foreach ($rewards as $reward)
-					<div class="col-sm-6 m-nopadding imagecenter" style="margin-top: 2%; display: table;margin: auto;">
-						<a href="{{route('reward.id', ['id' => $reward->id])}}"><img src="{{ asset('images') }}/{{$reward->image}}" class="img-responsive"></a>
-						<div style="background-color: #F1F1F2; padding: 3% 5% 1%; margin-bottom: 4%">
-							<a href="{{route('reward.id', ['id' => $reward->id])}}" style="font-weight: bold; color: black;"><img src="{{URL::to('images/hand.png')}}" style="margin: 10px">{{$reward->title}}</a>
+				@if ($rewards->count()===0)
+	                <h1 class="alert alert-danger">CURRENTLY THERE IS NO REWARDS AVAILABLE.</h1>
+	            @else
+				<div class="row">
+					@foreach ($rewards as $reward)
+						<div class="col-sm-6 m-nopadding imagecenter" style="margin-top: 2%; display: table;margin: auto;">
+							<a href="{{route('reward.id', ['id' => $reward->id])}}"><img src="{{ asset('images') }}/{{$reward->image}}" class="img-responsive"></a>
+							<div style="background-color: #F1F1F2; padding: 3% 5% 1%; margin-bottom: 4%">
+								<a href="{{route('reward.id', ['id' => $reward->id])}}" style="font-weight: bold; color: black;"><img src="{{URL::to('images/hand.png')}}" style="margin: 10px">{{$reward->title}}</a>
+							</div>
 						</div>
+					@endforeach
+					<div class="text-right">
+						{{$rewards->render()}}
 					</div>
-				@endforeach
-				<div class="text-right">
-					{{$rewards->render()}}
 				</div>
-			</div>
+				@endif
 			</div>
 			<div class="col-sm-4 hidden-xs">
 				@include('pages.abt.ads')

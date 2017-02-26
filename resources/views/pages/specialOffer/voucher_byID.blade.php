@@ -19,7 +19,9 @@
 	<div class="container m-nopadding " style="margin-top: 2%;">
 		<div class="row nopadding">
 			<div class="col-sm-6">
-				<div class="container img-350px" style="background-image: url(<?= asset('images')?>/{{$voucher->image}});"></div>
+				<div class="container img-350px" style="background-image: url(<?= asset('images')?>/{{$voucher->image}});">
+					<p id="free">50%<span style="font-size: x-large;"> OFF</span></p>
+				</div>
 				<div class="container text-center" id="color4d" style="background-color: #F1F1F2; width: initial; margin-top: 2%; margin-bottom: 3%">
 					<h3 style="color: #333333">{{$voucher->title}}</h3>
 					<p style="font-size: small;">Now: <span style="color: #C1272D; font-size: x-large;">RM {{number_format($voucher->dis_price,2)}} </span> <span style="text-decoration: line-through;">RM{{number_format($voucher->ori_price,2)}}</span></p>
@@ -77,7 +79,7 @@ date.replace(/-/g, "/");
 console.log(date);
 $('#clock').countdown(date, function(event) {
   $(this).html(event.strftime('%D days %H:%M:%S'));
-});	
+});
 </script>
 @endsection
 

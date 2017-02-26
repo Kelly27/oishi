@@ -1,4 +1,3 @@
-
 @font-face{
     font-family: OpenSans;
     src:  url(open-sans/OpenSans-Regular.ttf);
@@ -137,10 +136,21 @@ body
     height: 200px;
 }
 
+.img-270px{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    text-align: center;
+    display: block;
+    width:100%;
+    height: 27  0px;
+}
+
+
 .img-350px{
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     text-align: center;
     display: block;
     width:100%;
@@ -161,6 +171,18 @@ body
     height:700px;
     position:absolute;
     cursor: pointer;
+}
+
+#free{
+    position: relative;
+    float: right;
+    background-color:rgba(0,0,0,0.5);
+    color: white;
+    top: 10px;
+    font-size: xx-large;
+    padding: 1% 4%;
+    border-radius: 5px;
+    margin-right: 3%;
 }
 
 .menu-cont{
@@ -669,7 +691,7 @@ ul.pagination{
         color: red;
         font-weight: normal;
     }
-    
+
     .menu-detail{
         padding: 0%;
     }
@@ -695,5 +717,39 @@ ul.pagination{
 @media only screen and (min-device-width: 767px) and (max-device-width: 1290px) and (orientation: landscape){
     #menu-style{
         font-size: large;
+    }
+}
+
+@media only screen and (min-device-width: 992px) and (max-device-width: 1199px){
+    #free{
+        top: 35px;
+    }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 991px){
+    #free{
+        top: 70px;
+        font-size: x-large;
+    }
+}
+
+@media only screen and (min-device-width: 560px) and (max-device-width: 767px){
+    #free{
+        top: 10px;
+        position: absolute;
+        left: 60%
+    }
+}
+
+@media only screen and (min-device-width: 430px) and (max-device-width: 560px){
+    #free{
+        top: 40px;
+        font-size: x-large;
+    }
+}
+
+@media only screen and (max-device-width: 430px){
+    #free{
+        top: 69px;
+        font-size: x-large;
     }
 }

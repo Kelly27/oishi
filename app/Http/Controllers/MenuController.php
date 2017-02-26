@@ -13,7 +13,9 @@ class MenuController extends Controller
 
     public function show_menu_home()
     {
-        return view('pages.menu.menu_home');
+        $menu1 = Menu::where('id', 1)->first();
+        $menu2 = Menu::where('id', 2)->first();
+        return view('pages.menu.menu_home', compact('menu1','menu2'));
     }
 
     public function show_sig_menu()

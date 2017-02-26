@@ -68,6 +68,7 @@ class AboutController extends Controller
         // $news_feeds = NewsFeed::paginate(4); //way of pagination
         // $news_feeds = $users->news_feed;
         // return $users->name;
+        return $news_feeds;
         return view('pages.abt.news_feed', compact('news_feeds'));
     }
 

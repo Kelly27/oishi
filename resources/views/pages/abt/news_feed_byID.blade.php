@@ -8,7 +8,7 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
           <li class="breadcrumb-item">About Us</li>
-          <li class="breadcrumb-item">News Feed</li>
+          <li class="breadcrumb-item active">News Feed</li>
           <li class="breadcrumb-item active">{{$news_feed->newsfeedPoster->name}}'s Post</li>
         </ol>
     </div>

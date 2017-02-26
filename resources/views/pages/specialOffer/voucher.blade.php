@@ -18,22 +18,26 @@
 	<div class="container m-nopadding" style="margin-top: 2%;">
 		<div class="row nopadding">
 			<div class="col-sm-8">
-			<div class="row">
-				@foreach ($vouchers as $voucher)
-					<div class="col-sm-6 m-nopadding imagecenter" style="margin-top: 2%; display: table;margin: auto;">
-						<a href="{{route('voucher.id', ['id' => $voucher->id])}}"><img src="{{ asset('images') }}/{{$voucher->image}}" class="img-responsive"></a>
-						<div style="background-color: #F1F1F2; padding: 3% 5% 1%; margin-bottom: 4%">
-							<a href="{{route('voucher.id', ['id' => $voucher->id])}}"><h6 style="color: initial;font-weight:bold; margin:0px;">{{$voucher->title}}</h6></a>
-			                <p style="font-size:x-small; ">{{$voucher->sold}} Bought | {{$voucher->availability}}</p>
-			                <p class="nopadding text-right" style="font-size: x-small;text-decoration: line-through; color: #6D6E71">RM{{number_format($voucher->ori_price, 2)}}</p>
-			                <p style="color: #EC1C24; font-weight: bold; margin-top: 0px; text-align: right;"><span style="font-size: x-small;">From </span> RM{{number_format($voucher->dis_price,2)}}</p>
+				@if ($vouchers->count()===0)
+	                <h1 class="alert alert-danger">CURRENTLY THERE IS NO NEWS AVAILABLE.</h1>
+	            @else
+				<div class="row">
+					@foreach ($vouchers as $voucher)
+						<div class="col-sm-6 m-nopadding imagecenter" style="margin-top: 2%; display: table;margin: auto;">
+							<a href="{{route('voucher.id', ['id' => $voucher->id])}}"><img src="{{ asset('images') }}/{{$voucher->image}}" class="img-responsive"></a>
+							<div style="background-color: #F1F1F2; padding: 3% 5% 1%; margin-bottom: 4%">
+								<a href="{{route('voucher.id', ['id' => $voucher->id])}}"><h6 style="color: initial;font-weight:bold; margin:0px;">{{$voucher->title}}</h6></a>
+				                <p style="font-size:x-small; ">{{$voucher->sold}} Bought | {{$voucher->availability}}</p>
+				                <p class="nopadding text-right" style="font-size: x-small;text-decoration: line-through; color: #6D6E71">RM{{number_format($voucher->ori_price, 2)}}</p>
+				                <p style="color: #EC1C24; font-weight: bold; margin-top: 0px; text-align: right;"><span style="font-size: x-small;">From </span> RM{{number_format($voucher->dis_price,2)}}</p>
+							</div>
 						</div>
+					@endforeach
+					<div class="text-right">
+						{{$vouchers->render()}}
 					</div>
-				@endforeach
-				<div class="text-right">
-					{{$vouchers->render()}}
 				</div>
-			</div>
+				@endif
 			</div>
 			<div class="col-sm-4 hidden-xs">
 				@include('pages.abt.ads')

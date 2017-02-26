@@ -9,7 +9,7 @@ class User extends Authenticatable
 {
 
     public $timestamps = true;
-    
+
     use Notifiable;
 
     /**
@@ -37,9 +37,9 @@ class User extends Authenticatable
         return $this->belongsToMany('App\NewsFeed', 'news_feed_likes_users');
     }
 
-    // public function feeds() {
-    //     return $this->hasMany('App\NewsFeed');
-    // }
+    public function feeds() {
+        return $this->hasMany('App\NewsFeed');
+    }
 
     public function comments()
     {

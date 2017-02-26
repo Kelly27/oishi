@@ -5,7 +5,7 @@
     <div class="container breadcrumb_container">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
-          <li class="breadcrumb-item">About Us</li>
+          <li class="breadcrumb-item active">About Us</li>
           <li class="breadcrumb-item active">News and Events</li>
         </ol>
     </div>
@@ -18,6 +18,9 @@
     <div class="container" style="padding-top: 3%;">
         <div class="row">
             <div class="col-sm-12 col-md-9 m-nopadding">
+            @if ($news_events->count()===0)
+                    <h1 class="alert alert-danger">CURRENTLY THERE IS NO NEWS AND EVENTS AVAILABLE.</h1>
+            @else
                 <div class="row nopadding">
                     @foreach ($news_events as $news_event)
                     <div class="col-sm-6 m-nopadding">
@@ -35,13 +38,14 @@
                 <div class="text-right" style="padding-right: 10px;">
                     {{$news_events->render()}}
                 </div>
+            @endif
             </div>
             <div class="col-md-3 hidden-xs">
                 @include('pages.abt.ads')
             </div>
         </div>
     </div>
-    
+
 
 </div>
 

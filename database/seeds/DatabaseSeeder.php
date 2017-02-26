@@ -110,7 +110,7 @@ class OishiSeeder extends Seeder
 		// 		'description' => 'This food is nice.'
 		// 	]);
 		// }
-		
+
 		for ($i=0; $i <10 ; $i++) {
 
 			Menu::create([
@@ -148,14 +148,15 @@ class OishiSeeder extends Seeder
 				'image' => 'img13.png',
             	'title' => 'FREE ONE JUICE DRINK',
             	'description' => 'A white fluorescent sign with a red awning marks Haem-Beogeo’s location along Jalan Baru, where diners may expect to find burgers with a Korean twist. Proprietor Mr. Haem devised a menu featuring familiar meats like pork, chicken, and shrimp but doused with Korean flavours and served with a side of kimchi. Complement meals with a variety of Korean-imported beverages while Wi-Fi connection prolongs dining sessions.',
-            	'term_cond' => '- Redemption period: Jul 7, 2015 
+            	'term_cond' => '- Redemption period: Jul 7, 2015
             					– Dec 31, 2015.
-								- Valid 11am – 9pm daily (not 
+								- Valid 11am – 9pm daily (not
 								  including public holidays).
 								- Dine-in only.
 								- Non-Halal restaurant.
 								- Prices displayed inclusive of GST. - No service charge.
 								- Valid at Haem-Beogeo: 04-390 8878.',
+                'redeem_period' => 'abc',
 				'expirydate' => '2018-02-27'
 				]);
 

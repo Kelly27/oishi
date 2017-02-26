@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class NewsFeed extends Model
 {
 	public $timestamps = true;
-	
+
     public function user()
     {
         return $this->belongsToMany('App\User', 'news_feed_likes_users');
     }
 
-    public function newsfeedPoster(){ 
+    public function newsfeedPoster(){
         return $this->belongsTo('App\User', 'user_id');
     }
 
@@ -21,7 +21,7 @@ class NewsFeed extends Model
     // {
     //     return $this->belongsToMany('App\Like', , 'news_feed_id', 'like_id');
     // }
-    // 
+    //
     public function comments()
     {
         return $this->hasMany('App\Comment');

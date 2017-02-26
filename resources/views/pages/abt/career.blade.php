@@ -5,7 +5,7 @@
     <div class="container breadcrumb_container">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
-          <li class="breadcrumb-item">About Us</li>
+          <li class="breadcrumb-item active">About Us</li>
           <li class="breadcrumb-item active">Career</li>
         </ol>
     </div>

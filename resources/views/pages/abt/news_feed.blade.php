@@ -7,7 +7,7 @@
     <div class="container breadcrumb_container">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
-          <li class="breadcrumb-item">About Us</li>
+          <li class="breadcrumb-item active">About Us</li>
           <li class="breadcrumb-item active">News Feed</li>
         </ol>
     </div>
@@ -80,7 +80,7 @@
             </div>
             <div class="col-sm-3 hidden-xs text-center">
                 <div class="container text-center" style="display: table; width:inherit; color:#BCBEC0; border: solid; border-width: thin; border-radius: 20px; margin-bottom: 5%; padding: 25px;">
-                    <p style="color: black; font-size: large;">Download<br>         
+                    <p style="color: black; font-size: large;">Download<br>
                     <span style="font-weight: bold;">Teaspoon Free App</span> <br> and enjoy the full feature today!</p>
                     <a href="#" data-target="#adspopup" data-toggle="modal"><div class="container" style="background-image: url(<?= asset('images/ads.png')?>); height: 276px; width: 151px; max-width: 100%; background-position: center; margin-bottom: 15px;"></div></a>
                     <p style="color: #58595B">AVAILABLE ON</p>
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                 </div>
-  
+
 
             </div>
         </div>
