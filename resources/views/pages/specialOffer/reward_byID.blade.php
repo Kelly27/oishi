@@ -56,6 +56,10 @@
 						@endforeach
 					</div>
 					<p class="bold-black">Redeem Period:</p>
+					@foreach ($periods as $period)
+						<?php var_dump($period->day)?>
+						<p>{{$period->day}}</p>
+					@endforeach
 					<p class="bold-black">Term and Condition:</p>
 					<div class="container" style="background-color: #F1F1F2; width: 100%; padding: 2%;margin-bottom: 3%; overflow: hidden;">
 						<p style="font-size: small; ">{!!nl2br($reward->term_cond)!!}</p>

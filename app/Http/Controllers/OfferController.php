@@ -32,7 +32,8 @@ class OfferController extends Controller
     	$reward = Reward::where('id', $id)->firstOrFail();
         $locations = $reward->locations;
         $menus = $reward->menus;
-    	return view('pages.specialOffer.reward_byID', compact('reward', 'locations', 'menus'));
+        $periods = $reward->rewardRedeems;
+    	return view('pages.specialOffer.reward_byID', compact('reward', 'locations', 'menus', 'periods'));
     }
 
     public function show_promotion()
