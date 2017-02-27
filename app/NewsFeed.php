@@ -17,6 +17,11 @@ class NewsFeed extends Model
         return $this->belongsTo('App\User', 'user_id');
     }
 
+    public function posterFriends()
+    {
+        return $this->belongsToMany('App\User', 'tgt_with');
+    }
+
     public function comments()
     {
         return $this->hasMany('App\Comment');

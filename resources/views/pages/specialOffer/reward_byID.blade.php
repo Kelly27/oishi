@@ -21,7 +21,7 @@
 			<div class="col-sm-6">
 				<div class="container nopadding" style="width:initial;">
 					<img src="{{ asset('images') }}/{{$reward->image}}" class="img-responsive" style="margin-right:auto; margin-left:auto; width:100%">
-					<p id="free">50%<span> OFF</span></p>
+					<p id="free">FREE</p>
 					</div>
 				<div class="container text-center" id="color4d" style="background-color: #F1F1F2; width: initial; margin-top: 2%; margin-bottom: 3%;">
 					<h3>{{$reward->title}}</h3>

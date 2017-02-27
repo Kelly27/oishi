@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMenusAddonsTable extends Migration
+class CreateTgtWithTables extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateMenusAddonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('menus_addons', function (Blueprint $table) {
+        Schema::create('tgt_with', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('menu_id');
-            $table->integer('add_on_id');
+            $table->integer('user_id');
+            $table->integer('news_feed_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateMenusAddonsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tgt_with');
     }
 }

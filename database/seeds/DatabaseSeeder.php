@@ -57,7 +57,7 @@ class OishiSeeder extends Seeder
 
 		for ($i=0; $i <4 ; $i++) {
 			NewsFeed::create([
-			'user_id' => 1,
+			'user_id' => User::min('id'),
 			'rated_restaurant' => 5,
 			'rated_food' => 5,
 			'image_file' => 'img25.png',
@@ -103,17 +103,6 @@ class OishiSeeder extends Seeder
 				]);
 			}
 		}
-
-		// for ($i=0; $i <12 ; $i++) {
-		// 	NewsFeed::create([
-		// 		'user_id' => 1,
-		// 		'rated_restaurant' => 5,
-		// 		'rated_food' => 5,
-		// 		'image_file' => 'img25.png',
-		// 		'food' => 'Kampua',
-		// 		'description' => 'This food is nice.'
-		// 	]);
-		// }
 
 		for ($i=0; $i <10 ; $i++) {
 
@@ -167,8 +156,8 @@ class OishiSeeder extends Seeder
 				]);
 
 				Comment::create([
-				'user_id' => 1,
-				'news_feed_id' => 1,
+				'user_id' => User::min('id'),
+				'news_feed_id' => NewsFeed::min('id'),
 				'comment' => 'I came here for a few times already.'
 			]);
 		}

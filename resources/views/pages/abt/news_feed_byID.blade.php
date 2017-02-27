@@ -13,14 +13,14 @@
         </ol>
     </div>
 </div>
-<div class="container-fluid aboutus-header hidden-xs" style="background-image: url(<?= asset('images/newsfeed-header.png') ?>") 
+<div class="container-fluid aboutus-header hidden-xs" style="background-image: url(<?= asset('images/newsfeed-header.png') ?>")
     <h1>News Feed</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>
 <div class="container-fluid nopadding news-feed" style="background-color: white;">
 <div class="container" style="padding-top: 3%; margin-bottom: 3%">
     <div class="row">
-        <div class="col-sm-9" style="border: solid; border-width:thin;border-color: #BCBEC0; border-radius: 20px">
+        <div class="col-sm-9 news-feed-border" style="border-width:thin;border-color: #BCBEC0; border-radius: 20px">
             <div class="row row-tb" style="margin: auto;">
                 <div class="col-sm-6 m-nopadding">
                     <table style="width: 100%">
@@ -59,9 +59,9 @@
                     <button data-target="#adspopup" data-toggle="modal" class="btn fa fa-share-alt btn-style"><span style="font-family: OpenSans;"> Share </span></button>
                 </div>
             </div>
+            <div class="containter comment" style="padding:3%">
             <h3>Recent Comments</h3>
             <hr style="border-color: #BCBEC0">
-            <div class="containter comment">
                 @foreach ($comments as $comment)
                     <div class="container grey-border">
                         <table style="width: 100%">

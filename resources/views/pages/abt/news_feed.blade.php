@@ -56,12 +56,13 @@
                                 <a href="{{URL::route('news_feed.id', ['id' => $news_feed->id])}}"><img src="{{ asset('images') }}/{{$news_feed->image_file}}" class="img-responsive" style="margin-left: auto; margin-right: auto;"></a>
                                 <div style="padding-left: 20px; margin-top: 15px">
                                     <a class="pre" href="#"><img src="{{ asset('images/cutleryicon.png') }}" style="width: 5%; margin-right: 5px">{{$news_feed->food}}</a>
-                                    <p class="pre" style="margin: 10px 0px 20px 0px; overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">{{ $news_feed->description }}</p>
+
+                                    <p class="pre" style="margin: 10px 0px 20px 0px; overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical; color:initial;"> {{ $news_feed->description }}  @if($news_feed->posterFriends->count() > 0)- @endif  <?php $i = 0; ?>@foreach($news_feed->posterFriends as $friend)<a href="#">{{$friend->name}}<?php $i++; ?></a>@if($i < $news_feed->posterFriends->count()), @else   @endif @endforeach</p>
                                     <table class="comment-table" style="width: 87%; margin-bottom: 5%;margin-left: 5%;">
                                         <tbody>
                                             <tr>
                                                 <td><a href="#" data-target="#adspopup" data-toggle="modal"><img src="{{ asset('images/likeicon.png') }}" style="cursor:pointer;vertical-align: sub;">{{count($news_feed->user)}}</a></td>
-                                                <td><a href="{{URL::route('news_feed.id', ['id' => $news_feed->id])}}"><img src="{{ asset('images/commenticon.png') }}">100</a></td>
+                                                <td><a href="#" data-target="#adspopup" data-toggle="modal"><img src="{{ asset('images/commenticon.png') }}">100</a></td>
                                                 <td><i class="fa fa-facebook" style="font-size: x-large; background: none; vertical-align: bottom; color: #999999" ></i><a href="#"></i>Share</a></td>
                                                 <td><a href="{{route('news_feed.id', ['id' => $news_feed->id])}}"><i class="fa fa-chevron-right" style="font-size: x-large; color: #A7A9AC"></i></a></td>
                                             </tr>
@@ -93,7 +94,7 @@
                         <div class="modal-content text-center" style="background-image: url(<?= asset('images/adspopup.png')?> );background-repeat: no-repeat; width:84%;">
                             <p>Enjoy Full Features with <br><span style="font-weight: bold">Teaspoon Free App</span><br>Today!</p>
                             <img src="{{ asset('images/ads.png') }} " class="img-responsive" style="margin-left: auto; margin-right: auto;">
-                            <div class="container" style="position:absolute; background-color: white; border-radius: 7px;bottom: 0%;width: 100%;height: 16%;"> 
+                            <div class="container" style="position:absolute; background-color: white; border-radius: 7px;bottom: 0%;width: 100%;height: 16%;">
                                 <a href="#"><img style="background-image: url(<?= asset('images/google-play-badge.png')?>); width: 128px; height: 38px;border-radius: 8px; margin-bottom: 5px; margin-top: 3%" href="#"></a>
                                 <a href="#"><img style="background-image: url(<?= asset('images/app-store-badge.png')?>); width: 128px; height: 38px;border-radius: 8px; margin-top: 3%" href="#"></a>
                             </div>

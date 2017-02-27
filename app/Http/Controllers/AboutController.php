@@ -79,12 +79,10 @@ class AboutController extends Controller
         // $users = User::where('id', 1)->first();
         // $users = User::has('news_feed')->get();
         // return User::with('feeds')->get();
-        $news_feeds = NewsFeed::with('newsfeedPoster')->paginate(4);
+        $news_feeds = NewsFeed::with(['newsfeedPoster'])->paginate(4);
         // $users = $news_feeds->user;
         // $news_feeds = NewsFeed::paginate(4); //way of pagination
         // $news_feeds = $users->news_feed;
-        // return $users->name;
-        // $news_feeds;
         return view('pages.abt.news_feed', compact('news_feeds'));
     }
 
@@ -96,11 +94,12 @@ class AboutController extends Controller
         return view('pages.abt.news_feed_byID', compact('news_feed', 'comments'));
     }
 
-    public function show_reply($a, $comment_id)
+    public function show_reply($news_feed_id, $comment_id)
     {
-        $comment = Comment::where('id', $comment_id)->firstOrFail();;
+        $comment = Comment::where('id', $comment_id)->firstOrFail();
+        $news_feed = NewsFeed::where('id', $news_feed_id)->firstOrFail();
         $replies = $comment->replies()->paginate(6);
-        return view('pages.abt.replies', compact('comment', 'replies'));
+        return view('pages.abt.replies', compact('comment', 'replies', 'news_feed'));
     }
 
     public function show_news_event()

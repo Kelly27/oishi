@@ -41,6 +41,11 @@ class User extends Authenticatable
         return $this->hasMany('App\NewsFeed');
     }
 
+    public function posterFriends()
+    {
+        return $this->belongsToMany('App\NewsFeed', 'tgt_with');
+    }
+
     public function comments()
     {
         return $this->hasMany('App\Comment');

@@ -323,6 +323,10 @@ body
     font-family: Arial;
 }
 
+.news-feed-border{
+    border: solid;
+}
+
 .news-feed-col{
     border: solid;
     border-color: #CCCCCC;
@@ -344,8 +348,8 @@ body
     display: inline-block;
     left: 53px;
     position: relative;
-    min-height:100px; 
-    max-height: 155px; 
+    min-height:100px;
+    max-height: 155px;
     overflow: hidden
 }
 
@@ -374,7 +378,7 @@ body
 }
 
 .like-icon{
-    
+
 }
 .menu-detail{
     padding: 0% 10%
@@ -737,6 +741,10 @@ ul.pagination{
     top: 0px;
     }
 
+    .news-feed-border{
+        border: none;
+    }
+
     .row-tb{
         display: table;
     }
@@ -754,7 +762,7 @@ ul.pagination{
 
 @media only screen and (min-device-width: 992px) and (max-device-width: 1199px){
     #gallery-col{
-        max-height: 128px; 
+        max-height: 128px;
     }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 991px){
@@ -767,7 +775,7 @@ ul.pagination{
     }
 
     #gallery-col{
-        max-height: 97px; 
+        max-height: 97px;
     }
 
     #red-tag{
@@ -809,7 +817,7 @@ ul.pagination{
     #free > span{
         font-size: large;
     }
-    
+
     #red-tag{
         left: 73%;
         padding:1% 2%
