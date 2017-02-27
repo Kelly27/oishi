@@ -60,7 +60,7 @@
             @endforeach
             <div class="row">
                 <div class="col-sm-6">
-                    <button class="btn btn-primary btn-style" style="color: #58595B; width: 100%; margin-bottom: 3%">WRITE A REPLY</button>
+                    <button data-target="#adspopup" data-toggle="modal" class="btn btn-primary btn-style" style="color: #58595B; width: 100%; margin-bottom: 3%">WRITE A REPLY</button>
                 </div>
                 <div class="col-sm-6">
                     <div class="text-right">

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCareersTable extends Migration
+class CreateRewardsRedeemsPeriodsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateCareersTable extends Migration
      */
     public function up()
     {
-        Schema::create('careers', function (Blueprint $table) {
+        Schema::create('rewards_redeems_periods', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('short_description');
-            $table->text('long_description');
-            $table->string('career_image');
+            $table->integer('reward_id');
+            $table->string('day');
+            $table->string('time');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateCareersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('careers');
+        Schema::dropIfExists('rewards_redeems_periods');
     }
 }

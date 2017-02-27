@@ -6,7 +6,7 @@
 	    <ol class="breadcrumb">
 	      <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
 	      <li class="breadcrumb-item">Special Offer</li>
-	      <li class="breadcrumb-item">Reward</li>
+	      <li class="breadcrumb-item"><a href="{{route('reward')}}"> Reward</li></a>
 	      <li class="breadcrumb-item active">{{$reward->title}}</li>
 	    </ol>
 	</div>
@@ -19,18 +19,18 @@
 	<div class="container m-nopadding " style="margin-top: 2%;">
 		<div class="row nopadding">
 			<div class="col-sm-6">
-				<div class="container img-350px" style="background-image: url(<?= asset('images')?>/{{$reward->image}});">
-					<div class="row">
-						<div class="col-sm-12">
-							<p id="free">FREE</p>
-						</div>
+				<div class="container nopadding" style="width:initial;">
+					<img src="{{ asset('images') }}/{{$reward->image}}" class="img-responsive" style="margin-right:auto; margin-left:auto; width:100%">
+					<p id="free">50%<span> OFF</span></p>
 					</div>
-				</div>
 				<div class="container text-center" id="color4d" style="background-color: #F1F1F2; width: initial; margin-top: 2%; margin-bottom: 3%;">
 					<h3>{{$reward->title}}</h3>
 					<p style="font-weight: bold">Expiry Date: {{$reward->expirydate}}</p>
-					<img src="{{ asset('images/grab_btn.png') }}" class="img-responsive" style="margin: auto">
-					<img src="{{ asset('images/redeem_btn.png') }}" class="img-responsive"  style="margin: auto;margin-bottom: 3%">
+					<div class="row">
+						<button data-target="#adspopup" data-toggle="modal" class="btn btn-font" style="color: white; background-color: #D10000; padding:0px"><img class="btn" src="{{ asset('images/hand2.png') }}" style="background-color:#A50000"><span style="padding:3%"> GRAB THIS VOUCHER </span></button>
+					</div>
+
+					<button data-target="#adspopup" data-toggle="modal" class="btn btn-font"  style="color: #58595B; background-color: #F8F8F8; padding:0px; margin-bottom: 5%"><img class="btn" src="{{ asset('images/import.png') }}" style="background-color:#DADADA"><span style="padding:3%; margin: 0% 5% 0% 7%"> INSTANT REDEEM </span></button>
 				</div>
 			</div>
 			<div class="col-sm-6 ">
@@ -40,7 +40,7 @@
 						<tbody>
 							@foreach ($locations as $location)
 								<tr>
-									<td>The G Cafe @ {{$location->location_name}} <span style="float: right; font-size: x-large; color: #939598" class="fa fa-chevron-right"></span></td>
+									<td>The G Cafe @ {{$location->location_name}} <a href="#" data-target="#adspopup" data-toggle="modal" ><span style="float: right; font-size: x-large; color: #939598" class="fa fa-chevron-right"></span></a></td>
 								</tr>
 							@endforeach
 						</tbody>
@@ -52,7 +52,7 @@
 					<p class="bold-black">Related Dishes:</p>
 					<div class="container" style="background-color: #F1F1F2; width: 100%; padding: 2%; margin-bottom: 3%">
 						@foreach ($menus as $menu)
-							<p style="padding: 2%">The G Cafe @ {{$menu->menu_name}} <span style="float: right; font-size: x-large; color: #939598" class="fa fa-chevron-right"></span></p>
+							<p>{{$menu->menu_name}} <a href="#" data-target="#adspopup" data-toggle="modal"><span style="float: right; font-size: x-large; color: #939598" class="fa fa-chevron-right"></span></a></p>
 						@endforeach
 					</div>
 					<p class="bold-black">Redeem Period:</p>
@@ -61,11 +61,12 @@
 						<p style="font-size: small; ">{!!nl2br($reward->term_cond)!!}</p>
 					</div>
 					<div class="container" style="background-color: #F1F1F2; width: 100%; padding: 2%; margin-top: 2%;margin-bottom: 3%">
-						<a href="#"><p class="bold-black"><img src="{{ asset('images/file.png') }}" style="margin-right: 3%">See rules that apply to all vouchers & rewards<span style="float: right; font-size: x-large; color: #939598" class="fa fa-chevron-right"></span></p></a>
+						<a href="#" data-target="#adspopup" data-toggle="modal"><p class="bold-black"><img src="{{ asset('images/file.png') }}" style="margin-right: 3%">See rules that apply to all vouchers & rewards<span style="float: right; font-size: x-large; color: #939598" class="fa fa-chevron-right"></span></p></a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	@include('partials.adspopup')
 </div>
 @endsection

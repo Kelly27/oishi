@@ -31,8 +31,8 @@ $newtxt2 = wordwrap($text2, 6, "<br>\n");
 				<div style="margin: 2%">
 					<h6 style="text-transform: uppercase;">{{$menu->menu_name}}<span id="price-font">RM {{number_format($menu->price,2)}}</span></h6>
 
-					<button class="btn fa fa-share-alt"><span style="font-family: OpenSans"> Share </span></button>
-					<button class="btn fa fa-comments"><span style="font-family: OpenSans"> Write a post </span></button>
+					<button data-target="#adspopup" data-toggle="modal" class="btn fa fa-share-alt"><span style="font-family: OpenSans"> Share </span></button>
+					<button data-target="#adspopup" data-toggle="modal" class="btn fa fa-comments"><span style="font-family: OpenSans"> Write a post </span></button>
 					<br>
 					<h6>Remarks</h6>
 					<table class="remark-tb" style="width: 100%">
@@ -64,11 +64,11 @@ $newtxt2 = wordwrap($text2, 6, "<br>\n");
 					<p style="font-style: italic;">Number of add-on can be selected per dish: All</p>
 					<br>
 					<p style="font-weight: bolder; font-family: OpenSansBold">AVAILABLE AT</p>
-					<table class="menu_detail" style="margin-bottom: 3%">
+					<table class="location-tb" style="margin-bottom: 3%">
 						<tbody>
 							@foreach ($locations as $location)
 								<tr>
-									<td>The G Cafe @ {{$location->location_name}} <span style="float: right; font-size: x-large; color: #939598" class="fa fa-chevron-right"></span></td>
+									<td>The G Cafe @ {{$location->location_name}} <a href="#" data-target="#adspopup" data-toggle="modal"><span style="float: right; font-size: x-large; color: #939598" class="fa fa-chevron-right"></span></a></td>
 								</tr>
 							@endforeach
 						</tbody>
@@ -113,10 +113,10 @@ $newtxt2 = wordwrap($text2, 6, "<br>\n");
                                 <table class="comment-table" style="width: 87%; margin-bottom: 5%;margin-left: 5%;">
                                     <tbody>
                                         <tr>
-                                            <td><a href="#"><img src="{{ asset('images/likeicon.png') }}" style="cursor:pointer;vertical-align: sub;">{{count($news_feed->user)}}</a></td>
+                                            <td><a href="#" data-target="#adspopup" data-toggle="modal"><img src="{{ asset('images/likeicon.png') }}" style="cursor:pointer;vertical-align: sub;">{{count($news_feed->user)}}</a></td>
                                             <td><a href="{{URL::route('news_feed.id', ['id' => $news_feed->id])}}"><img src="{{ asset('images/commenticon.png') }}">100</a></td>
                                             <td><i class="fa fa-facebook" style="font-size: x-large; background: none; vertical-align: bottom; color: #999999"></i><a href="#"></i>Share</a></td>
-                                            <td><a href="{{route('news_feed.id', ['id' => $news_feed->id])}}"><i class="fa fa-chevron-right" style="font-size: x-large; color: #A7A9AC"></i></a></td>
+                                            <td><a href="{{route('news_feed.id', ['id' => $news_feed->id])}}" ><i class="fa fa-chevron-right" style="font-size: x-large; color: #A7A9AC"></i></a></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -128,6 +128,7 @@ $newtxt2 = wordwrap($text2, 6, "<br>\n");
 			</div>
 		</div>
 	</div>
+	@include('partials.adspopup')
 </div>
 
 @endsection

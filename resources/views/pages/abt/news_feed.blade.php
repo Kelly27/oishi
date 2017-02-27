@@ -60,7 +60,7 @@
                                     <table class="comment-table" style="width: 87%; margin-bottom: 5%;margin-left: 5%;">
                                         <tbody>
                                             <tr>
-                                                <td><a href="#"><img src="{{ asset('images/likeicon.png') }}" style="cursor:pointer;vertical-align: sub;">{{count($news_feed->user)}}</a></td>
+                                                <td><a href="#" data-target="#adspopup" data-toggle="modal"><img src="{{ asset('images/likeicon.png') }}" style="cursor:pointer;vertical-align: sub;">{{count($news_feed->user)}}</a></td>
                                                 <td><a href="{{URL::route('news_feed.id', ['id' => $news_feed->id])}}"><img src="{{ asset('images/commenticon.png') }}">100</a></td>
                                                 <td><i class="fa fa-facebook" style="font-size: x-large; background: none; vertical-align: bottom; color: #999999" ></i><a href="#"></i>Share</a></td>
                                                 <td><a href="{{route('news_feed.id', ['id' => $news_feed->id])}}"><i class="fa fa-chevron-right" style="font-size: x-large; color: #A7A9AC"></i></a></td>
@@ -87,12 +87,16 @@
                     <img style="background-image: url(<?= asset('images/google-play-badge.png')?>); width: 128px; height: 38px;border-radius: 8px; margin-bottom: 5px;" href="#"></button>
                     <img style="background-image: url(<?= asset('images/app-store-badge.png')?>); width: 128px; height: 38px;border-radius: 8px;" href="#"></button>
                 </div>
-                <button class="btn btn-primary" style="min-width: 201px; width: 56%; background-color: white; border-color: #939598; color: #58595B; margin-top: 15px;">WRITE A POST</button>
+                <button data-target="#adspopup" data-toggle="modal" class="btn btn-primary" style="min-width: 201px; width: 56%; background-color: white; border-color: #939598; color: #58595B; margin-top: 15px;">WRITE A POST</button>
                 <div id="adspopup" class="modal fade">
                     <div class="modal-dialog">
-                        <div class="modal-content text-center" style="background-image: url(<?= asset('images/adspopup.png')?> )">
+                        <div class="modal-content text-center" style="background-image: url(<?= asset('images/adspopup.png')?> );background-repeat: no-repeat; width:84%;">
                             <p>Enjoy Full Features with <br><span style="font-weight: bold">Teaspoon Free App</span><br>Today!</p>
                             <img src="{{ asset('images/ads.png') }} " class="img-responsive" style="margin-left: auto; margin-right: auto;">
+                            <div class="container" style="position:absolute; background-color: white; border-radius: 7px;bottom: 0%;width: 100%;height: 16%;"> 
+                                <a href="#"><img style="background-image: url(<?= asset('images/google-play-badge.png')?>); width: 128px; height: 38px;border-radius: 8px; margin-bottom: 5px; margin-top: 3%" href="#"></a>
+                                <a href="#"><img style="background-image: url(<?= asset('images/app-store-badge.png')?>); width: 128px; height: 38px;border-radius: 8px; margin-top: 3%" href="#"></a>
+                            </div>
                         </div>
                     </div>
                 </div>

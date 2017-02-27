@@ -17,17 +17,12 @@ class NewsFeed extends Model
         return $this->belongsTo('App\User', 'user_id');
     }
 
-    // public function likes()
-    // {
-    //     return $this->belongsToMany('App\Like', , 'news_feed_id', 'like_id');
-    // }
-    //
     public function comments()
     {
         return $this->hasMany('App\Comment');
     }
 
     protected $fillable = [
-        'rated_restaurant', 'rated_food', 'image_file', 'food', 'description'
+        'rated_restaurant', 'rated_food', 'image_file', 'food', 'description', 'user_id'
     ];
 }

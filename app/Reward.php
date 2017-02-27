@@ -15,4 +15,9 @@ class Reward extends Model
     {
     	return $this->belongsToMany('App\Location', 'rewards_locations');
     }
+
+    public function rewardRedeem()
+    {
+    	return $this->hasMany('App\RewardsRedeemPeriod');
+    }
 }

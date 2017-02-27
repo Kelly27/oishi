@@ -25,13 +25,13 @@
                     <h3>QUICK LINKS</h3>
                         <i class="fa fa-chevron-right"></i><a href="{{URL::route('menu_home')}}">MENU</a>
                         <hr>
-                        <i class="fa fa-chevron-right"></i><a href="#">VOUCHER</a>
+                        <i class="fa fa-chevron-right"></i><a href="{{ route('voucher') }}">VOUCHER</a>
                         <hr>
-                        <i class="fa fa-chevron-right"></i><a href="#">REWARD</a>
+                        <i class="fa fa-chevron-right"></i><a href="{{ route('reward') }}">REWARD</a>
                         <hr>
-                        <i class="fa fa-chevron-right"></i><a href="#">PROMOTION</a>
+                        <i class="fa fa-chevron-right"></i><a href="{{ route('promotion') }}">PROMOTION</a>
                         <hr>
-                        <i class="fa fa-chevron-right"></i><a href="#">NEWS FEED</a>
+                        <i class="fa fa-chevron-right"></i><a href="{{ route('news_feed') }}">NEWS FEED</a>
                 </div>
             </div>
             <div class="col-sm-4">

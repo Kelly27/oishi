@@ -17,6 +17,7 @@ class CreateRewardsTable extends Migration
             $table->increments('id');
             $table->string('image');
             $table->string('title');
+            $table->integer('tag');
             $table->text('description');
             $table->text('redeem_period');
             $table->text('term_cond');

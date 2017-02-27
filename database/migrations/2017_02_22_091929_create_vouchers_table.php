@@ -19,6 +19,9 @@ class CreateVouchersTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('redeem_dish');
+            $table->integer('tag');
+            $table->integer('from');
+            $table->integer('is_cv');
             $table->integer('sold');
             $table->integer('stock');
             $table->integer('group_of');

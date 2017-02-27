@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Session;
 use Illuminate\Validation\Factory;
+use App\Mailers\AppMailer;
 use Illuminate\Support\Facades\Auth;
 
 use Carbon\Carbon;
@@ -17,9 +18,24 @@ use App\NewsEvent;
 use App\ContactUs;
 use App\Comment;
 use App\Reply;
+use App\Menu;
+use App\Voucher;
+use App\Reward;
 
 class AboutController extends Controller
 {
+    public function show_home()
+    {
+        $menu1 = Menu::where('id', '=', Menu::min('id'))->first();
+        $menu2 = Menu::where('id', '>', Menu::min('id'))->first();
+        // $voucher1 = Voucher::where('id', '=', Voucher::min('id'))->first();
+        // $voucher2 = Voucher::where('id', '>', Voucher::min('id'))->first();
+        // $voucher3 = Voucher::where('id', '>', $voucher2->id)->first();
+        $vouchers = Voucher::paginate(3);
+        $rewards = Reward::paginate(3);
+        return view('pages.home.home', compact('menu1','menu2', 'vouchers', 'rewards'));
+    }
+
     public function show_gallery()
     {
     	$galleries = DB::table('galleries')->paginate(15);
@@ -68,7 +84,7 @@ class AboutController extends Controller
         // $news_feeds = NewsFeed::paginate(4); //way of pagination
         // $news_feeds = $users->news_feed;
         // return $users->name;
-        return $news_feeds;
+        // $news_feeds;
         return view('pages.abt.news_feed', compact('news_feeds'));
     }
 
@@ -107,11 +123,11 @@ class AboutController extends Controller
         return redirect() -> back();
     }
 
-    public function store_message(Request $request, Factory $validator)
+    public function store_message(Request $request, Factory $validator, AppMailer $mailer)
     {
         $validation=$validator->make($request->all(), [
             'name' =>'required',
-            'email' =>'required',
+            'email' =>'required | email',
             'phone' =>'required',
             'subject' =>'required',
             'message' =>'required',
@@ -129,9 +145,17 @@ class AboutController extends Controller
                 'message' => $request->input('message')
             ]);
             $message->save();
+            $mailer->sendTicketInformation($message);
             Session::flash('message', 'Successfully created message!');
         }
 
         return redirect()->back();
+    }
+
+    public function messages()
+    {
+        return [
+            'email.E-mail' => 'A '/@' is required in the E-mail field.',
+        ];
     }
 }

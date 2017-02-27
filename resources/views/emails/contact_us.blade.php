@@ -5,7 +5,7 @@
 </head>
 <body>
     <p>
-        Thank you {{ ucfirst($user->name) }} for contacting our support team. We will keep in touch with you as soon as possible. The details of your message are shown below:
+        Thank you {{ $contactus->name }} for contacting our support team. We will keep in touch with you as soon as possible. The details of your message are shown below:
     </p>
 
     <p>Name: {{ $contactus->name }}</p>

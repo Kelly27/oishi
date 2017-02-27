@@ -86,7 +86,7 @@
 						<textarea rows="7" id="message" name="message" class="form-control" placeholder="Meassage*:"></textarea>
 					</div>
 					{{csrf_field()}}
-					<button class="btn">Clear</button>
+					<button type="reset" class="btn">Clear</button>
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form>
 			</div>

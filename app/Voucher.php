@@ -10,4 +10,9 @@ class Voucher extends Model
     {
     	return $this->belongsToMany('App\Location', 'vouchers_locations');
     }
+
+    public function voucherRedeem()
+    {
+    	return $this->hasMany('App\VouchersRedeemPeriod');
+    }
 }

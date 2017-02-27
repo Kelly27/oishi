@@ -6,8 +6,8 @@ use Illuminate\Contracts\Mail\Mailer;
 
 class AppMailer {
     protected $mailer;
-    protected $fromAddress = 'support@supportticket.dev';
-    protected $fromName = 'Support Ticket';
+    protected $fromAddress = 'oishi@oishi.dev';
+    protected $fromName = 'Oishi Restaurant';
     protected $to;
     protected $subject;
     protected $view;
@@ -40,3 +40,4 @@ class AppMailer {
                     ->to($this->to)->subject($this->subject);
         });
     }
+}

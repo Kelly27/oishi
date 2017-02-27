@@ -1,24 +1,21 @@
 <div class="container">
     <h4 style="font-weight:bold; text-align: center">REWARDS</h2>
     <div class="row">
-        <div class="col-sm-4 m-nopadding">
-            <div class="container reward-cont" >
-                <img src="{{URL::to('images/img12.png')}}" class="img-responsive">
-                <a href="#" style="font-weight: bold; color: black;"><img src="{{URL::to('images/hand.png')}}" style="margin: 10px"> FREE ONE JUICE DRINK</a>
+        @foreach ($rewards as $reward)
+            <div class="col-sm-4 m-nopadding">
+                <div class="container reward-cont" >
+                    <div style="max-height: 240px; overflow: hidden;">
+                        <img src="{{ asset('images') }}/{{$reward->image}}" class="img-responsive">
+                        @if ($reward->tag === 1)
+                            <h5 id="red-tag">FREE</h5>
+                        @elseif($reward->tag === 2)
+                            <h5 id="red-tag" style="display: -webkit-inline-box; font-size: 18px;">50 <span style="color: white;font-size: 9px; display: table-caption;padding-left: 12%"> % OFF</span></h5>
+                        @endif
+                    </div>
+                    <a href="#" style="font-weight: bold; color: black;"><img src="{{URL::to('images/hand.png')}}" style="margin: 10px"> {{$reward->title}}</a>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-4 m-nopadding">
-            <div class="container reward-cont" >
-                <img src="{{URL::to('images/img13.png')}}" class="img-responsive">
-                <a href="#" style="font-weight: bold; color: black;"><img src="{{URL::to('images/hand.png')}}" style="margin: 10px"> FREE ONE JUICE DRINK</a>
-            </div>
-        </div>
-        <div class="col-sm-4 m-nopadding">
-            <div class="container reward-cont" >
-                <img src="{{URL::to('images/img14.png')}}" class="img-responsive">
-                <a href="#" style="font-weight: bold; color: black;"><img src="{{URL::to('images/hand.png')}}" style="margin: 10px"> FREE ONE JUICE DRINK</a>
-            </div>
-        </div>
+        @endforeach
     </div>
     <div class="row">
         <div class="col-sm-12 text-right" style="margin: 5px 0px 5px">

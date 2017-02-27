@@ -24,7 +24,10 @@
 				<div class="row">
 					@foreach ($rewards as $reward)
 						<div class="col-sm-6 m-nopadding imagecenter" style="margin-top: 2%; display: table;margin: auto;">
-							<a href="{{route('reward.id', ['id' => $reward->id])}}"><img src="{{ asset('images') }}/{{$reward->image}}" class="img-responsive"></a>
+							<div style="max-height: 262px; overflow: hidden;">
+								<a href="{{route('reward.id', ['id' => $reward->id])}}">
+								<img src="{{ asset('images') }}/{{$reward->image}}" class="img-responsive" style="height: 100%"></a>
+							</div>
 							<div style="background-color: #F1F1F2; padding: 3% 5% 1%; margin-bottom: 4%">
 								<a href="{{route('reward.id', ['id' => $reward->id])}}" style="font-weight: bold; color: black;"><img src="{{URL::to('images/hand.png')}}" style="margin: 10px">{{$reward->title}}</a>
 							</div>

@@ -8,12 +8,12 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
           <li class="breadcrumb-item">About Us</li>
-          <li class="breadcrumb-item active">News Feed</li>
+          <li class="breadcrumb-item"><a href="{{route('news_feed')}}">News Feed</a></li>
           <li class="breadcrumb-item active">{{$news_feed->newsfeedPoster->name}}'s Post</li>
         </ol>
     </div>
 </div>
-{{-- <div class="container-fluid aboutus-header hidden-xs" style="background-image: url(<?= asset('images/newsfeed-header.png') ?>") --}}
+<div class="container-fluid aboutus-header hidden-xs" style="background-image: url(<?= asset('images/newsfeed-header.png') ?>") 
     <h1>News Feed</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>
@@ -56,7 +56,7 @@
                     <a class="pre" href="#"><img src="{{ asset('images/cutleryicon.png') }}" style="margin-right: 5px;">{{$news_feed->food}}</a>
                     <p class="pre" style=" color: black; margin: 10px 0px 20px 0px; overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">{{ $news_feed->description }}</p>
                     <p>{{count($news_feed->user)}} likes</p>
-                    <button class="btn fa fa-share-alt btn-style"><span style="font-family: OpenSans;"> Share </span></button>
+                    <button data-target="#adspopup" data-toggle="modal" class="btn fa fa-share-alt btn-style"><span style="font-family: OpenSans;"> Share </span></button>
                 </div>
             </div>
             <h3>Recent Comments</h3>
@@ -70,9 +70,9 @@
                                     <td style="min-width: 30px; width: 90px;"><img src="{{asset('images')}}/{{$comment->user->profilepic}}" style="border-radius: 50px"></td>
                                     <td>
                                         <p style="font-weight: bold; margin: 0px">{{$comment->user->name}}</p>
-                                        <p style="font-size: smaller;">2000 <span style="font-style: italic; color: #808080">{{$comment->created_at->diffForHumans()}}</span></p>
+                                        <p style="font-size: smaller;">2000 <span style="color: #EAAA28; font-size: large;">  •  </span>  0  <span style="color: #797A7A; font-size: large;">  •  </span>  0  <span style="color: #AF571C; font-size: large;">  •  </span>  0  <span style="font-style: italic; color: #808080; margin-left: 6%">{{$comment->created_at->diffForHumans()}}</span></p>
                                         <p>{{$comment->comment}}</p>
-                                        <p style="text-align: ">like</p>
+                                        <p><a href="#" data-target="#adspopup" data-toggle="modal" style="text-decoration: none; color:initial;"> 1 <img src="{{ asset('images/like_red.png') }}"> 0 <img src="{{ asset('images/dislike.png') }}"></a></p>
                                     </td>
                                     <td style="vertical-align: bottom;">
                                         <a href="{{route('news_feed.reply', [$news_feed->id, $comment->id])}}"><p style="font-family: OpenSans; font-size:smaller; text-align: right;color: initial">{{count($comment->replies)}} Replies</p></a>
@@ -84,7 +84,7 @@
                 @endforeach
                 <div class="row">
                     <div class="col-sm-6">
-                        <button class="btn btn-style" style="color: #58595B; width: 100%; margin-bottom: 3%">WRITE A COMMENT</button>
+                        <button href="#" data-target="#adspopup" data-toggle="modal" class="btn btn-style" style="color: #58595B; width: 100%; margin-bottom: 3%">WRITE A COMMENT</button>
                     </div>
                     <div class="col-sm-6">
                         <div class="text-right">
@@ -98,6 +98,7 @@
             @include('pages.abt.ads')
         </div>
     </div>
+    @include('partials.adspopup')
 </div>
 
 

@@ -21,9 +21,9 @@
 		@else
 		<div class="row" id="links">
 			@foreach($galleries as $gallery)
-				<div class="col-sm-2 my-col-2 nopadding imagecenter" id="gallery-col" style="min-height:100px; max-height: 155px; overflow: hidden">
+				<div class="col-sm-2 my-col-2 nopadding imagecenter" id="gallery-col">
 					<a href="{{asset('images')}}/{{$gallery->gallery_name}}">
-						<img src="{{asset('images')}}/{{$gallery->gallery_name}}" class="img-responsive"  >
+						<img src="{{asset('images')}}/{{$gallery->gallery_name}}" class="img-responsive m-full-width">
 					</a>
 				</div>
 			@endforeach

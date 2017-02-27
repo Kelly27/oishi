@@ -174,15 +174,33 @@ body
 }
 
 #free{
-    position: relative;
+    position: absolute;
     float: right;
     background-color:rgba(0,0,0,0.5);
     color: white;
     top: 10px;
+    left: 64%;
     font-size: xx-large;
     padding: 1% 4%;
     border-radius: 5px;
     margin-right: 3%;
+}
+
+#free > span{
+    font-size: x-large;
+}
+
+#red-tag{
+    color:white;
+    background-color: #D10000;
+    position: absolute;
+    left: 75%;
+    top: 3%;
+    font-size: medium;
+    font-weight: bolder;
+    padding: 2% 4%;
+    border-radius: 4px;
+
 }
 
 .menu-cont{
@@ -326,6 +344,9 @@ body
     display: inline-block;
     left: 53px;
     position: relative;
+    min-height:100px; 
+    max-height: 155px; 
+    overflow: hidden
 }
 
 .masonry{
@@ -352,6 +373,9 @@ body
     color: black;
 }
 
+.like-icon{
+    
+}
 .menu-detail{
     padding: 0% 10%
 }
@@ -381,7 +405,7 @@ body
     padding: 1%;
 }
 
-.addOn-tb, .menu-detail{
+.addOn-tb, .location-tb{
     width: 100%;
     color: black;
     border: solid;
@@ -396,14 +420,14 @@ body
     border-width: thin;
 }
 
-.addOn-tb th, .addOn-tb td, .menu-detail td, .alt_bg td{
+.addOn-tb th, .addOn-tb td, .location-tb td, .alt_bg td{
     padding: 2%
 }
 .addOn-tb th, #grey, {
     background-color: #F1F1F2
 }
 
-.menu-detail > tbody > tr:nth-child(odd), .alt_bg > tbody > tr:nth-child(odd){
+.location-tb > tbody > tr:nth-child(odd), .alt_bg > tbody > tr:nth-child(odd){
     background-color: #F1F1F2
 }
 .addOn-tb th{
@@ -563,6 +587,10 @@ ul.pagination{
     font-size: x-large;
 }
 
+.btn-font{
+    font-size: x-large;
+}
+
 .bold-black{
     color:black;
     font-weight: bolder;
@@ -712,6 +740,10 @@ ul.pagination{
     .row-tb{
         display: table;
     }
+
+    .m-full-width{
+        width:100%;
+    }
 }
 
 @media only screen and (min-device-width: 767px) and (max-device-width: 1290px) and (orientation: landscape){
@@ -721,35 +753,82 @@ ul.pagination{
 }
 
 @media only screen and (min-device-width: 992px) and (max-device-width: 1199px){
-    #free{
-        top: 35px;
+    #gallery-col{
+        max-height: 128px; 
     }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 991px){
     #free{
-        top: 70px;
         font-size: x-large;
+    }
+
+    #free > span{
+        font-size: large;
+    }
+
+    #gallery-col{
+        max-height: 97px; 
+    }
+
+    #red-tag{
+        color: white;
+        background-color: #D10000;
+        position: absolute;
+        left: 73%;
+        top: 0%;
+        font-size: small;
+        font-weight: bolder;
+        padding: 2% 3%;
+        border-radius: 4px;
+    }
+}
+
+@media only screen and (min-device-width: 560px) and (max-device-width: 767px){
+    #red-tag{
+        left: 67%;
+        padding:1% 2%
     }
 }
 
 @media only screen and (min-device-width: 560px) and (max-device-width: 767px){
     #free{
-        top: 10px;
         position: absolute;
         left: 60%
+    }
+    #red-tag{
+        left: 67%;
+        padding:1% 2%
     }
 }
 
 @media only screen and (min-device-width: 430px) and (max-device-width: 560px){
     #free{
-        top: 40px;
         font-size: x-large;
+    }
+
+    #free > span{
+        font-size: large;
+    }
+    
+    #red-tag{
+        left: 73%;
+        padding:1% 2%
     }
 }
 
 @media only screen and (max-device-width: 430px){
     #free{
-        top: 69px;
         font-size: x-large;
+    }
+
+    #free > span{
+        font-size: large;
+    }
+
+}
+
+@media only screen and (max-device-width: 991px){
+    .btn-font{
+        font-size: large;
     }
 }
