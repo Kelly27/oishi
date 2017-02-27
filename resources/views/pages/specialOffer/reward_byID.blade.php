@@ -57,7 +57,21 @@
 					</div>
 					<p class="bold-black">Redeem Period:</p>
 					@foreach ($periods as $period)
-						<?php var_dump($period->day)?>
+						<?php 
+						$days = explode(", ", $period->day);
+						var_dump($days);
+						$i;
+						for ($i =0; $i < sizeof($days); $i++) { 
+							if($days[$i] === '1') echo "Monday";
+							elseif($days[$i] === '2') echo "Tuesday";
+							elseif($days[$i] === '3') echo "Wednesday";
+							elseif($days[$i] === '4') echo "Thursday";
+							elseif($days[$i] === '4') echo "Friday";
+							elseif($days[$i] === '6') echo "Saturday";
+							elseif($days[$i] === '7') echo "Sunday";
+						};
+
+						?>
 						<p>{{$period->day}}</p>
 					@endforeach
 					<p class="bold-black">Term and Condition:</p>
