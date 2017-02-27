@@ -18,7 +18,8 @@ class OfferController extends Controller
     {
     	$voucher = Voucher::where('id', $id)->firstOrFail();
         $locations = $voucher->locations;
-    	return view('pages.specialOffer.voucher_byID', compact('voucher', 'locations'));
+        $periods = $voucher->voucherRedeem;
+    	return view('pages.specialOffer.voucher_byID', compact('voucher', 'locations', 'periods'));
     }
 
     public function show_reward()

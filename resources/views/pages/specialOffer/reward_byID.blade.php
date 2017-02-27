@@ -56,24 +56,31 @@
 						@endforeach
 					</div>
 					<p class="bold-black">Redeem Period:</p>
-					@foreach ($periods as $period)
-						<?php 
-						$days = explode(", ", $period->day);
-						var_dump($days);
-						$i;
-						for ($i =0; $i < sizeof($days); $i++) { 
-							if($days[$i] === '1') echo "Monday";
-							elseif($days[$i] === '2') echo "Tuesday";
-							elseif($days[$i] === '3') echo "Wednesday";
-							elseif($days[$i] === '4') echo "Thursday";
-							elseif($days[$i] === '4') echo "Friday";
-							elseif($days[$i] === '6') echo "Saturday";
-							elseif($days[$i] === '7') echo "Sunday";
-						};
+					<table cellspacing="5" style="border-spacing: 5px; border-collapse: separate; min-width:60%">
+					    <tbody>
+					        @foreach ($periods as $period)
+					        <tr>
+								<?php
+									$days = explode(", ", $period->day);
+									$i;
+									for ($i =0; $i < sizeof($days); $i++) {
+										if($days[$i] === '1') $days[$i] = "Monday";
+										elseif($days[$i] === '2') $days[$i] = "Tuesday";
+										elseif($days[$i] === '3') $days[$i] = "Wednesday";
+										elseif($days[$i] === '4') $days[$i] = "Thursday";
+										elseif($days[$i] === '5') $days[$i] = "Friday";
+										elseif($days[$i] === '6') $days[$i] = "Saturday";
+										elseif($days[$i] === '7') $days[$i] = "Sunday";
+									};
+									$days = implode(" \n", $days)
+								?>
+					            <td style="background-color:#F1F1F2; padding:7px;">{!!nl2br($days)!!}</td>
+					            <td style="background-color:#F1F1F2; padding:7px; text-align: center;">{{$period->time}}</td>
+					        </tr>
+							@endforeach
+					    </tbody>
+					</table>
 
-						?>
-						<p>{{$period->day}}</p>
-					@endforeach
 					<p class="bold-black">Term and Condition:</p>
 					<div class="container" style="background-color: #F1F1F2; width: 100%; padding: 2%;margin-bottom: 3%; overflow: hidden;">
 						<p style="font-size: small; ">{!!nl2br($reward->term_cond)!!}</p>

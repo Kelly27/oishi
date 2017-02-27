@@ -13,6 +13,6 @@ class Voucher extends Model
 
     public function voucherRedeem()
     {
-    	return $this->hasMany('App\VouchersRedeemPeriod');
+    	return $this->hasMany('App\VouchersRedeemsPeriod');
     }
 }
