@@ -18,18 +18,12 @@ class MenuController extends Controller
         return view('pages.menu.menu_home', compact('menu1','menu2'));
     }
 
-    public function show_sig_menu()
+    public function show_menu_index($menu_type)
     {
-    	$menus = DB::table('menus')->where('menu_type', 'sig')->paginate(8);
-        // $menus = Menu::where('id', 99) ; //test no data
-    	return view('pages.menu.sig_menu', compact('menus'));
+    	$menus = Menu::where('menu_type', $menu_type)->paginate(8);
+    	return view('pages.menu.index', compact('menus'));
     }
 
-    public function show_starters_menu()
-    {
-    	$menus = DB::table('menus')->where('menu_type', 'sta')->paginate(10);
-    	return view('pages.menu.starters_menu', compact('menus'));
-    }
 
     public function show_menu_byID($menu_id)
     {

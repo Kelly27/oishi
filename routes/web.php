@@ -36,9 +36,8 @@ Route::group(['prefix' => 'about'], function(){
 
 Route::group(['prefix' => 'menu'], function(){
     Route::get('/', 'menuController@show_menu_home') -> name('menu_home');
-    Route::get('sig_menu', 'menuController@show_sig_menu') -> name('sig_menu');
-    Route::get('starters_menu', 'menuController@show_starters_menu') -> name('starters_menu');
-    Route::get('{menu_id}', 'menuController@show_menu_byID');
+    Route::get('{menu_type}', 'menuController@show_menu_index')->name('menu.index');
+    Route::get('{menu_type}/{menu_id}', 'menuController@show_menu_byID');
     // '/menu/{type}/{item}'
 
 });
