@@ -23,14 +23,10 @@
 	            @else
 				<div class="row">
 					@foreach ($vouchers as $voucher)
-						<div class="col-sm-6 m-nopadding imagecenter" style="margin-top: 2%; display: table;margin: auto; max-height: 326px; overflow: hidden;">
-							
-							<div style="max-height: 209px; overflow: hidden;">
-								<a href="{{route('voucher.id', ['id' => $voucher->id])}}">
-								<img src="{{ asset('images') }}/{{$voucher->image}}" class="img-responsive"></a>
-							</div>
+						<div class="col-sm-6 m-nopadding imagecenter" id="padding25" style="margin-top: 2%; display: table;margin: auto; max-height: 326px; overflow: hidden;">
+							<a href="{{route('voucher.id', ['id' => $voucher->id])}}"><div class="container" style="background-color: #F1F1F2; background-image: url(../images/{{$voucher->image}}); height:240px; background-size: cover; max-width: 349px; min-width: 320px; background-repeat: no-repeat; "></div></a>
 							<div style="background-color: #F1F1F2; padding: 3% 5% 1%; margin-bottom: 4%">
-								<a href="{{route('voucher.id', ['id' => $voucher->id])}}"><h6 style="color: initial;font-weight:bold; margin:0px;">{{$voucher->title}}</h6></a>
+								<a href="{{route('voucher.id', ['id' => $voucher->id])}}"><h6 class="eli-1line" style="color: initial;font-weight:bold; margin:0px;">{{$voucher->title}}</h6></a>
 				                <p style="font-size:x-small; ">{{$voucher->sold}} Bought | {{$voucher->availability}}</p>
 				                <p class="nopadding text-right" style="font-size: x-small;text-decoration: line-through; color: #6D6E71">RM{{number_format($voucher->ori_price, 2)}}</p>
 				                <p style="color: #EC1C24; font-weight: bold; margin-top: 0px; text-align: right;">

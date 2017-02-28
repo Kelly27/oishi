@@ -13,9 +13,7 @@
 
 Route::get('/', 'AboutController@show_home')->name('home');
 
-Route::get('contact', function () {
-    return view('pages.contact');
-})-> name('contact');
+Route::get('contact', 'AboutController@show_contact')-> name('contact');
 
 Route::post('contact/store_message', 'AboutController@store_message'
 )-> name('store_message');
@@ -39,8 +37,9 @@ Route::group(['prefix' => 'about'], function(){
 Route::group(['prefix' => 'menu'], function(){
     Route::get('/', 'menuController@show_menu_home') -> name('menu_home');
     Route::get('sig_menu', 'menuController@show_sig_menu') -> name('sig_menu');
-    Route::get('{menu_id}', 'menuController@show_menu_byID');
     Route::get('starters_menu', 'menuController@show_starters_menu') -> name('starters_menu');
+    Route::get('{menu_id}', 'menuController@show_menu_byID');
+    // '/menu/{type}/{item}'
 
 });
 
@@ -51,9 +50,6 @@ Route::group(['prefix' => 'specialOffer'], function(){
     Route::get('reward/{reward_id}', 'OfferController@show_reward_byID') -> name('reward.id');
     Route::get('promotion', 'OfferController@show_promotion') -> name('promotion');
 });
-
-Route::get('test', 'AboutController@show_test');
-
 
 Auth::routes();
 

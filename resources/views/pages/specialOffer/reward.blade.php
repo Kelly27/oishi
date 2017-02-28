@@ -5,7 +5,7 @@
 	<div class="container breadcrumb_container">
 	    <ol class="breadcrumb">
 	      <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
-	      <li class="breadcrumb-item">Special Offer</li>
+	      <li class="breadcrumb-item active">Special Offer</li>
 	      <li class="breadcrumb-item active">Reward</li>
 	    </ol>
 	</div>
@@ -23,18 +23,17 @@
 	            @else
 				<div class="row">
 					@foreach ($rewards as $reward)
-						<div class="col-sm-6 m-nopadding imagecenter" style="margin-top: 2%; display: table;margin: auto;">
-							<div style="max-height: 262px; overflow: hidden;">
-								<a href="{{route('reward.id', ['id' => $reward->id])}}">
-								<img src="{{ asset('images') }}/{{$reward->image}}" class="img-responsive" style="height: 100%"></a>
-							</div>
+						<div class="col-sm-6 m-nopadding imagecenter" id="padding25" style="margin-top: 2%; display: table;margin: auto;">
+							<a href="{{route('reward.id', ['id' => $reward->id])}}"><div class="container" style="background-color: #F1F1F2; background-image: url(../images/{{$reward->image}}); height:240px; background-size: cover; max-width: 349px; min-width: 320px; background-repeat: no-repeat;"></div></a>
 							<div style="background-color: #F1F1F2; padding: 3% 5% 1%; margin-bottom: 4%">
-								<a href="{{route('reward.id', ['id' => $reward->id])}}" style="font-weight: bold; color: black;"><img src="{{URL::to('images/hand.png')}}" style="margin: 10px">{{$reward->title}}</a>
+								<a class="eli-1line" href="{{route('reward.id', ['id' => $reward->id])}}" style="font-weight: bold; color: black;"><img src="{{URL::to('images/hand.png')}}" style="margin: 10px">{{$reward->title}}</a>
 							</div>
 						</div>
 					@endforeach
-					<div class="text-right">
-						{{$rewards->render()}}
+					<div class="continer">
+						<div class="text-right">
+							{{$rewards->render()}}
+						</div>
 					</div>
 				</div>
 				@endif

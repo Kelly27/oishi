@@ -1,3 +1,10 @@
+<?php 
+use Illuminate\Support\Facades\DB;
+
+$openingHours = DB::table('opening_hours')->get();
+$info = DB::table('get_in_touches')->first();
+?>
+
 <div class="footer-area">
     <div class="container" >
         <div class="row" style="vertical-align: middle;">
@@ -5,18 +12,28 @@
                 <h3>OPENING HOURS</h3>
                 <table class="table">
                     <tbody>
+                        @foreach ($openingHours as $openingHour)
                         <tr>
-                            <td>Monday</td>
-                            <td>8am - 10pm</td>
+                            <td>
+                            <?php 
+                                $days = explode(", ", $openingHour->day);
+                                $i;
+                                for ($i =0; $i < sizeof($days); $i++) {
+                                    if($days[$i] === '1') $days[$i] = "Monday";
+                                    elseif($days[$i] === '2') $days[$i] = "Tuesday";
+                                    elseif($days[$i] === '3') $days[$i] = "Wednesday";
+                                    elseif($days[$i] === '4') $days[$i] = "Thursday";
+                                    elseif($days[$i] === '5') $days[$i] = "Friday";
+                                    elseif($days[$i] === '6') $days[$i] = "Saturday";
+                                    elseif($days[$i] === '7') $days[$i] = "Sunday";
+                                };
+                                $days = implode(" \n", $days)
+                            ?>
+                            {!!nl2br($days)!!}
+                            </td>
+                            <td>{{$openingHour->time}}</td>
                         </tr>
-                        <tr>
-                            <td>Tuesay<br>Wednesday<br>Thursday<br>Friday<br>Saturday</td>
-                            <td>8am - 1am</td>
-                        </tr>
-                        <tr>
-                            <td>Sunday</td>
-                            <td>Off</td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -40,15 +57,15 @@
                     <tbody class="borderless">
                         <tr>
                             <td><img src="{{URL::to('images/home.png')}}"</td>
-                            <td><p>66 South Street, <br>Window 6 WonderLand,</p></td>
+                            <td><p>{!! nl2br($info->address) !!}</p></td>
                         </tr>
                         <tr>
                             <td><img src="{{URL::to('images/phone.png')}}"</td>
-                            <td><p>Office No.: +440 875369208 <br>Mobile No.: +440 353363114</p></td>
+                            <td><p>Office No.: {{$info->office_no}} <br>Mobile No.: {{$info->mobile_no}}</p></td>
                         </tr>
                         <tr>
                             <td><img src="{{URL::to('images/mail.png')}}"</td>
-                            <td><p>oishi@gmail.com</td>
+                            <td><p>{{$info->email}}</td>
                         </tr>
                     </tbody>
                 </table>

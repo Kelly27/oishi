@@ -18,7 +18,8 @@ class CreateCareersTable extends Migration
             $table->string('title');
             $table->string('short_description');
             $table->text('long_description');
-            $table->string('career_image');
+            $table->string('image');
+            $table->string('contact_info');
             $table->timestamps();
         });
     }

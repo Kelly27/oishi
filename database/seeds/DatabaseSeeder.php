@@ -160,6 +160,24 @@ class OishiSeeder extends Seeder
 				'news_feed_id' => NewsFeed::min('id'),
 				'comment' => 'I came here for a few times already.'
 			]);
+
+				NewsEvent::create([
+        	'title' => 'ADIPSCING ELIT PRAESANT VESTIBULUM',
+        	'image' => 'img 15.png',
+        	'short_description' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacunean nonummy edrerit mauris. Phasellus porta. Fusce suscipit.',
+        	'long_description' => '	Lid est laborum dolo rumes fugats untras. Etha rums ser quidem rerum facilis dolores nemis onis fugats vitaes nemo minima rerums unsers sadips amets sadips ips. Ut enim ad minim veniam, quis nostrud Neque porro quisquam est, qui dolorem ipsum. Quia dolor sit amet, consectetur, adipisci amets uns. Rumes fugats untras. Etha rums ser quidem nemo minima rerums unsers sadips rerums.
+	
+	Lid est laborum dolo rumes fugats untras. Etha rums ser quidem rerum facilis dolores nemis onis fugats vitaes nemo minima rerums unsers sadips amets sadips ips. Ut enim ad minim veniam, quis nostrud Neque porro quisquam est, qui dolorem ipsum. Quia dolor sit amet, consectetur, adipisci amets uns. Rumes fugats untras. Etha rums ser quidem nemo minima rerums unsers sadips rerums.
+
+	Lid est laborum dolo rumes fugats untras. Etha rums ser quidem rerum facilis dolores nemis onis fugats vitaes nemo minima rerums unsers sadips amets sadips ips. Ut eenim ad minim veniam, quis nostrud Neque porro quis.
+
+	Lid est laborum dolo rumes fugats untras. Etha rums ser quidem rerum facilis dolores nemis onis fugats vitaes nemo minima rerums unsers sadips amets sadips ips. Ut enim ad minim veniam, quis nostrud Neque porro quisquam est, qui dolorem ipsum. Quia dolor sit amet, consectetur, adipisci amets uns. Rumes fugats untras. Etha rums ser quidem nemo minima rerums unsers sadips rerums.
+
+	Lid est laborum dolo rumes fugats untras. Etha rums ser quidem rerum facilis dolores nemis onis fugats vitaes nemo minima rerums unsers sadips amets sadips ips. Ut eenim ad minim veniam, quis nostrud Neque porro quis.
+
+	Lid est laborum dolo rumes fugats untras. Etha rums ser quidem rerum facilis dolores nemis onis fugats vitaes nemo minima rerums unsers sadips amets sadips ips. Ut enim ad minim veniam, quis nostrud Neque porro quisquam est, qui dolorem ipsum. Quia dolor sit amet, consectetur, adipisci amets uns. Rumes fugats untras. Etha rums ser quidem nemo minima rerums unsers sadips rerums.',
+        ]);
+
 		}
 
 		AddOn::create([
@@ -207,5 +225,7 @@ class OishiSeeder extends Seeder
             'day' => '2, 3, 4, 5, 6',
             'time' => '8am - 1am'
         ]);
+
+        
 	}
 }

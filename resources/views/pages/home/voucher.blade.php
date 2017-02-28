@@ -4,12 +4,12 @@
         <div class="row">
             @foreach ($vouchers as $voucher)
                 <div class="col-sm-4 m-nopadding">
-                    <div class="container" id="voucher-cont">
+                    <div class="container" id="voucher-cont"><a href="{{route('voucher.id', ['id' => $voucher->id])}}">
                     <div style="max-height: 244px; overflow: hidden;">
                         <img src="{{ asset('images') }}/{{$voucher->image}}" class="img-responsive">
                     </div>
                     
-                        <h6 style="font-weight:bold; margin-bottom:0px;text-transform: uppercase;">{{$voucher->title}}</h6>
+                        <a href="{{route('voucher.id', ['id' => $voucher->id])}}" style="color:initial; padding:initial;"><h6 class="eli-3line" style="font-weight:bold; margin-bottom:0px;text-transform: uppercase; padding-left: 20px;">{{$voucher->title}}</h6></a>
                         @if ($voucher->tag === 1)
                             <h5 id="red-tag">FREE</h5>
                         @elseif($voucher->tag === 2)
@@ -23,13 +23,13 @@
                             <span style="font-size: x-small;">From </span>
                         @endif 
                         RM{{number_format($voucher->dis_price,2)}}</p>
-                    </div>
+                    </a></div>
                 </div>
             @endforeach
         </div>
         <div class="row">
             <div class="col-sm-12 text-right" style="margin: 5px 0px 5px">
-                <a href="#" style="color: #1B75BB; font-weight: bold; font-family: Arial;">SEE MORE >></a>
+                <a href="{{ route('voucher') }}" style="color: #1B75BB; font-weight: bold; font-family: Arial;">SEE MORE >></a>
             </div>
         </div>
     </div>

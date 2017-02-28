@@ -20,8 +20,8 @@
             <div class="col-sm-9">
                 <h3 style="color: #EE3433; font-weight: normal; padding-left: 10px"><img src="{{ asset('images/careericon.png') }}" style="padding-right: 15px">{{$career->title}}</h3>
                 <p>{{$career->short_description}}</p>
-                <img src="{{asset('images')}}/{{$career->career_image}}" class="img-responsive">
-                <p>{{$career->long_description}}</p>
+                <img src="{{asset('images')}}/{{$career->image}}" class="img-responsive">
+                <p style="margin-top: 20px;">{{$career->long_description}}</p>
                 <p style="color: red; font-weight: bold;">{{$career->contact_info}}</p>
             </div>
             <div class="col-sm-3 hidden-xs">

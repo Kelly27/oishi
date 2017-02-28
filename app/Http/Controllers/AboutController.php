@@ -21,6 +21,8 @@ use App\Reply;
 use App\Menu;
 use App\Voucher;
 use App\Reward;
+use App\Chef;
+use App\BoardDirector;
 
 class AboutController extends Controller
 {
@@ -28,12 +30,10 @@ class AboutController extends Controller
     {
         $menu1 = Menu::where('id', '=', Menu::min('id'))->first();
         $menu2 = Menu::where('id', '>', Menu::min('id'))->first();
-        // $voucher1 = Voucher::where('id', '=', Voucher::min('id'))->first();
-        // $voucher2 = Voucher::where('id', '>', Voucher::min('id'))->first();
-        // $voucher3 = Voucher::where('id', '>', $voucher2->id)->first();
         $vouchers = Voucher::paginate(3);
         $rewards = Reward::paginate(3);
-        return view('pages.home.home', compact('menu1','menu2', 'vouchers', 'rewards'));
+        $newsEvents = NewsEvent::paginate(3);
+        return view('pages.home.home', compact('menu1','menu2', 'vouchers', 'rewards', 'newsEvents'));
     }
 
     public function show_gallery()
@@ -52,7 +52,9 @@ class AboutController extends Controller
 
     public function show_our_story()
     {
-        return view('pages.abt.our_story');
+        $chefs = Chef::paginate(4);
+        $directors = BoardDirector::paginate(6);
+        return view('pages.abt.our_story', compact('chefs', 'directors'));
     }
 
     public function show_career()
@@ -122,6 +124,11 @@ class AboutController extends Controller
         return redirect() -> back();
     }
 
+    public function show_contact()
+    {
+        $info = DB::table('get_in_touches')->where('id', 2)->first();
+        return view('pages.contact', compact('info'));
+    }
     public function store_message(Request $request, Factory $validator, AppMailer $mailer)
     {
         $validation=$validator->make($request->all(), [

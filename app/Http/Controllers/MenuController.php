@@ -28,7 +28,6 @@ class MenuController extends Controller
     public function show_starters_menu()
     {
     	$menus = DB::table('menus')->where('menu_type', 'sta')->paginate(10);
-        // $menus = Menu::where('id', 99) ; //test no data
     	return view('pages.menu.starters_menu', compact('menus'));
     }
 
@@ -36,7 +35,7 @@ class MenuController extends Controller
     {
         $news_feeds = NewsFeed::paginate(2);
         $count_news = NewsFeed::get();
-        $menu = Menu::where('id', $menu_id)->firstOrFail();
+        $menu = Menu::where('id', $menu_id)->first();
         $addOns = $menu->addOns;
         $locations = $menu->locations;
         return view('pages.menu.menu_byID', compact('menu', 'news_feeds', 'users', 'addOns', 'locations', 'count_news'));

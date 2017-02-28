@@ -24,7 +24,7 @@
 					@if($voucher->tag===1)
 						<p id="free">FREE</p>
 					@elseif ($voucher->tag===2)
-						<p id="free">50%<span> OFF</span></p>
+						<p id="fiftypercent">50%<span> OFF</span></p>
 
 					@endif
 				</div>

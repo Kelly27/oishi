@@ -25,11 +25,11 @@
                     @foreach ($news_events as $news_event)
                     <div class="col-sm-6 m-nopadding">
                         <div class="news-feed-item"> {{-- news-feed-item style is same here --}}
-                            <img src="{{ asset('images') }}/{{$news_event->image}}" class="img-responsive" style="margin-left: auto; margin-right: auto; width: 100%; max-height: 241px">
-                            <div style="padding-left: 20px; padding-right: 20px; margin-top: 15px">
+                            <a href="{{ url('about/news_event/'. $news_event->id) }}" ><img src="{{ asset('images') }}/{{$news_event->image}}" class="img-responsive" style="margin-left: auto; margin-right: auto; width: 100%; max-height: 241px"></a>
+                            <div style="padding-left: 15px; padding-right: 10px; margin-top: 15px">
                                 <a href="{{ url('about/news_event/'. $news_event->id) }}" style="font-size:large; color: #4D4D4D; margin: 10px 0px 20px 0px; ">{{$news_event->title}}</a>
                                 <p style="color: #4D4D4D; font-style: italic;font-size:medium; margin: 10px 0px 0px">{{$news_event->created_at}}</p>
-                                <p class="text-justify">{{$news_event->short_description}}</p>
+                                <p class="text-justify" style="margin: 10px 0px 20px 0px; overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical; color:initial;">{{$news_event->short_description}}</p>
                             </div>
                         </div>
                     </div>

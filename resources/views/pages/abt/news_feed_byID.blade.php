@@ -7,13 +7,13 @@
     <div class="container breadcrumb_container">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
-          <li class="breadcrumb-item">About Us</li>
+          <li class="breadcrumb-item"><a href="#">About Us</a></li>
           <li class="breadcrumb-item"><a href="{{route('news_feed')}}">News Feed</a></li>
           <li class="breadcrumb-item active">{{$news_feed->newsfeedPoster->name}}'s Post</li>
         </ol>
     </div>
 </div>
-<div class="container-fluid aboutus-header hidden-xs" style="background-image: url(<?= asset('images/newsfeed-header.png') ?>")
+<div class="container-fluid aboutus-header hidden-xs" style="background-image: url(<?= asset('images/newsfeed-header.png') ?>)">
     <h1>News Feed</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-sm-6 news-feed-detail" >
                     <a class="pre" href="#"><img src="{{ asset('images/cutleryicon.png') }}" style="margin-right: 5px;">{{$news_feed->food}}</a>
-                    <p class="pre" style=" color: black; margin: 10px 0px 20px 0px; overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">{{ $news_feed->description }}</p>
+                    <p class="pre" style="margin: 10px 0px 20px 0px; overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical; color:initial;"> {{ $news_feed->description }}  @if($news_feed->posterFriends->count() > 0)- @endif  <?php $i = 0; ?>@foreach($news_feed->posterFriends as $friend)<a href="#" data-target="#adspopup" data-toggle="modal">{{$friend->name}}<?php $i++; ?></a>@if($i < $news_feed->posterFriends->count()), @else   @endif @endforeach</p>
                     <p>{{count($news_feed->user)}} likes</p>
                     <button data-target="#adspopup" data-toggle="modal" class="btn fa fa-share-alt btn-style"><span style="font-family: OpenSans;"> Share </span></button>
                 </div>

@@ -14,8 +14,8 @@
     <h1>Promotion</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>
-<div class="container-fluid m-nopadding " style="background-color: white; margin-bottom: 3%">
-	<div class="container m-nopadding" style="margin-top: 2%;">
+<div class="container-fluid m-nopadding " style="background-color: white; ">
+	<div class="container m-nopadding" style="margin-top: 2%;margin-bottom: 3%">
 		<div class="row promo-row">
 			<div class="col-sm-4 nopadding imagecenter">
 				<img src="{{ asset('images/promo1.png') }}" class="img-responsive" style="width: 100%">

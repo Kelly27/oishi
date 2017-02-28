@@ -8,12 +8,12 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
           <li class="breadcrumb-item">About Us</li>
-          <li class="breadcrumb-item">News Feed</li>
+          <li class="breadcrumb-item"><a href="{{ route('news_feed') }}">News Feed</a></li>
           <li class="breadcrumb-item active">{{$news_feed->newsfeedPoster->name}}'s Post</li>
         </ol>
     </div>
 </div>
-<div class="container-fluid aboutus-header hidden-xs" style="background-image: url(<?= asset('images/newsfeed-header.png') ?>")
+<div class="container-fluid aboutus-header hidden-xs" style="background-image: url(<?= asset('images/newsfeed-header.png') ?>)">
     <h1>News Feed</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
 </div>

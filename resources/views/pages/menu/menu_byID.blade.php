@@ -38,9 +38,9 @@ $newtxt2 = wordwrap($text2, 6, "<br>\n");
 					<table class="remark-tb" style="width: 100%">
 						<tbody>
 							<tr><td style="font-weight: bold;background-color:#F1F1F2">Ice Level</td></tr>
-							<tr><td><?php echo $newtxt?></td></tr>
+							<tr><td><?php echo $newtxt ?></td></tr>
 							<tr><td style="font-weight: bold;background-color:#F1F1F2">Sugar Level</td></tr>
-							<tr><td><?php echo $newtxt2?></td></tr>
+							<tr><td><?php echo $newtxt2 ?></td></tr>
 							<tr><td style="font-weight: bold;background-color:#F1F1F2">Hot</td></tr>
 							<tr><td>{{$menu->hot}}</td></tr>
 						</tbody>
@@ -109,7 +109,7 @@ $newtxt2 = wordwrap($text2, 6, "<br>\n");
                             <a href="{{URL::route('news_feed.id', ['id' => $news_feed->id])}}"><img src="{{ asset('images') }}/{{$news_feed->image_file}}" class="img-responsive" style="margin-left: auto; margin-right: auto;"></a>
                             <div style="padding-left: 20px; margin-top: 15px">
                                 <a class="pre" href="#"><img src="{{ asset('images/cutleryicon.png') }}" style="width: 5%; margin-right: 5px">{{$news_feed->food}}</a>
-                                <p class="pre" style="margin: 10px 0px 20px 0px; overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">{{ $news_feed->description }}</p>
+                                <p class="pre" style="margin: 10px 0px 20px 0px; overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical; color:initial;"> {{ $news_feed->description }}  @if($news_feed->posterFriends->count() > 0)- @endif  <?php $i = 0; ?>@foreach($news_feed->posterFriends as $friend)<a href="#" data-target="#adspopup" data-toggle="modal">{{$friend->name}}<?php $i++; ?></a>@if($i < $news_feed->posterFriends->count()), @else   @endif @endforeach</p>
                                 <table class="comment-table" style="width: 87%; margin-bottom: 5%;margin-left: 5%;">
                                     <tbody>
                                         <tr>
@@ -124,7 +124,7 @@ $newtxt2 = wordwrap($text2, 6, "<br>\n");
                         </div>
                     </a>
                 @endforeach
-                <button class="btn menu-btn" style="width: 100%; margin-bottom: 5%">View all Post ({{count($count_news)}})</button>
+                <a href="{{ route('news_feed') }}"><button class="btn menu-btn" style="width: 100%; margin-bottom: 5%">View all Post ({{count($count_news)}})</button></a>
 			</div>
 		</div>
 	</div>

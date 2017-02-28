@@ -179,16 +179,30 @@ body
     background-color:rgba(0,0,0,0.5);
     color: white;
     top: 10px;
-    left: 64%;
+    left: 75%;
     font-size: xx-large;
     padding: 1% 4%;
     border-radius: 5px;
     margin-right: 3%;
 }
 
-#free > span{
+#fiftypercent{
+    position: absolute;
+    float: right;
+    background-color:rgba(0,0,0,0.5);
+    color: white;
+    top: 10px;
+    left: 62%;
+    font-size: xx-large;
+    padding: 1% 4%;
+    border-radius: 5px;
+    margin-right: 3%;
+}
+
+#fiftypercent > span{
     font-size: x-large;
 }
+
 
 #red-tag{
     color:white;
@@ -237,10 +251,10 @@ body
     font-size: xx-large;
     background-color: rgba(35,31,34, 0.5);
     position: absolute;
-    top: 75%;
+    top: 76%;
     color: white;
     width: 100%;
-    height: 25%;
+    height: 24%;
     text-align: center;
     padding-top: 2%;
 }
@@ -487,6 +501,27 @@ ul.pagination{
     border-radius: 20px;
     width: 100%;
     margin: 2% 0% 2%
+}
+
+.eli-3line{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+}
+
+.eli-1line{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+}
+
+.eli-4line{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
 }
 
 .footer-area{
@@ -752,6 +787,13 @@ ul.pagination{
     .m-full-width{
         width:100%;
     }
+    #free{
+        left: 75%;
+    }
+
+    #fiftypercent{
+        left: 70%;
+    }
 }
 
 @media only screen and (min-device-width: 767px) and (max-device-width: 1290px) and (orientation: landscape){
@@ -764,13 +806,22 @@ ul.pagination{
     #gallery-col{
         max-height: 128px;
     }
+
+    #padding25{
+        padding-left:25%
+    }
+
+    #free{
+        left: 70%;
+    }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 991px){
     #free{
+        left: 70%;
         font-size: x-large;
     }
 
-    #free > span{
+    #fiftypercent > span{
         font-size: large;
     }
 
@@ -789,6 +840,11 @@ ul.pagination{
         padding: 2% 3%;
         border-radius: 4px;
     }
+    
+    #fiftypercent{
+        left:55%
+    }
+
 }
 
 @media only screen and (min-device-width: 560px) and (max-device-width: 767px){
@@ -798,23 +854,22 @@ ul.pagination{
     }
 }
 
-@media only screen and (min-device-width: 560px) and (max-device-width: 767px){
-    #free{
-        position: absolute;
-        left: 60%
-    }
-    #red-tag{
-        left: 67%;
-        padding:1% 2%
+@media only screen and (min-device-width: 560px) and (max-device-width: 590px){
+    #fiftypercent{
+        font-size: x-large;
     }
 }
 
 @media only screen and (min-device-width: 430px) and (max-device-width: 560px){
-    #free{
+    #free, #fiftypercent{
         font-size: x-large;
     }
 
-    #free > span{
+    #fiftypercent{
+        left:65%;
+    }
+
+    #fiftypercent > span{
         font-size: large;
     }
 
@@ -824,12 +879,14 @@ ul.pagination{
     }
 }
 
+
 @media only screen and (max-device-width: 430px){
-    #free{
+    #free, #fiftypercent{
+        left:60%;
         font-size: x-large;
     }
 
-    #free > span{
+    #fiftypercent > span{
         font-size: large;
     }
 
@@ -839,4 +896,5 @@ ul.pagination{
     .btn-font{
         font-size: large;
     }
+    
 }

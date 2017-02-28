@@ -5,12 +5,12 @@
         </div>
         <div class="col-sm-3 nopadding">
             <div class="container sig-dish-img nopadding" style="background-image:  url(<?= asset('images')?>/{{$menu1->menu_img}});">
-                <a style="text-transform: uppercase;"href="{{ url('menu/sig_menu/'. $menu1->id) }}" id="menu-style">{{$menu1->menu_name}}</a>
+                <a style="text-transform: uppercase; -webkit-line-clamp: 1; overflow: hidden;"href="{{ url('menu/'. $menu1->id) }}" id="menu-style">{{$menu1->menu_name}}</a>
             </div>
         </div>
         <div class="col-sm-3 nopadding">
             <div class="container sig-dish-img nopadding" style="background-image: url(<?= asset('images')?>/{{$menu2->menu_img}}); ">
-                <a style="text-transform: uppercase;" href="{{ url('menu/sig_menu/'. $menu2->id) }}" id="menu-style">{{$menu2->menu_name}}</a>
+                <a style="text-transform: uppercase; -webkit-line-clamp: 1; overflow: hidden;" href="{{ url('menu/'. $menu2->id) }}" id="menu-style">{{$menu2->menu_name}}</a>
             </div>
         </div>
         <div class="col-sm-1">

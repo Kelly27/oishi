@@ -28,20 +28,20 @@
                         <tr>
                             <td><img src="{{URL::to('images/home.png')}}"</td>
                             <td>
-	                            <p>66 South Street, <br>Window 6 WonderLand, xxxx <br>xxxxx, xxxxxxxxxxxxxx </p>
+	                            <p>{!! nl2br($info->address) !!} </p>
                             </td>
                         </tr>
                         <tr>
                             <td><img src="{{URL::to('images/phone2.png')}}"</td>
-                            <td><p>082-577168</p></td>
+                            <td><p>{{$info->office_no}}</p></td>
                         </tr>
                         <tr>
                             <td><img src="{{URL::to('images/phone3.png')}}" style="width: 15px;"></td>
-                            <td><p>082-462569</p></td>
+                            <td><p>{{$info->mobile_no}}</p></td>
                         </tr>
                         <tr>
                             <td><img src="{{URL::to('images/mail2.png')}}"</td>
-                            <td><p>oishi@gmail.com</td>
+                            <td><p>{{$info->email}}</td>
                         </tr>
                     </tbody>
                 </table>

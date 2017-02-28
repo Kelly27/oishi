@@ -1,29 +1,13 @@
 <div class="container text-center">
     <h1>Our Chefs</h1>
     <div class="row">
-        <div class="col-sm-3 chef">
-            <img src="{{URL::to('images/chef1.png')}}" class="img-responsive">
-            <h5 style="font-weight: bold;">Umberto Vincenzo</h5>
-            <h6 style="color: #BBBDBF;">CHEF</h6>
-            <p style="color: #6D6E70;">Give a brief description of your founders to become closer to your clients.</p>
-        </div>
-        <div class="col-sm-3 chef">
-            <img src="{{URL::to('images/chef2.png')}}" class="img-responsive">
-            <h5 style="font-weight: bold;">Mary Walnut</h5>
-            <h6 style="color: #BBBDBF;">DESSERT CHEF</h6>
-            <p style="color: #6D6E70;">Give a brief description of your founders to become closer to your clients.</p>
-        </div>
-        <div class="col-sm-3 chef">
-            <img src="{{URL::to('images/chef3.png')}}" class="img-responsive">
-            <h5 style="font-weight: bold;">Umberto Vincenzo</h5>
-            <h6 style="color: #BBBDBF;">CHEF’S ASSISTANT</h6>
-            <p style="color: #6D6E70;">Give a brief description of your founders to become closer to your clients.</p>
-        </div>
-        <div class="col-sm-3 chef">
-            <img src="{{URL::to('images/chef4.png')}}" class="img-responsive">
-            <h5 style="font-weight: bold;">Edward Horton</h5>
-            <h6 style="color: #BBBDBF;">CHEF’S ASSISTANT</h6>
-            <p style="color: #6D6E70;">Give a brief description of your founders to become closer to your clients.</p>
-        </div>
+        @foreach ($chefs as $chef)
+            <div class="col-sm-3 chef">
+                <img src="{{ asset('images') }}/{{$chef->image}}" class="img-responsive">
+                <h5 style="font-weight: bold;">{{$chef->name}}</h5>
+                <h6 style="color: #BBBDBF;">{{$chef->position}}</h6>
+                <p class="eli-3line" style="color: #6D6E70;">{{$chef->description}}</p>
+            </div>
+        @endforeach
     </div>
 </div>

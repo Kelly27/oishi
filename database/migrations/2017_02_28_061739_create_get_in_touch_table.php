@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNewsEventsTable extends Migration
+class CreateGetInTouchTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateNewsEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('news_events', function (Blueprint $table) {
+        Schema::create('get_in_touches', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('image');
-            $table->string('title');
-            $table->mediumtext('short_description');
-            $table->longtext('long_description');
+            $table->string('address');
+            $table->string('office_no');
+            $table->string('mobile_no');
+            $table->string('email');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateNewsEventsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_events');
+        Schema::dropIfExists('get_in_touches');
     }
 }
