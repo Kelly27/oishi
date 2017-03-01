@@ -25,7 +25,7 @@ class MenuController extends Controller
     }
 
 
-    public function show_menu_byID($menu_id)
+    public function show_menu_byID($menu_type, $menu_id)
     {
         $news_feeds = NewsFeed::paginate(2);
         $count_news = NewsFeed::get();

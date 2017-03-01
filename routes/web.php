@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/', 'AboutController@show_home')->name('home');
+Route::get('/', 'Controller@show_home')->name('home');
 
-Route::get('contact', 'AboutController@show_contact')-> name('contact');
-
-Route::post('contact/store_message', 'AboutController@store_message'
-)-> name('store_message');
+Route::group(['prefix' => 'contact'], function(){
+    Route::get('/', 'ContactController@show_contact')-> name('contact');
+    Route::post('store_message', 'ContactController@store_message')-> name('store_message');
+});
 
 Route::group(['prefix' => 'about'], function(){
     Route::get('our_story', 'AboutController@show_our_story') -> name('our_story');
@@ -53,3 +53,6 @@ Route::group(['prefix' => 'specialOffer'], function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('test', function(){
+    return view('test');
+});

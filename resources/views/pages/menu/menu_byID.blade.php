@@ -6,14 +6,16 @@ $text = $menu->ice_lvl;
 $newtxt = wordwrap($text, 6, "<br>\n");
 $text2 = $menu->sugar_lvl;
 $newtxt2 = wordwrap($text2, 6, "<br>\n");
-?>
 
+if ($menu->menu_type === 'sig') $type = 'Signature Dish';
+elseif ($menu->menu_type === 'sta') $type = 'Starters';
+?>
 <div class="container-fluid" style="background-color: white;">
 	<div class="container breadcrumb_container">
 	    <ol class="breadcrumb">
-	      <li class="breadcrumb-item"><a href="#">Home</a></li>
-	      <li class="breadcrumb-item active"><a style="color: #929497;" href="{{route('menu_home')}}">Menu</a></li>
-	      <li class="breadcrumb-item active"><a style="color: #929497;" href="#">Signature Dish</a></li>
+	      <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+	      <li class="breadcrumb-item "><a href="{{route('menu_home')}}">Menu</a></li>
+	      <li class="breadcrumb-item "><a href="{{ route('menu.index', ['menu_type' => $menu->menu_type]) }}">{{$type}}</a></li>
 	      <li class="breadcrumb-item active" style="text-transform: uppercase;">{{$menu->menu_name}}</li>
 	    </ol>
 	</div>

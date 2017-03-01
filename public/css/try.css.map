@@ -1,0 +1,1 @@
+{"version":3,"sources":["try.scss"],"names":[],"mappings":"AAAA;EACC,YAAW;EACX,aAAY;CAQZ;;AAVD;EAIE,cAAc;CAKd;;AATF;EAMG,kBAAkB;CAClB","file":"try.css","sourcesContent":[".nopadding{\r\n\tmargin:0px;\r\n\tpadding:0px;\r\n\tp{\r\n\t\tcolor: purple;\r\n\t\tspan{\r\n\t\t\tborder: solid 4px;\r\n\t\t}\r\n\r\n\t}\r\n}"]}

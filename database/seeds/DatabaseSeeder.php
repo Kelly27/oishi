@@ -48,12 +48,22 @@ class OishiSeeder extends Seeder
         DB::table('rewards_redeems_periods')->delete();
         DB::table('vouchers_redeems_periods')->delete();
 
+        $faker = Faker\Factory::create();
+
 		User::create([
 			'name' => 'John Maxwell',
 			'profilepic' => 'head1.png',
 			'email' => 'john@eg.com',
 			'password' => '123'
 			]);
+
+		for($i = 0; $i < 100; $i++) {
+	        App\User::create([
+	            'username' => $faker->userName,
+	            'name' => $faker->name,
+	            'email' => $faker->email
+	        ]);
+	    }
 
 		for ($i=0; $i <4 ; $i++) {
 			NewsFeed::create([

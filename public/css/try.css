@@ -1,0 +1,14 @@
+.nopadding {
+  margin: 0px;
+  padding: 0px;
+}
+
+.nopadding p {
+  color: purple;
+}
+
+.nopadding p span {
+  border: solid 4px;
+}
+
+/*# sourceMappingURL=try.css.map */

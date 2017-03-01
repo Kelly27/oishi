@@ -75,7 +75,7 @@
 									$days = implode(" \n", $days)
 								?>
 					            <td style="background-color:#F1F1F2; padding:7px;">{!!nl2br($days)!!}</td>
-					            <td style="background-color:#F1F1F2; padding:7px; text-align: center;">{{$period->time}}</td>
+					            <td style="background-color:#F1F1F2; padding:7px; text-align: center; vertical-align: baseline;">{{$period->time}}</td>
 					        </tr>
 							@endforeach
 					    </tbody>
