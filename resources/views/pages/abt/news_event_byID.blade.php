@@ -1,20 +1,9 @@
 @extends('layouts.layout')
 
 @section('content')
-<div class="container-fluid" style="background-color: white;">
-    <div class="container breadcrumb_container">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
-          <li class="breadcrumb-item">About Us</li>
-          <li class="breadcrumb-item active">News and Events</li>
-          <li class="breadcrumb-item active">{{$news_event->title}}</li>
-        </ol>
-    </div>
-</div>
-<div class="container-fluid aboutus-header hidden-xs" style="background-image: url(<?= asset('images/newsfeed-header.png')?> )">
-    <h1>NEWS AND EVENT</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
-</div>
+@php
+    $data = $news_event;
+@endphp
 <div class="container-fluid nopadding" style="background-color: white;">
     <div class="container text-justify" style="padding: 3%;">
         <div class="text-center" style="margin-bottom: 20px;"">

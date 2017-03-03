@@ -1,19 +1,10 @@
 @extends('layouts.layout')
 
 @section('content')
-<div class="container-fluid" style="background-color: white;">
-    <div class="container breadcrumb_container">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
-          <li class="breadcrumb-item">About Us</li>
-          <li class="breadcrumb-item active">Career</li>
-        </ol>
-    </div>
-</div>
-<div class="container-fluid aboutus-header" style="background-image: url(../../images/career-header.png);">
-    <h1>Career</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
-</div>
+@php
+    $data = $career;
+@endphp
+
 <div class="container-fluid" style="background-color: white">
     <div class="container" style="margin-top: 3%;">
         <div class="row">

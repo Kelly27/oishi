@@ -1,21 +1,8 @@
 @extends('layouts.layout')
 
 @section('content')
-<div class="container-fluid" style="background-color: white;">
-	<div class="container breadcrumb_container">
-	    <ol class="breadcrumb">
-	      <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-	      <li class="breadcrumb-item"><a href="{{route('menu_home')}}">Menu</a></li>
-	      <li class="breadcrumb-item active">Signature Dish</li>
-	    </ol>
-	</div>
-</div>
-<div class="container-fluid menu1-header hidden-xs">
-    <h1>Menu</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
-</div>
 <div class="container">
-	<h1 class="hidden-xs">SIGNATURE DISH</h1>
+	<h1 class="hidden-xs" style="text-transform: capitalize;">{{Request::segment(2)}}</h1>
 	@if ($menus->count()===0)
 		<h2 class="alert alert-danger">THERE IS NO SIGNATURE DISH TO BE DISPLAY.</h2>
 	@else
@@ -29,7 +16,7 @@
 							</div></a>
 						</div>
 						<div class="col-sm-5">
-							<a class="eli-1line" href="{{ url('menu/'.$menu->menu_type.'/'. $menu->id) }}" style="font-size: large; color: red; vertical-align: middle;">{{$menu->menu_name}}</a>
+							<a class="eli-1line" href="{{ url('menu/'.$menu->menu_type.'/'. $menu->id) }}" style="font-size: large; color: red; vertical-align: middle;">{{$menu->title}}</a>
 						    <p>RM{{number_format($menu->price,2)}}</p>
 						    <p style="font-size: x-small"><i class="fa fa-star" style="color: #F6921E"></i>{{number_format($menu->star,2)}}</p>
 						    <p style="font-size: x-small">{{$menu->new_feed_point}} new feed posts</p>
@@ -39,7 +26,7 @@
 				<div class="container menu-cont visible-xs" style="margin: 0px auto 0px auto; width: 356px; max-width: 100%; background-color: white" >
 					<div class="container img-responsive img-200px" style="background-image: url(../images/{{$menu->menu_img}}); max-width: 100%; width: 400px; height: 200px; background-size: cover">
 					</div>
-					<a href="{{ url('menu/'. $menu->id) }}" style="color: red; vertical-align: middle;">{{$menu->menu_name}}</a>
+					<a href="{{ url('menu/'. $menu->id) }}" style="color: red; vertical-align: middle;">{{$menu->title}}</a>
 				    <p>RM{{number_format($menu->price,2)}}</p>
 				    <p style="font-size: x-small"><i class="fa fa-star" style="color: #F6921E"></i>{{number_format($menu->star,2)}}</p>
 				    <p style="font-size: x-small">{{$menu->new_feed_point}} new feed posts</p>

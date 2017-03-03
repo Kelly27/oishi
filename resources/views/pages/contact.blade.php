@@ -2,16 +2,6 @@
 
 @section('content')
 <div class="container-fluid nopadding" style="background-color: white;">
-	<div class="container breadcrumb_container">
-	    <ol class="breadcrumb">
-	      <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
-	      <li class="breadcrumb-item active">Contact Us</li>
-	    </ol>
-	</div>
-	<div class="container-fluid menu1-header hidden-xs" style="background-image: url(images/contact-header.png )">
-	    <h1>Contact Us</h1>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
-	</div>
 		<div class="container">
 			<h3 style="font-family: OpenSansBold; color: #414042; margin-left: auto">OUR LOCATION</h3>
 		</div>

@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         $this->call('OishiSeeder');
+        $this->call(HeaderSeeder::class);
         $this->command->info('Oishi Seeder seeds finished.');
     }
 }
@@ -119,7 +120,7 @@ class OishiSeeder extends Seeder
 			Menu::create([
 				'menu_img' => 'img1.png',
 				'menu_type' => 'sig',
-				'menu_name' => 'Chicken Teriyaki',
+				'title' => 'Chicken Teriyaki',
 				'ice_lvl' => '- 100% - 70% - 50% - 30% - 0% ',
 				'sugar_lvl' => '- 100% - 70% - 50% - 30% - 0% ',
 				'hot' => 'Available',

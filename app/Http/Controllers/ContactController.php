@@ -10,12 +10,14 @@ use App\Mailers\AppMailer;
 use Illuminate\Support\Facades\Auth;
 
 use App\ContactUs;
+use App\Header;
 
 class ContactController extends Controller{
     public function show_contact()
     {  
+        $header = Header::where('page', 'contact_us')->firstOrFail();
         $info = DB::table('get_in_touches')->where('id', 2)->first();
-        return view('pages.contact', compact('info'));
+        return view('pages.contact', compact('info', 'header'));
     }
 
     public function store_message(Request $request, Factory $validator, AppMailer $mailer)

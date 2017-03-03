@@ -1,19 +1,6 @@
 @extends('layouts.layout')
 
 @section('content')
-<div class="container-fluid" style="background-color: white;">
-	<div class="container breadcrumb_container">
-	    <ol class="breadcrumb">
-	      <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
-	      <li class="breadcrumb-item active">Special Offer</li>
-	      <li class="breadcrumb-item active">Reward</li>
-	    </ol>
-	</div>
-</div>
-<div class="container-fluid menu1-header hidden-xs" style="background-image: url(../images/reward-header.png)">
-    <h1>Reward</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
-</div>
 <div class="container-fluid m-nopadding" style="background-color: white">
 	<div class="container m-nopadding" style="margin-top: 2%;">
 		<div class="row nopadding">

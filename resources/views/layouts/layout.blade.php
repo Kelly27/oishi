@@ -9,15 +9,19 @@
         <link href="{{ asset('css/switch.css') }}" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.3/js/bootstrap-switch.min.js" rel="stylesheet">
         <link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-        <link href="{{asset('/css/app.css')}}" rel="stylesheet">
-        <script src="{{asset('/js/app.js')}}"></script>
-        <link href="{{asset('/css/styles.css')}}" rel="stylesheet">
+        <link href="{{asset('css/app.css')}}" rel="stylesheet">
+        <link href="{{asset('css/styles.css')}}" rel="stylesheet">
+        <script src="{{asset('js/app.js')}}"></script>
         <script src="{{ asset('/js/masonry.pkgd.min.js') }}"></script>
         <link rel="stylesheet" href="{{ asset('css/blueimp-gallery.min.css') }}">
 
     </head>
     <body>
-        @include('partials.oishi_header')
+        @include('partials.oishi_nav')
+        @if(count(Request::segments()) > 0)
+            @include('partials.breadcrumb')
+            @include('partials.header')
+        @endif
         @yield('content')
         
         <script src="{{ asset('/js/blueimp-gallery.min.js') }}"></script>

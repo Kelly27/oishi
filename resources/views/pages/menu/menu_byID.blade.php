@@ -2,28 +2,15 @@
 
 @section('content')
 <?php 
+$data = $menu;
 $text = $menu->ice_lvl;
 $newtxt = wordwrap($text, 6, "<br>\n");
 $text2 = $menu->sugar_lvl;
 $newtxt2 = wordwrap($text2, 6, "<br>\n");
 
-if ($menu->menu_type === 'sig') $type = 'Signature Dish';
-elseif ($menu->menu_type === 'sta') $type = 'Starters';
+if ($menu->menu_type === 'signature_dish') $type = 'Signature Dish';
+elseif ($menu->menu_type === 'starters') $type = 'Starters';
 ?>
-<div class="container-fluid" style="background-color: white;">
-	<div class="container breadcrumb_container">
-	    <ol class="breadcrumb">
-	      <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-	      <li class="breadcrumb-item "><a href="{{route('menu_home')}}">Menu</a></li>
-	      <li class="breadcrumb-item "><a href="{{ route('menu.index', ['menu_type' => $menu->menu_type]) }}">{{$type}}</a></li>
-	      <li class="breadcrumb-item active" style="text-transform: uppercase;">{{$menu->menu_name}}</li>
-	    </ol>
-	</div>
-</div>
-<div class="container-fluid menu1-header hidden-xs">
-    <h1>Menu</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
-</div>
 <div class="container-fluid nopadding" style="background-color: white">
 	<div class="container">
 		<div class="row">
@@ -31,7 +18,7 @@ elseif ($menu->menu_type === 'sta') $type = 'Starters';
 				<h1 class="hidden-xs" style="font-family: Arial; font-weight: bolder; color:#58595B">DETAILED INFORMATION</h1>
 				<img src="{{ asset('images') }}/{{$menu->menu_img}}" class="img-responsive" style="margin-left: auto; margin-right: auto">
 				<div style="margin: 2%">
-					<h6 style="text-transform: uppercase;">{{$menu->menu_name}}<span id="price-font">RM {{number_format($menu->price,2)}}</span></h6>
+					<h6 style="text-transform: uppercase;">{{$menu->title}}<span id="price-font">RM {{number_format($menu->price,2)}}</span></h6>
 
 					<button data-target="#adspopup" data-toggle="modal" class="btn fa fa-share-alt"><span style="font-family: OpenSans"> Share </span></button>
 					<button data-target="#adspopup" data-toggle="modal" class="btn fa fa-comments"><span style="font-family: OpenSans"> Write a post </span></button>
@@ -40,9 +27,9 @@ elseif ($menu->menu_type === 'sta') $type = 'Starters';
 					<table class="remark-tb" style="width: 100%">
 						<tbody>
 							<tr><td style="font-weight: bold;background-color:#F1F1F2">Ice Level</td></tr>
-							<tr><td><?php echo $newtxt ?></td></tr>
+							<tr><td><?php echo $newtxt; ?></td></tr>
 							<tr><td style="font-weight: bold;background-color:#F1F1F2">Sugar Level</td></tr>
-							<tr><td><?php echo $newtxt2 ?></td></tr>
+							<tr><td><?php echo $newtxt2; ?></td></tr>
 							<tr><td style="font-weight: bold;background-color:#F1F1F2">Hot</td></tr>
 							<tr><td>{{$menu->hot}}</td></tr>
 						</tbody>

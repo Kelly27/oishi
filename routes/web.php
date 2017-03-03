@@ -13,16 +13,17 @@
 
 Route::get('/', 'Controller@show_home')->name('home');
 
-Route::group(['prefix' => 'contact'], function(){
+Route::group(['prefix' => 'contact_us'], function(){
     Route::get('/', 'ContactController@show_contact')-> name('contact');
     Route::post('store_message', 'ContactController@store_message')-> name('store_message');
 });
 
-Route::group(['prefix' => 'about'], function(){
+Route::group(['prefix' => 'about_us'], function(){
+    Route::get('/', function(){return redirect(route('our_story'));});
     Route::get('our_story', 'AboutController@show_our_story') -> name('our_story');
-    Route::get('gallery', 'AboutController@show_gallery') -> name('gallery');
+    Route::get('photo_gallery', 'AboutController@show_gallery') -> name('gallery');
     Route::get('career', 'AboutController@show_career') -> name('career');
-    Route::get('career/{career_id}', 'AboutController@show_career_by_id');
+    Route::get('career/{career_id}', 'AboutController@show_career_by_id')->name('career.index');
     Route::get('news_feed', 'AboutController@show_news_feed') -> name('news_feed');
     Route::get('news_feed/{news_feed_id}', 'AboutController@show_news_feed_byID') -> name('news_feed.id');
     Route::get('news_feed/{news_feed_id}/{comment_id}', 'AboutController@show_reply') -> name('news_feed.reply');
@@ -31,7 +32,7 @@ Route::group(['prefix' => 'about'], function(){
         'as' => 'news_feed.like'
         ]);
     Route::get('news_event', 'AboutController@show_news_event') -> name('news_event');
-    Route::get('news_event/{news_event_id}', 'AboutController@show_news_event_byID');
+    Route::get('news_event/{news_event_id}', 'AboutController@show_news_event_byID') -> name('news_event.index');
 });
 
 Route::group(['prefix' => 'menu'], function(){
@@ -42,7 +43,8 @@ Route::group(['prefix' => 'menu'], function(){
 
 });
 
-Route::group(['prefix' => 'specialOffer'], function(){
+Route::group(['prefix' => 'special_offer'], function(){
+    Route::get('/', function(){return redirect(route('voucher'));});
     Route::get('voucher', 'OfferController@show_voucher') -> name('voucher');
     Route::get('voucher/{voucher_id}', 'OfferController@show_voucher_byID') -> name('voucher.id');
     Route::get('reward', 'OfferController@show_reward') -> name('reward');

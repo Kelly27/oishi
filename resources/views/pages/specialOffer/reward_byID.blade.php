@@ -1,20 +1,9 @@
+@php 
+	$data = $reward;
+@endphp
 @extends('layouts.layout')
 
 @section('content')
-<div class="container-fluid" style="background-color: white;">
-	<div class="container breadcrumb_container">
-	    <ol class="breadcrumb">
-	      <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
-	      <li class="breadcrumb-item">Special Offer</li>
-	      <li class="breadcrumb-item"><a href="{{route('reward')}}"> Reward</li></a>
-	      <li class="breadcrumb-item active">{{$reward->title}}</li>
-	    </ol>
-	</div>
-</div>
-<div class="container-fluid menu1-header hidden-xs" style="background-image: url(<?=asset('images/reward-header.png')?> )">
-    <h1>Reward</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
-</div>
 <div class="container-fluid m-nopadding " style="background-color: white">
 	<div class="container m-nopadding " style="margin-top: 2%;">
 		<div class="row nopadding">
@@ -52,7 +41,7 @@
 					<p class="bold-black">Related Dishes:</p>
 					<div class="container" style="background-color: #F1F1F2; width: 100%; padding: 2%; margin-bottom: 3%">
 						@foreach ($menus as $menu)
-							<p>{{$menu->menu_name}} <a href="#" data-target="#adspopup" data-toggle="modal"><span style="float: right; font-size: x-large; color: #939598" class="fa fa-chevron-right"></span></a></p>
+							<p>{{$menu->title}} <a href="#" data-target="#adspopup" data-toggle="modal"><span style="float: right; font-size: x-large; color: #939598" class="fa fa-chevron-right"></span></a></p>
 						@endforeach
 					</div>
 					<p class="bold-black">Redeem Period:</p>
@@ -72,7 +61,7 @@
 										elseif($days[$i] === '6') $days[$i] = "Saturday";
 										elseif($days[$i] === '7') $days[$i] = "Sunday";
 									};
-									$days = implode(" \n", $days)
+									$days = implode(" \n", $days);
 								?>
 					            <td style="background-color:#F1F1F2; padding:7px;">{!!nl2br($days)!!}</td>
 					            <td style="background-color:#F1F1F2; padding:7px; text-align: center; vertical-align: baseline;">{{$period->time}}</td>

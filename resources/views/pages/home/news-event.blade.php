@@ -8,9 +8,9 @@
                 <div class="row imagecenter">
                     @foreach ($newsEvents as $newsEvent)
                         <div class="col-sm-4 m-nopadding">
-                            <a href="{{ url('about/news_event/'. $newsEvent->id) }}"><div class="container m-nopadding" style="background-image: url(images/{{$newsEvent->image}}); max-width: 100%; width: 400px; height: 200px; background-size: cover">
+                            <a href="{{ route('news_event.index', ['news_event_id' => $newsEvent->id]) }}"><div class="container m-nopadding" style="background-image: url(images/{{$newsEvent->image}}); max-width: 100%; width: 400px; height: 200px; background-size: cover">
                             </div></a>
-                            <a href="{{ url('about/news_event/'. $newsEvent->id) }}"><p style="color: white">{{$newsEvent->title}}</p></a>
+                            <a href="{{ route('news_event.index', ['news_event_id' => $newsEvent->id]) }}"><p style="color: white">{{$newsEvent->title}}</p></a>
                         </div>
                     @endforeach
                 </div>

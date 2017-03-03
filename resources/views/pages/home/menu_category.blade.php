@@ -4,12 +4,12 @@
 <div class="container-fluid nopadding" id="img-container-id">
     <div class="container nopadding img-700px" style="background-image: url(<?= asset('images/img5.png')?>);">
         <div class="overlay">
-            <a href="{{URL::route('menu.index',['menu_type' => 'sta'])}}">STARTERS</a>
+            <a href="{{URL::route('menu.index',['menu_type' => 'starters'])}}">STARTERS</a>
         </div>
     </div>
     <div class="container nopadding img-700px" style="background-image: url(<?= asset('images/img6.png')?>);">
         <div class="overlay">
-            <a href="{{URL::route('menu.index',['menu_type' => 'sta'])}}">MAIN COURSES</a>
+            <a href="{{URL::route('menu.index',['menu_type' => 'starters'])}}">MAIN COURSES</a>
         </div>
     </div>
     <div class="container nopadding img-700px" style="background-image: url(<?= asset('images/img7.png')?>);">

@@ -1,22 +1,13 @@
-<? use Carbon\Carbon; ?>
+<?php 
+use Carbon\Carbon; 
+$author = $news_feed->newsfeedPoster->name;
+$reply = true;
+
+?>
 
 @extends('layouts.layout')
 
 @section('content')
-<div class="container-fluid" style="background-color: white;">
-    <div class="container breadcrumb_container">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Home</a></li>
-          <li class="breadcrumb-item">About Us</li>
-          <li class="breadcrumb-item"><a href="{{ route('news_feed') }}">News Feed</a></li>
-          <li class="breadcrumb-item active">{{$news_feed->newsfeedPoster->name}}'s Post</li>
-        </ol>
-    </div>
-</div>
-<div class="container-fluid aboutus-header hidden-xs" style="background-image: url(<?= asset('images/newsfeed-header.png') ?>)">
-    <h1>News Feed</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a aliquet orci. Ut interdum mauris sem, non aliquet felis interdum sit amet.</p>
-</div>
 <div class="container-fluid nopadding news-feed" style="background-color: white;">
 <div class="container" style="padding-top: 3%; margin-bottom: 3%">
     <div class="row">

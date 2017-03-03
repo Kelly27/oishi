@@ -261,12 +261,11 @@ body
     margin:0px;
 }
 
- // .breadcrumb_container > ol > li:first-child > a{
- //    margin-right: 50%;
- //    margin-left: 0%;
- // }
+.background-tint{
+    background-image: linear-gradient(rgba(35,31,32,.5), rgba(35,31,32,.5));
+}
 
-.aboutus-header{
+.header{
     text-align: center;
     color: white;
     height: 236px;
@@ -274,20 +273,13 @@ body
     background-position: center;
 }
 
+.header h1{
+    font-family: OpenSansBold;
+    text-transform: uppercase;
+    margin-top: 70px;
+}
+
 .aboutus-header h1, .aboutus-header p{
-    position: relative;
-    top: 55px;
-}
-
-.menu1-header{
-    background-image: url(../images/menu1-header.png);
-    background-position: center;
-    text-align: center;
-    color: white;
-    height: 236px;
-}
-
-.menu1-header h1, .menu1-header p{
     position: relative;
     top: 55px;
 }
