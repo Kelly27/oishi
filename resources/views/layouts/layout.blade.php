@@ -14,6 +14,10 @@
         <script src="{{asset('js/app.js')}}"></script>
         <script src="{{ asset('/js/masonry.pkgd.min.js') }}"></script>
         <link rel="stylesheet" href="{{ asset('css/blueimp-gallery.min.css') }}">
+        
+        <title>Oishi</title>
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+        <link rel="icon" href="{{ asset('oishi.png') }}">
 
     </head>
     <body>

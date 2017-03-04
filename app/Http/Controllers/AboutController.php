@@ -14,8 +14,6 @@ use App\ContactUs;
 use App\Comment;
 use App\Reply;
 use App\Menu;
-use App\Voucher;
-use App\Reward;
 use App\Chef;
 use App\BoardDirector;
 use App\Header;
