@@ -27,6 +27,11 @@ class NewsFeed extends Model
         return $this->hasMany('App\Comment');
     }
 
+    public function tag()
+    {
+        return $this->belongsTo('App\Tag');
+    }
+
     protected $fillable = [
         'rated_restaurant', 'rated_food', 'image_file', 'food', 'description', 'user_id'
     ];

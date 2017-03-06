@@ -16,8 +16,7 @@
         <link rel="stylesheet" href="{{ asset('css/blueimp-gallery.min.css') }}">
         
         <title>Oishi</title>
-        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-        <link rel="icon" href="{{ asset('oishi.png') }}">
+        <link rel="icon" href="{{ asset('oishi.png') }}"> {{-- icon --}}
 
     </head>
     <body>
