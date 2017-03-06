@@ -20,16 +20,6 @@ class CreateBoardDirectorsTable extends Migration
             $table->string('description');
             $table->timestamps();
         });
-
-        DB::table('board_directors')->insert([
-            ['name' => 'Lisa Johnson', 'position' => 'Manager', 'description' => 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'],
-            ['name' => 'Eva Fry', 'position' => 'Manager', 'description' => 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'],
-            ['name' => 'Eva Fry', 'position' => 'Manager', 'description' => 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'],
-            ['name' => 'Lisa Johnson', 'position' => 'Manager', 'description' => 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'],
-            ['name' => 'Eva Fry', 'position' => 'Manager', 'description' => 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'],
-            ['name' => 'Eva Fry', 'position' => 'Manager', 'description' => 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'],
-
-        ]);
     }
 
     /**

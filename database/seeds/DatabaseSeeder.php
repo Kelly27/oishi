@@ -36,18 +36,18 @@ class OishiSeeder extends Seeder
 
 	public function run()
 	{
-		DB::table('users')->truncate();
-        DB::table('add_ons')->truncate();
-        DB::table('careers')->truncate();
-        DB::table('news_feeds')->truncate();
-        DB::table('galleries')->truncate();
-        DB::table('menus')->truncate();
-        DB::table('comments')->truncate();
-        DB::table('vouchers')->truncate();
-        DB::table('rewards')->truncate();
-        DB::table('locations')->truncate();
-        DB::table('rewards_redeems_periods')->truncate();
-        DB::table('vouchers_redeems_periods')->truncate();
+		DB::table('users')->delete();
+        DB::table('add_ons')->delete();
+        DB::table('careers')->delete();
+        DB::table('news_feeds')->delete();
+        DB::table('galleries')->delete();
+        DB::table('menus')->delete();
+        DB::table('comments')->delete();
+        DB::table('vouchers')->delete();
+        DB::table('rewards')->delete();
+        DB::table('locations')->delete();
+        DB::table('rewards_redeems_periods')->delete();
+        DB::table('vouchers_redeems_periods')->delete();
 
         $faker = Faker\Factory::create();
 
@@ -59,10 +59,9 @@ class OishiSeeder extends Seeder
 			]);
 
 		for($i = 0; $i < 100; $i++) {
-	        User::create([
+	        App\User::create([
+	            'username' => $faker->userName,
 	            'name' => $faker->name,
-				'profilepic' => 'head1.png',
-				'password' => $faker->password,
 	            'email' => $faker->email
 	        ]);
 	    }
@@ -175,7 +174,7 @@ class OishiSeeder extends Seeder
 
 				NewsEvent::create([
         	'title' => 'ADIPSCING ELIT PRAESANT VESTIBULUM',
-        	'image' => 'img15.png',
+        	'image' => 'img 15.png',
         	'short_description' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacunean nonummy edrerit mauris. Phasellus porta. Fusce suscipit.',
         	'long_description' => '	Lid est laborum dolo rumes fugats untras. Etha rums ser quidem rerum facilis dolores nemis onis fugats vitaes nemo minima rerums unsers sadips amets sadips ips. Ut enim ad minim veniam, quis nostrud Neque porro quisquam est, qui dolorem ipsum. Quia dolor sit amet, consectetur, adipisci amets uns. Rumes fugats untras. Etha rums ser quidem nemo minima rerums unsers sadips rerums.
 	

@@ -21,12 +21,6 @@ class CreateGetInTouchTable extends Migration
             $table->string('email');
             $table->timestamps();
         });
-
-        DB::table('get_in_touches')->insert([
-            ['address' => '66 South Street, 
-Window 6 Wonderland, xxxx
-xxxxx, xxxxxxxxxx', 'office_no' => '082-577168', 'mobile_no' => '082-462569', 'email' => 'oishi@gmail.com']
-            ]);
     }
 
     /**
