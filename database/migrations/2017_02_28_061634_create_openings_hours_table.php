@@ -19,6 +19,12 @@ class CreateOpeningsHoursTable extends Migration
             $table->string('time');
             $table->timestamps();
         });
+
+        DB::table('opening_hours')->insert([
+            ['day' => '1', 'time' => '8am - 10pm'],
+            ['day' => '2, 3, 4, 5, 6', 'time' => '8am - 1am'],
+            ['day' => '7', 'time' => 'Off'],
+        ]);
     }
 
     /**

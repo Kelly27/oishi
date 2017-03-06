@@ -21,6 +21,13 @@ class CreateChefsTable extends Migration
             $table->string('description');
             $table->timestamps();
         });
+
+        DB::table('chefs')->insert([
+            ['name' => 'Umberto Vincenzo', 'image' => 'chef1.png', 'position' => 'CHEF', 'description'=> 'Give a brief description of your founders to become closer to your clients.'],
+            ['name' => 'Mary Walnut', 'image' => 'chef2.png', 'position' => 'DESSERT CHEF', 'description'=> 'Give a brief description of your founders to become closer to your clients.'],
+            ['name' => 'Umberto Vincenzo', 'image' => 'chef3.png', 'position' => 'CHEF’S ASSISTANT', 'description'=> 'Give a brief description of your founders to become closer to your clients.'],
+            ['name' => 'Edward Horton', 'image' => 'chef4.png', 'position' => 'CHEF’S ASSISTANT', 'description'=> 'Give a brief description of your founders to become closer to your clients.'],
+        ]);
     }
 
     /**
